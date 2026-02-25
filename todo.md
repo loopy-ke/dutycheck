@@ -1,4 +1,4 @@
-# CarDuty — Todo
+# DutyCheck — Todo
 
 ## In Progress / Recent
 - [x] Vite + Tailwind v4 calculator setup

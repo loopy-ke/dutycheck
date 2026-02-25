@@ -1,5 +1,5 @@
 /**
- * CarDuty — KRA Import Duty Calculator
+ * DutyCheck — KRA Import Duty Calculator
  * Cascade: Vehicle Type → Make → Model → Year → auto-calculate
  * Uses only safe DOM methods (no innerHTML with data).
  */
@@ -491,7 +491,7 @@ function makeBreakdownRow({ label, note, formula, value, style }) {
 function buildShareText(total, cv, id, ed, vat, idf, rdl) {
   const car = `${selectedMake} ${selectedModel.model} (${selectedYear})`;
   return [
-    `🚗 *CarDuty KRA Calculator*`,
+    `🚗 *DutyCheck KRA Calculator*`,
     ``,
     `*${car}*`,
     `CRSP: ${kes(selectedModel.crsp)}`,
@@ -504,7 +504,7 @@ function buildShareText(total, cv, id, ed, vat, idf, rdl) {
     ``,
     `*Total KRA Duty: ${kes(total)}*`,
     ``,
-    `Calculate yours 👉 https://carduty.co.ke`,
+    `Calculate yours 👉 https://dutycheck.co.ke`,
   ].join("\n");
 }
 

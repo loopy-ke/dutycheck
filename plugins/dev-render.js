@@ -9,7 +9,7 @@ import { renderUrl } from "./render.js";
 
 export function devRenderPlugin() {
   return {
-    name: "carduty-dev-render",
+    name: "dutycheck-dev-render",
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         // Only handle GET requests with clean paths (no assets, api, etc.)
@@ -28,7 +28,7 @@ export function devRenderPlugin() {
           res.statusCode = 200;
           res.end(html);
         } catch (err) {
-          console.error("[carduty-dev-render] Error rendering", url, err);
+          console.error("[dutycheck-dev-render] Error rendering", url, err);
           next(err);
         }
       });
