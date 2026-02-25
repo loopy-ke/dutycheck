@@ -102,7 +102,7 @@ function collapseSection(id, summary) {
   if (body) body.classList.add("hidden");
   if (val)  { val.textContent = summary; val.classList.remove("hidden"); }
   if (chg)  chg.classList.remove("hidden");
-  if (hdr)  hdr.classList.remove("border-b");
+  if (hdr)  { hdr.classList.remove("border-b"); hdr.classList.add("cursor-pointer"); }
 }
 
 function expandSection(id) {
@@ -113,7 +113,20 @@ function expandSection(id) {
   if (body) body.classList.remove("hidden");
   if (val)  val.classList.add("hidden");
   if (chg)  chg.classList.add("hidden");
-  if (hdr)  hdr.classList.add("border-b");
+  if (hdr)  { hdr.classList.add("border-b"); hdr.classList.remove("cursor-pointer"); }
+}
+
+// Make an entire collapsed section header clickable (delegates to its Change button)
+function makeHeaderClickable(id) {
+  const hdr  = $(`${id}-hdr`);
+  const chg  = $(`${id}-chg`);
+  const body = $(`${id}-body`);
+  if (!hdr || !chg || !body) return;
+  hdr.addEventListener("click", (e) => {
+    if (!e.target.closest("button") && body.classList.contains("hidden")) {
+      chg.click();
+    }
+  });
 }
 
 // ── State ─────────────────────────────────────────────────────────────────
@@ -133,6 +146,11 @@ export async function initCalculator() {
   renderCategories();
   shareBtn.addEventListener("click", share);
   recalcBtn.addEventListener("click", recalculate);
+  $("brand-home").addEventListener("click", recalculate);
+  makeHeaderClickable("step-cat");
+  makeHeaderClickable("step-make");
+  makeHeaderClickable("step-model");
+  makeHeaderClickable("step-year");
 }
 
 function updatePath() {
@@ -269,7 +287,13 @@ function selectMake(make, activeChip) {
 
     const leftDiv = document.createElement("div");
     leftDiv.className = "min-w-0";
-    leftDiv.appendChild(el("p", { cls: "font-semibold text-sm text-text", text: m.model }));
+    const nameRow = document.createElement("div");
+    nameRow.className = "flex items-baseline gap-2 flex-wrap";
+    nameRow.appendChild(el("p", { cls: "font-semibold text-sm text-text", text: m.model }));
+    if (m.mn) {
+      nameRow.appendChild(el("span", { cls: "text-xs font-mono text-text-subtle", text: m.mn }));
+    }
+    leftDiv.appendChild(nameRow);
     const parts = [
       m.cc ? (typeof m.cc === "number" ? m.cc + "cc" : String(m.cc)) : null,
       m.fuel,

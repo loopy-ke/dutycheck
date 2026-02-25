@@ -126,6 +126,9 @@ def build():
             "model": title_case(v["model"]),
             "crsp": v["crsp_kes"],
         }
+        mn = v.get("model_number")
+        if mn and mn != "None":
+            entry["mn"] = mn
         if v.get("engine_cc"):
             entry["cc"] = v["engine_cc"]
         if v.get("fuel"):
