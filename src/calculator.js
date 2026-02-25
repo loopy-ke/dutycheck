@@ -516,7 +516,7 @@ function makeBreakdownRow({ label, note, formula, value, style }) {
 function buildShareText(total, cv, id, ed, vat, idf, rdl) {
   const car = `${selectedMake} ${selectedModel.model} (${selectedYear})`;
   return [
-    `🚗 *Duty Check KRA Calculator*`,
+    `*Duty Check -- KRA Calculator*`,
     ``,
     `*${car}*`,
     `CRSP: ${kes(selectedModel.crsp)}`,
@@ -529,7 +529,7 @@ function buildShareText(total, cv, id, ed, vat, idf, rdl) {
     ``,
     `*Total KRA Duty: ${kes(total)}*`,
     ``,
-    `Calculate yours 👉 https://dutycheck.co.ke`,
+    `Calculate yours: https://dutycheck.co.ke`,
   ].join("\n");
 }
 
