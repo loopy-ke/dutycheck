@@ -28,8 +28,8 @@
 
 ### SEO / Content
 - [ ] JSON-LD structured data on model/year pages (FAQPage or Product schema)
-- [ ] Sitemap.xml generation in build script
-- [ ] robots.txt
+- [x] Sitemap.xml generation in build script (sitemap-index.xml + sitemap.xml + 11 per-category sitemaps)
+- [ ] robots.txt with Sitemap: https://dutycheck.co.ke/sitemap-index.xml
 
 ## Notes
 
