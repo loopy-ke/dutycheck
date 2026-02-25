@@ -1,0 +1,10 @@
+{
+  "import_duty_rate": 0.25,
+  "excise_duty_rate": 0.2,
+  "vat_rate": 0.16,
+  "idf_rate": 0.0225,
+  "rdl_rate": 0.015,
+  "idf_minimum_kes": 5000,
+  "crsp_tax_strip_divisor": 2.4469,
+  "note": "Rates as per KRA Finance Act 2025. Tax-strip divisor derived from official KRA valuation template."
+}

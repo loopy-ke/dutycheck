@@ -1,0 +1,4652 @@
+[
+  {
+    "make": "HONDA",
+    "model": "400X",
+    "model_number": "2BL-NC56",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 971616
+  },
+  {
+    "make": "HONDA",
+    "model": "400X",
+    "model_number": "8BL-NC56",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1110048
+  },
+  {
+    "make": "HONDA",
+    "model": "400X",
+    "model_number": "2BL-NC47",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 949622
+  },
+  {
+    "make": "HONDA",
+    "model": "ADV150",
+    "model_number": "2BK-KF38",
+    "transmission": "CVT",
+    "engine_cc": 149,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 530443
+  },
+  {
+    "make": "HONDA",
+    "model": "ADV160",
+    "model_number": "8BK-KF54",
+    "transmission": "CVT",
+    "engine_cc": 156,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 611950
+  },
+  {
+    "make": "HONDA",
+    "model": "BENLY",
+    "model_number": "2BH-AA05",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 284628
+  },
+  {
+    "make": "HONDA",
+    "model": "BENLY 110 PRO",
+    "model_number": "2BJ-JA09",
+    "transmission": "CVT",
+    "engine_cc": 107,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 353197
+  },
+  {
+    "make": "HONDA",
+    "model": "BENLY E: I",
+    "model_number": "ZAD-EF07",
+    "transmission": null,
+    "engine_cc": null,
+    "seating": 1,
+    "fuel": "ELECTRIC",
+    "crsp_kes": 866821
+  },
+  {
+    "make": "HONDA",
+    "model": "BENLY E: I PRO",
+    "model_number": "ZAD-EF08",
+    "transmission": null,
+    "engine_cc": null,
+    "seating": 1,
+    "fuel": "EELCTRIC",
+    "crsp_kes": 907963
+  },
+  {
+    "make": "HONDA",
+    "model": "BENLY E: II",
+    "model_number": "ZAD-EF10",
+    "transmission": null,
+    "engine_cc": null,
+    "seating": 1,
+    "fuel": "EELCTRIC",
+    "crsp_kes": 893731
+  },
+  {
+    "make": "HONDA",
+    "model": "BENLY E: II PRO",
+    "model_number": "ZAD-EF11",
+    "transmission": null,
+    "engine_cc": 0,
+    "seating": 1,
+    "fuel": "ELECTRIC",
+    "crsp_kes": 967734
+  },
+  {
+    "make": "HONDA",
+    "model": "BENLY PRO",
+    "model_number": "2BH-AA05",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 327322
+  },
+  {
+    "make": "HONDA",
+    "model": "BENLY110 PRO",
+    "model_number": "2BJ-JA09",
+    "transmission": "CVT",
+    "engine_cc": 107,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 353197
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1000R",
+    "model_number": "2BL-SC80",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1960050
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1000R",
+    "model_number": "8BL-SC80",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2161748
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1000R BLACK EDITION",
+    "model_number": "8BL-SC80",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2220096
+  },
+  {
+    "make": "HONDA",
+    "model": "CB100R",
+    "model_number": "2BL-SC80",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1965225
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1100",
+    "model_number": "2BL-SC65",
+    "transmission": "6MT",
+    "engine_cc": 1140,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1461952
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1100  EX",
+    "model_number": "2BL-SC65",
+    "transmission": "6MT",
+    "engine_cc": 1140,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1763269
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1100 EX",
+    "model_number": "2BL-SC65",
+    "transmission": "6MT",
+    "engine_cc": 1140,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1602972
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1100 RS",
+    "model_number": "2BL-SC65",
+    "transmission": "6MT",
+    "engine_cc": 1140,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1648253
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1100EX",
+    "model_number": "2BL-SC65",
+    "transmission": "6MT",
+    "engine_cc": 1140,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1602972
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1100N RS",
+    "model_number": "2BL-SC65",
+    "transmission": "6MT",
+    "engine_cc": 1140,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1650841
+  },
+  {
+    "make": "HONDA",
+    "model": "CB125R",
+    "model_number": "2BJ-JC79",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 536911
+  },
+  {
+    "make": "HONDA",
+    "model": "CB125R",
+    "model_number": "8BJ-JC91",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 611950
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1300",
+    "model_number": "2BL-SC54",
+    "transmission": "6MT",
+    "engine_cc": 1284,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1777630
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1300 SUPER BOL D'OR",
+    "model_number": "2BL-SC54",
+    "transmission": "6MT",
+    "engine_cc": 1284,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1907006
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1300 SUPER BOL D'OR",
+    "model_number": "8BL-SC54",
+    "transmission": "6MT",
+    "engine_cc": 1284,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2163171
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1300 SUPER BOL D'OR SP",
+    "model_number": "8BL-SC54",
+    "transmission": "6MT",
+    "engine_cc": 1284,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2647038
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1300 SUPER DOL D'OR",
+    "model_number": "8BL-SC54",
+    "transmission": "6MT",
+    "engine_cc": 1284,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2163171
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1300 SUPER FOUR",
+    "model_number": "2BL-SC54",
+    "transmission": "6MT",
+    "engine_cc": 1284,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1777630
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1300 SUPER FOUR",
+    "model_number": "8BL-CS54",
+    "transmission": "6MT",
+    "engine_cc": 1284,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2020857
+  },
+  {
+    "make": "HONDA",
+    "model": "CB1300 SUPER FOUR SP",
+    "model_number": "8BL-SC54",
+    "transmission": "6MT",
+    "engine_cc": 1284,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2504724
+  },
+  {
+    "make": "HONDA",
+    "model": "CB250R",
+    "model_number": "2BK-MC52",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 602893
+  },
+  {
+    "make": "HONDA",
+    "model": "CB250R",
+    "model_number": "8BK-MC52",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 730070
+  },
+  {
+    "make": "HONDA",
+    "model": "CB400",
+    "model_number": "2BL-NC42",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1091936
+  },
+  {
+    "make": "HONDA",
+    "model": "CB400 SUPER BOL D'OR",
+    "model_number": "2BL-NC42",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1275650
+  },
+  {
+    "make": "HONDA",
+    "model": "CB400 SUPER D0L D'OR",
+    "model_number": "2BL-NC42",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1186380
+  },
+  {
+    "make": "HONDA",
+    "model": "CB400 SUPER FOUR",
+    "model_number": "2BL-NC42",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1028541
+  },
+  {
+    "make": "HONDA",
+    "model": "CB650F",
+    "model_number": "2BL-RC83",
+    "transmission": "6MT",
+    "engine_cc": 648,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1106167
+  },
+  {
+    "make": "HONDA",
+    "model": "CB650R",
+    "model_number": "2BL-RH03",
+    "transmission": "6MT",
+    "engine_cc": 648,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1151449
+  },
+  {
+    "make": "HONDA",
+    "model": "CB650R",
+    "model_number": "8BL-RH03",
+    "transmission": "6MT",
+    "engine_cc": 648,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1323519
+  },
+  {
+    "make": "HONDA",
+    "model": "CB650R E-CLUTCH",
+    "model_number": "8BL-RH17",
+    "transmission": "6MT",
+    "engine_cc": 648,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1408907
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR1000RR",
+    "model_number": "2BL-SC77",
+    "transmission": "6MT",
+    "engine_cc": 999,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2451680
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR1000RR SP",
+    "model_number": "2BL-SC77",
+    "transmission": "6MT",
+    "engine_cc": 999,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2988591
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR1000RR-R",
+    "model_number": "2BL-SC82",
+    "transmission": "6MT",
+    "engine_cc": 999,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2846278
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR1000RR-R FIREBLADE",
+    "model_number": "8BL-SC82",
+    "transmission": "6MT",
+    "engine_cc": 999,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3130905
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR1000RR-R FIREBLADE",
+    "model_number": "2BL-SC82",
+    "transmission": "6MT",
+    "engine_cc": 999,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3130905
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR250R",
+    "model_number": "2BK-MC51",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 966441
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR250R",
+    "model_number": "8BK-MC51",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1124280
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR250R",
+    "model_number": "8BK-MC52",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 730070
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR250R",
+    "model_number": "2BK-MC52",
+    "transmission": "6MT",
+    "engine_cc": 149,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 730070
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR250RR ABS",
+    "model_number": "2BK-MC51",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 966441
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR400R",
+    "model_number": "2BL-NC56",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 950915
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR400R",
+    "model_number": "2BL-NC47",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 937978
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR400R",
+    "model_number": "8BL-NC56",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1088701
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR400R",
+    "model_number": "BBL-NC65",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1116517
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR600RR",
+    "model_number": "2BL-PC40",
+    "transmission": "6MT",
+    "engine_cc": 599,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2077783
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR600RR",
+    "model_number": "8BL-PC40",
+    "transmission": "6MT",
+    "engine_cc": 599,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2035088
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR650F",
+    "model_number": "2BL-RC83",
+    "transmission": "6MT",
+    "engine_cc": 648,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1235543
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR650R",
+    "model_number": "2BL-RH03",
+    "transmission": "6MT",
+    "engine_cc": 648,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1280825
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR650R",
+    "model_number": "8BL-RH03",
+    "transmission": "6MT",
+    "engine_cc": 648,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1394676
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR650R",
+    "model_number": "8BL-RH17",
+    "transmission": "6MT",
+    "engine_cc": 648,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1423139
+  },
+  {
+    "make": "HONDA",
+    "model": "CBR650R",
+    "model_number": "2BL-RH03",
+    "transmission": "6MT",
+    "engine_cc": 648,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1408907
+  },
+  {
+    "make": "HONDA",
+    "model": "CL250",
+    "model_number": "8BK-MC57",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 804073
+  },
+  {
+    "make": "HONDA",
+    "model": "CL500",
+    "model_number": "8BL-PC68",
+    "transmission": "6MT",
+    "engine_cc": 471,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1117164
+  },
+  {
+    "make": "HONDA",
+    "model": "CL500",
+    "model_number": "BBL-PC68",
+    "transmission": "6MT",
+    "engine_cc": 471,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1117164
+  },
+  {
+    "make": "HONDA",
+    "model": "CR250 RALLY",
+    "model_number": "2BK-MD44",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 840946
+  },
+  {
+    "make": "HONDA",
+    "model": "CR600R",
+    "model_number": "2BL-PC40",
+    "transmission": "6MT",
+    "engine_cc": 599,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1888893
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF1000L",
+    "model_number": "2BL-SD04",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1988513
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF100L AFRICA TWIN ADVENTURE SPORTS DUAL CLUTCH TRANSMISSION",
+    "model_number": "2BL-SD04",
+    "transmission": "DCT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1993688
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF110 AFRICA TWIN ADVENTURE DUAL CLUTCH TRANSMISSION",
+    "model_number": "2BL-SD10",
+    "transmission": "DCT",
+    "engine_cc": 1082,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2419336
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF1100L AFRICA TWIN",
+    "model_number": "2BL-SD10",
+    "transmission": "6MT",
+    "engine_cc": 1082,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2092014
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF1100L AFRICA TWIN",
+    "model_number": "2BL-SD10",
+    "transmission": "DCT",
+    "engine_cc": 1082,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2661269
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF1100L AFRICA TWIN ADVENTURE SPORTS ES (DCT)",
+    "model_number": "8BL-SD15",
+    "transmission": "DCT",
+    "engine_cc": 1082,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2120477
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF1100LAFRICA TWIN",
+    "model_number": "8BL-SD10",
+    "transmission": "6MT",
+    "engine_cc": 1082,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2120477
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF110F",
+    "model_number": "JE02",
+    "transmission": "4MT",
+    "engine_cc": 109,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 323441
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF125F",
+    "model_number": "JE03",
+    "transmission": "5MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 407535
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF150R",
+    "model_number": "KE03",
+    "transmission": "5MT",
+    "engine_cc": 149,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 591249
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF250 L",
+    "model_number": "2BK-MD47",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 775611
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF250 RALLY",
+    "model_number": "2BK-MD44",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 840946
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF250 RALLY",
+    "model_number": "8BK-MD47",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 989081
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF250 RALLY",
+    "model_number": "2BK-MD47",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 959196
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF250 RALLY ABS",
+    "model_number": "2BK-MD44",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 840946
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF250L",
+    "model_number": "2BK-MD44",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 596425
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF250L",
+    "model_number": "CRF-MD44",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 596425
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF250L",
+    "model_number": "8BK-MD47",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 804073
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF250M",
+    "model_number": "2BK-MD44",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 645587
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF250R",
+    "model_number": "ME12",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 996197
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF250RX",
+    "model_number": "ME12",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1015604
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF450L",
+    "model_number": "2BL-PD11",
+    "transmission": "6MT",
+    "engine_cc": 449,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1552515
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF450R",
+    "model_number": "PE07",
+    "transmission": "5MT",
+    "engine_cc": 449,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1157917
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF450RX",
+    "model_number": "PE07",
+    "transmission": "5MT",
+    "engine_cc": 449,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1177324
+  },
+  {
+    "make": "HONDA",
+    "model": "CRF50F",
+    "model_number": "AE04",
+    "transmission": "4MT",
+    "engine_cc": 49,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 232877
+  },
+  {
+    "make": "HONDA",
+    "model": "CROSS CUB 110",
+    "model_number": "8BJ-JA60",
+    "transmission": "4MT",
+    "engine_cc": 109,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 469636
+  },
+  {
+    "make": "HONDA",
+    "model": "CROSS CUB 110",
+    "model_number": "8BJ-J60",
+    "transmission": "4MT",
+    "engine_cc": 109,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 469636
+  },
+  {
+    "make": "HONDA",
+    "model": "CROSS CUB 110",
+    "model_number": "2BJ-JA45",
+    "transmission": "4MT",
+    "engine_cc": 109,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 441173
+  },
+  {
+    "make": "HONDA",
+    "model": "CROSS CUB 50",
+    "model_number": "2BH-AA06",
+    "transmission": "4MT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 349316
+  },
+  {
+    "make": "HONDA",
+    "model": "CT125",
+    "model_number": "2BJ-JA55",
+    "transmission": "4MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 517505
+  },
+  {
+    "make": "HONDA",
+    "model": "CT125",
+    "model_number": "8BJ-JA65",
+    "transmission": "4MT",
+    "engine_cc": 123,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 569256
+  },
+  {
+    "make": "HONDA",
+    "model": "DAX125",
+    "model_number": "8BJ-JB04",
+    "transmission": "4MT",
+    "engine_cc": 123,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 569256
+  },
+  {
+    "make": "HONDA",
+    "model": "DAX125",
+    "model_number": "8BJ-JB06",
+    "transmission": "4MT",
+    "engine_cc": 123,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 583487
+  },
+  {
+    "make": "HONDA",
+    "model": "DIO110",
+    "model_number": "2BJ-JF58",
+    "transmission": "CVT",
+    "engine_cc": 108,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 276865
+  },
+  {
+    "make": "HONDA",
+    "model": "DIO110",
+    "model_number": "8BJ-JK03",
+    "transmission": "CVT",
+    "engine_cc": 109,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 327322
+  },
+  {
+    "make": "HONDA",
+    "model": "DIO110",
+    "model_number": "2BJ-JK03",
+    "transmission": "CVT",
+    "engine_cc": 109,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 317360
+  },
+  {
+    "make": "HONDA",
+    "model": "DUNK",
+    "model_number": "2BH-AF78",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 257459
+  },
+  {
+    "make": "HONDA",
+    "model": "EM1 E",
+    "model_number": "ZAD-EF16",
+    "transmission": null,
+    "engine_cc": null,
+    "seating": 1,
+    "fuel": "ELECTRIC",
+    "crsp_kes": 387094
+  },
+  {
+    "make": "HONDA",
+    "model": "FORZA",
+    "model_number": "2BK-MF13",
+    "transmission": "CVT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 774964
+  },
+  {
+    "make": "HONDA",
+    "model": "FORZA",
+    "model_number": "8BK-MF17",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 895154
+  },
+  {
+    "make": "HONDA",
+    "model": "FORZA",
+    "model_number": "2BK-MF15",
+    "transmission": "CVT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 852460
+  },
+  {
+    "make": "HONDA",
+    "model": "GB350",
+    "model_number": "8BL-NC59",
+    "transmission": "5MT",
+    "engine_cc": 348,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 725801
+  },
+  {
+    "make": "HONDA",
+    "model": "GB350",
+    "model_number": "2BL-NC59",
+    "transmission": "5MT",
+    "engine_cc": 348,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 711569
+  },
+  {
+    "make": "HONDA",
+    "model": "GB350 S",
+    "model_number": "2BL-NC59",
+    "transmission": "5MT",
+    "engine_cc": 348,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 768495
+  },
+  {
+    "make": "HONDA",
+    "model": "GIORNO",
+    "model_number": "2BH-AF77",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 232877
+  },
+  {
+    "make": "HONDA",
+    "model": "GOLD WING",
+    "model_number": "2BL-SC79",
+    "transmission": "6MT",
+    "engine_cc": 1833,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3278394
+  },
+  {
+    "make": "HONDA",
+    "model": "GOLD WING TOUR",
+    "model_number": "2BL-SC79",
+    "transmission": "DCT",
+    "engine_cc": 1833,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3971851
+  },
+  {
+    "make": "HONDA",
+    "model": "GOLD WING TOUR",
+    "model_number": "8BL-SC79",
+    "transmission": "DCT",
+    "engine_cc": 1833,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 4482887
+  },
+  {
+    "make": "HONDA",
+    "model": "GOLD WING TOUR AIRBAG",
+    "model_number": "2BL-SC79",
+    "transmission": "DCT",
+    "engine_cc": 1833,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3977026
+  },
+  {
+    "make": "HONDA",
+    "model": "GROM",
+    "model_number": "2BJ-JC75",
+    "transmission": "4MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 420473
+  },
+  {
+    "make": "HONDA",
+    "model": "GROM",
+    "model_number": "8BJ-JC92",
+    "transmission": "5MT",
+    "engine_cc": 123,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 505214
+  },
+  {
+    "make": "HONDA",
+    "model": "GYRO CANOPY",
+    "model_number": "2BH-TA03",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 671463
+  },
+  {
+    "make": "HONDA",
+    "model": "GYRO CANOPY E",
+    "model_number": "ZAD-EF14",
+    "transmission": null,
+    "engine_cc": null,
+    "seating": 1,
+    "fuel": "ELECTRIC",
+    "crsp_kes": 1295056
+  },
+  {
+    "make": "HONDA",
+    "model": "GYRO E",
+    "model_number": "ZAD-EF13",
+    "transmission": null,
+    "engine_cc": 0,
+    "seating": 1,
+    "fuel": "ELECTRIC",
+    "crsp_kes": 711569
+  },
+  {
+    "make": "HONDA",
+    "model": "GYRO X",
+    "model_number": "2BH-TD02",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 501980
+  },
+  {
+    "make": "HONDA",
+    "model": "HAWK 11",
+    "model_number": "8BL-SC85",
+    "transmission": "6MT",
+    "engine_cc": 1082,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1807386
+  },
+  {
+    "make": "HONDA",
+    "model": "HAWK11",
+    "model_number": "8BL-SC85",
+    "transmission": "6MT",
+    "engine_cc": 1082,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1807386
+  },
+  {
+    "make": "HONDA",
+    "model": "IORNO",
+    "model_number": "2BH-AF77",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 270396
+  },
+  {
+    "make": "HONDA",
+    "model": "LEAD125",
+    "model_number": "2BJ-JF45",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 371310
+  },
+  {
+    "make": "HONDA",
+    "model": "LEAD125",
+    "model_number": "8BJ-JK12",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 426942
+  },
+  {
+    "make": "HONDA",
+    "model": "LEADER125",
+    "model_number": "8BJ-JK12",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 426942
+  },
+  {
+    "make": "HONDA",
+    "model": "MM4-02",
+    "model_number": "2BL-RC82",
+    "transmission": "DCT",
+    "engine_cc": 745,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1416670
+  },
+  {
+    "make": "HONDA",
+    "model": "MONKEY 125",
+    "model_number": "2BJ-JB02",
+    "transmission": "4MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 478692
+  },
+  {
+    "make": "HONDA",
+    "model": "MONKEY 125",
+    "model_number": "8BJ-JB03",
+    "transmission": "5MT",
+    "engine_cc": 123,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 569256
+  },
+  {
+    "make": "HONDA",
+    "model": "MONKEY 125",
+    "model_number": "8BJ-JB05",
+    "transmission": "5MT",
+    "engine_cc": 123,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 583487
+  },
+  {
+    "make": "HONDA",
+    "model": "MONKEY125",
+    "model_number": "2B-JB02",
+    "transmission": "4MT",
+    "engine_cc": 124,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 478692
+  },
+  {
+    "make": "HONDA",
+    "model": "MONKEY125",
+    "model_number": "8BJ-JB03",
+    "transmission": "5MT",
+    "engine_cc": 123,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 569256
+  },
+  {
+    "make": "HONDA",
+    "model": "NC750S",
+    "model_number": "2BL-RC88",
+    "transmission": "DCT",
+    "engine_cc": 745,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 985847
+  },
+  {
+    "make": "HONDA",
+    "model": "NC750S DUAL CLUTCH TRANSMISSION",
+    "model_number": "2BL-RC88",
+    "transmission": "DCT",
+    "engine_cc": 745,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 991022
+  },
+  {
+    "make": "HONDA",
+    "model": "NC750X",
+    "model_number": "2BL-RC90",
+    "transmission": "6MT",
+    "engine_cc": 745,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1059591
+  },
+  {
+    "make": "HONDA",
+    "model": "NC750X",
+    "model_number": "8BL-RH09",
+    "transmission": "6MT",
+    "engine_cc": 745,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1195437
+  },
+  {
+    "make": "HONDA",
+    "model": "NC750X",
+    "model_number": "2BL-RH09",
+    "transmission": "6MT",
+    "engine_cc": 745,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1195437
+  },
+  {
+    "make": "HONDA",
+    "model": "NC750X ABS E",
+    "model_number": "2BL-RC90",
+    "transmission": "6MT",
+    "engine_cc": 745,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1054416
+  },
+  {
+    "make": "HONDA",
+    "model": "NT1100",
+    "model_number": "8BL-SC84",
+    "transmission": "DCT",
+    "engine_cc": 1082,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2177402
+  },
+  {
+    "make": "HONDA",
+    "model": "NX400",
+    "model_number": "BBL-NC65",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1152742
+  },
+  {
+    "make": "HONDA",
+    "model": "PCX",
+    "model_number": "2BJ-JF81",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 410123
+  },
+  {
+    "make": "HONDA",
+    "model": "PCX",
+    "model_number": "8BJ-JK05",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 469636
+  },
+  {
+    "make": "HONDA",
+    "model": "PCX",
+    "model_number": "2BJ-JK05",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 462520
+  },
+  {
+    "make": "HONDA",
+    "model": "PCX E:HEV",
+    "model_number": "2BJ-JK106",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 580641
+  },
+  {
+    "make": "HONDA",
+    "model": "PCX HYBRID",
+    "model_number": "2AJ-JF84",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 517505
+  },
+  {
+    "make": "HONDA",
+    "model": "PCX150 ABS",
+    "model_number": "2BK-KF30",
+    "transmission": "CVT",
+    "engine_cc": 149,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 473517
+  },
+  {
+    "make": "HONDA",
+    "model": "PCX150 ABS",
+    "model_number": "2BJ-JF81",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 410123
+  },
+  {
+    "make": "HONDA",
+    "model": "PCX150 ABS",
+    "model_number": "2BK-KF30",
+    "transmission": "CVT",
+    "engine_cc": 149,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 473517
+  },
+  {
+    "make": "HONDA",
+    "model": "PCX160",
+    "model_number": "8BK-KF47",
+    "transmission": "CVT",
+    "engine_cc": 156,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 533677
+  },
+  {
+    "make": "HONDA",
+    "model": "PCX160",
+    "model_number": "2BK-KF47",
+    "transmission": "CVT",
+    "engine_cc": 156,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 526561
+  },
+  {
+    "make": "HONDA",
+    "model": "REBEL 1100",
+    "model_number": "8BL-SC83",
+    "transmission": "6MT",
+    "engine_cc": 1082,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1472949
+  },
+  {
+    "make": "HONDA",
+    "model": "REBEL 1100",
+    "model_number": "8BL-SC63",
+    "transmission": "6MT",
+    "engine_cc": 1082,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1423139
+  },
+  {
+    "make": "HONDA",
+    "model": "REBEL 250",
+    "model_number": "2BK-MC49",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 644294
+  },
+  {
+    "make": "HONDA",
+    "model": "REBEL 250",
+    "model_number": "8BK-MC49",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 789842
+  },
+  {
+    "make": "HONDA",
+    "model": "REBEL 250 S EDITION",
+    "model_number": "2BK-MC49",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 750382
+  },
+  {
+    "make": "HONDA",
+    "model": "REBEL 500",
+    "model_number": "2BL-PC60",
+    "transmission": "6MT",
+    "engine_cc": 471,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 940565
+  },
+  {
+    "make": "HONDA",
+    "model": "REBEL250",
+    "model_number": "8BK-MC49",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 789842
+  },
+  {
+    "make": "HONDA",
+    "model": "SPUER CUB 50 PRO",
+    "model_number": "3BH-AA07",
+    "transmission": "4MT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 334438
+  },
+  {
+    "make": "HONDA",
+    "model": "SUPER CUB 110",
+    "model_number": "8BJ-JA59",
+    "transmission": "4MT",
+    "engine_cc": 109,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 391363
+  },
+  {
+    "make": "HONDA",
+    "model": "SUPER CUB 110",
+    "model_number": "BBJ-JA59",
+    "transmission": "4MT",
+    "engine_cc": 109,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 391363
+  },
+  {
+    "make": "HONDA",
+    "model": "SUPER CUB 110 PRO",
+    "model_number": "2BJ-JA42",
+    "transmission": "4MT",
+    "engine_cc": 109,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 355785
+  },
+  {
+    "make": "HONDA",
+    "model": "SUPER CUB 125",
+    "model_number": "2BJ-JA48",
+    "transmission": "4MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 478692
+  },
+  {
+    "make": "HONDA",
+    "model": "SUPER CUB 125",
+    "model_number": "8BJ-JA58",
+    "transmission": "4MT",
+    "engine_cc": 123,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 569256
+  },
+  {
+    "make": "HONDA",
+    "model": "SUPER CUB 50",
+    "model_number": "2BH-AA09",
+    "transmission": "4MT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 278159
+  },
+  {
+    "make": "HONDA",
+    "model": "SUPER CUB C125",
+    "model_number": "2BJ-JA48",
+    "transmission": "4MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 478692
+  },
+  {
+    "make": "HONDA",
+    "model": "SUPER CUB C125",
+    "model_number": "8BJ-JA58",
+    "transmission": "4MT",
+    "engine_cc": 123,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 569256
+  },
+  {
+    "make": "HONDA",
+    "model": "SUPER CUB C125",
+    "model_number": "8BJ-JA71",
+    "transmission": "4MT",
+    "engine_cc": 123,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 583487
+  },
+  {
+    "make": "HONDA",
+    "model": "TACT",
+    "model_number": "2BH-AF79",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 213471
+  },
+  {
+    "make": "HONDA",
+    "model": "TACT BASIC",
+    "model_number": "2BH-AF79",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 197946
+  },
+  {
+    "make": "HONDA",
+    "model": "VFR3800X",
+    "model_number": "2BL-RC80",
+    "transmission": "6MT",
+    "engine_cc": 781,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1764692
+  },
+  {
+    "make": "HONDA",
+    "model": "VFR800F",
+    "model_number": "2BL-RC79",
+    "transmission": "6MT",
+    "engine_cc": 781,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1656016
+  },
+  {
+    "make": "HONDA",
+    "model": "VFR800X",
+    "model_number": "2BL-RC80",
+    "transmission": "6MT",
+    "engine_cc": 781,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1720704
+  },
+  {
+    "make": "HONDA",
+    "model": "VRF800X",
+    "model_number": "2BL-RC80",
+    "transmission": "6MT",
+    "engine_cc": 781,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1941161
+  },
+  {
+    "make": "HONDA",
+    "model": "X-ADV",
+    "model_number": "2BL-RC95",
+    "transmission": "DCT",
+    "engine_cc": 745,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1481358
+  },
+  {
+    "make": "HONDA",
+    "model": "X-ADV",
+    "model_number": "8BL-RH10",
+    "transmission": "DCT",
+    "engine_cc": 745,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1707766
+  },
+  {
+    "make": "HONDA",
+    "model": "XL750 TRANSALP",
+    "model_number": "8BL-RD16",
+    "transmission": "6MT",
+    "engine_cc": 754,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1636610
+  },
+  {
+    "make": "SUZUKI",
+    "model": "ADDRESS 110",
+    "model_number": "2BJ-CE47A",
+    "transmission": "CVT",
+    "engine_cc": 112,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 256165
+  },
+  {
+    "make": "SUZUKI",
+    "model": "ADDRESS 125",
+    "model_number": "8BJ-DP12H",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 354362
+  },
+  {
+    "make": "SUZUKI",
+    "model": "ADDRESS V50",
+    "model_number": "2BH-CA4BA",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 209590
+  },
+  {
+    "make": "SUZUKI",
+    "model": "ADDRESS V50",
+    "model_number": "2BH-CA4BA",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 236241
+  },
+  {
+    "make": "SUZUKI",
+    "model": "ADDRESS110",
+    "model_number": "2BJ-CE47A",
+    "transmission": "CVT",
+    "engine_cc": 112,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 256165
+  },
+  {
+    "make": "SUZUKI",
+    "model": "ADDRESS125",
+    "model_number": "2BJ-DT11A",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 265221
+  },
+  {
+    "make": "SUZUKI",
+    "model": "ADDRESS125 FLAT SEAT",
+    "model_number": "2BJ-DT11A",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 271690
+  },
+  {
+    "make": "SUZUKI",
+    "model": "AVENSIS 125",
+    "model_number": "8BJ-EA12J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 368593
+  },
+  {
+    "make": "SUZUKI",
+    "model": "AVENSIS125",
+    "model_number": "8BJ-EA12J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 368593
+  },
+  {
+    "make": "SUZUKI",
+    "model": "BURGMAN 400 ABS",
+    "model_number": "8BL-DU11N",
+    "transmission": "CVT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1158435
+  },
+  {
+    "make": "SUZUKI",
+    "model": "BURGMAN STREET125EX",
+    "model_number": "8BJ-EA23M",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 411287
+  },
+  {
+    "make": "SUZUKI",
+    "model": "BURGMAN200",
+    "model_number": "2BJ-CH41A",
+    "transmission": "CVT",
+    "engine_cc": 199,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 627475
+  },
+  {
+    "make": "SUZUKI",
+    "model": "BURGMAN200 ABS",
+    "model_number": "2BDK-CH41A",
+    "transmission": "CVT",
+    "engine_cc": 199,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 739178
+  },
+  {
+    "make": "SUZUKI",
+    "model": "BURGMAN400 ABS",
+    "model_number": "2BJ-DU11A",
+    "transmission": "CVT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 957384
+  },
+  {
+    "make": "SUZUKI",
+    "model": "BURGMAN400 ABS",
+    "model_number": "8BL-DU11N",
+    "transmission": "CVT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1095817
+  },
+  {
+    "make": "SUZUKI",
+    "model": "DR-Z50",
+    "model_number": "JA42A",
+    "transmission": "6MT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 271690
+  },
+  {
+    "make": "SUZUKI",
+    "model": "DR-Z50",
+    "model_number": "JA42A",
+    "transmission": "3MT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 271690
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GIXXER",
+    "model_number": "2BK-ED13N",
+    "transmission": "5MT",
+    "engine_cc": 154,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 414004
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GIXXER",
+    "model_number": "2BK-NG4BG",
+    "transmission": "5MT",
+    "engine_cc": 154,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 385541
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GIXXER",
+    "model_number": "8BK-ED131",
+    "transmission": "6MT",
+    "engine_cc": 154,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 498099
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GIXXER250",
+    "model_number": "8BK-ED22Y",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 623335
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GIXXER 250",
+    "model_number": "2BK-ED22B",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 527855
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GIXXER SF 250",
+    "model_number": "2BK-ED22B",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 566668
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GIXXER SF250",
+    "model_number": "8BK-ED22Y",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 666029
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX250R",
+    "model_number": "2BK-DN11A",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 645587
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX250R",
+    "model_number": "8BK-DN12B",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 795535
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX250R ABS",
+    "model_number": "2BK-ED111A",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 752840
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-8R",
+    "model_number": "8BL-EM1AA",
+    "transmission": "6MT",
+    "engine_cc": 775,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1480064
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-8S",
+    "model_number": "8BL-EM1AA",
+    "transmission": "6MT",
+    "engine_cc": 775,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1380445
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-R1000R ABS",
+    "model_number": "2BL-DM11G",
+    "transmission": "6MT",
+    "engine_cc": 999,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2445211
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-R125",
+    "model_number": "2BJ-DL33B",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 463167
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-R125 ABS",
+    "model_number": "8BJ-DL32D",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 586333
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-R125 ABS",
+    "model_number": "2BJ-DL33B",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 537946
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S1000",
+    "model_number": "8BL-EK1AA",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1850080
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S1000 ABS",
+    "model_number": "GSX-S1000 ABS",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1355863
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S1000 ABS",
+    "model_number": "2BL-GT798",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1355863
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S1000F ABS",
+    "model_number": "2BL-GT79B",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1420551
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S1000GT",
+    "model_number": "8BL-EK1AA",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2063551
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S1000GX",
+    "model_number": "8BL-EK1AA",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2575881
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S125",
+    "model_number": "2BJ-DL32B",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 424354
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S125 ABS",
+    "model_number": "2BJ-DL32B",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 424354
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S125 ABS",
+    "model_number": "8BJ-DL32D",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 543639
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S125 ABS",
+    "model_number": "GSX-DL32B",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 495252
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S750",
+    "model_number": "2BL-C533F",
+    "transmission": "6MT",
+    "engine_cc": 749,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1161799
+  },
+  {
+    "make": "SUZUKI",
+    "model": "GSX-S750 ABS",
+    "model_number": "2BL-C533F",
+    "transmission": "6MT",
+    "engine_cc": 749,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1161799
+  },
+  {
+    "make": "SUZUKI",
+    "model": "HAYABUSA",
+    "model_number": "8BL-EJ11A",
+    "transmission": "6MT",
+    "engine_cc": 1339,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2789352
+  },
+  {
+    "make": "SUZUKI",
+    "model": "HAYBUSA",
+    "model_number": "8BL-EJ11A",
+    "transmission": "6MT",
+    "engine_cc": 1339,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2789352
+  },
+  {
+    "make": "SUZUKI",
+    "model": "KATANA",
+    "model_number": "2BL-GT79B",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1811268
+  },
+  {
+    "make": "SUZUKI",
+    "model": "KATANA",
+    "model_number": "8BL-EK1AA",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2077783
+  },
+  {
+    "make": "SUZUKI",
+    "model": "KATANA",
+    "model_number": "2BL-GT79B",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1992394
+  },
+  {
+    "make": "SUZUKI",
+    "model": "LET'S",
+    "model_number": "2BH-CA4AA",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 195358
+  },
+  {
+    "make": "SUZUKI",
+    "model": "LET'S",
+    "model_number": "2BH-CA4AA",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 195358
+  },
+  {
+    "make": "SUZUKI",
+    "model": "LET'S ABSKET",
+    "model_number": "2BH-CA4AA",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 218646
+  },
+  {
+    "make": "SUZUKI",
+    "model": "RM85L",
+    "model_number": "RD17C",
+    "transmission": "6MT",
+    "engine_cc": 84,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 547262
+  },
+  {
+    "make": "SUZUKI",
+    "model": "RM-Z250",
+    "model_number": "EC117Z",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 912103
+  },
+  {
+    "make": "SUZUKI",
+    "model": "RM-Z250",
+    "model_number": "RJ42A",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 892696
+  },
+  {
+    "make": "SUZUKI",
+    "model": "RM-Z450",
+    "model_number": "DZ117",
+    "transmission": "5MT",
+    "engine_cc": 449,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1086760
+  },
+  {
+    "make": "SUZUKI",
+    "model": "SKYWAVE650LX",
+    "model_number": "2BL-CP52A",
+    "transmission": "CVT",
+    "engine_cc": 638,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1371388
+  },
+  {
+    "make": "SUZUKI",
+    "model": "SV650 ABS",
+    "model_number": "2BL-VP55B",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 820245
+  },
+  {
+    "make": "SUZUKI",
+    "model": "SV650 ABS",
+    "model_number": "8BL-VP55E",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1038891
+  },
+  {
+    "make": "SUZUKI",
+    "model": "SV650X ABS",
+    "model_number": "2BL-VP55B",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 936684
+  },
+  {
+    "make": "SUZUKI",
+    "model": "SV650X ABS",
+    "model_number": "8BL-VP55E",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1095817
+  },
+  {
+    "make": "SUZUKI",
+    "model": "SV659 ABS",
+    "model_number": "2BL-VP55B",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1016121
+  },
+  {
+    "make": "SUZUKI",
+    "model": "SWISH",
+    "model_number": "2BJ-DV12B",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 381660
+  },
+  {
+    "make": "SUZUKI",
+    "model": "SWISH LIMITED",
+    "model_number": "2BJ-DV12B",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 407535
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM 1000 ABS",
+    "model_number": "2BL-VU51A",
+    "transmission": "6MT",
+    "engine_cc": 1036,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1681891
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM1000XT ABS",
+    "model_number": "2BL-VU51A",
+    "transmission": "6MT",
+    "engine_cc": 1036,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1733642
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM1050",
+    "model_number": "8BL-EF11M",
+    "transmission": "6MT",
+    "engine_cc": 1036,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1681891
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM1050DE",
+    "model_number": "8BL-EF11M",
+    "transmission": "6MT",
+    "engine_cc": 1036,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2220096
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM1050XT",
+    "model_number": "8BL-EF11M",
+    "transmission": "6MT",
+    "engine_cc": 1036,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1785392
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM250",
+    "model_number": "2BK-DS11A",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 683107
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM250",
+    "model_number": "8BK-DS12E",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 835512
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM250 ABS",
+    "model_number": "2BK-DS11A",
+    "transmission": "6MT",
+    "engine_cc": 999,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 721919
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM250 ABS",
+    "model_number": "2BK-DS11A",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 721919
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM250SX",
+    "model_number": "8BK-EL11L",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 737186
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM650 ABS",
+    "model_number": "2BL-C733A",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1086760
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM650 ABS",
+    "model_number": "8BL-C733M",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1238131
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM650 ABS",
+    "model_number": "2BL-C733A",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1195437
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM650XT ABS",
+    "model_number": "2BL-C733A",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1138511
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM650XT ABS",
+    "model_number": "8BL-C733M",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1295056
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM650XT ABS",
+    "model_number": "2BL-C733A",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1138511
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM800",
+    "model_number": "8BL-EM1BA",
+    "transmission": "6MT",
+    "engine_cc": 775,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1593915
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROM800DE",
+    "model_number": "8BL-EM1BA",
+    "transmission": "6MT",
+    "engine_cc": 775,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1707766
+  },
+  {
+    "make": "SUZUKI",
+    "model": "V-STROMXT ABS",
+    "model_number": "2BL-C733A",
+    "transmission": "6MT",
+    "engine_cc": 645,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1148861
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "ELIMINATOR SE",
+    "model_number": "8BL-EL400A",
+    "transmission": "6MT",
+    "engine_cc": 398,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1110048
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "KX100",
+    "model_number": "KX100F",
+    "transmission": "6MT",
+    "engine_cc": 99,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 481280
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "KX112",
+    "model_number": "KX112A",
+    "transmission": "6MT",
+    "engine_cc": 111,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 583487
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "KX250",
+    "model_number": "KX252A",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 925040
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "KX250F",
+    "model_number": "KX252A",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 925040
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "KX450",
+    "model_number": "KX450J",
+    "transmission": "5MT",
+    "engine_cc": 449,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1190262
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "KX450F",
+    "model_number": "KX450H",
+    "transmission": "5MT",
+    "engine_cc": 449,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1110048
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "KX65",
+    "model_number": "KX065A",
+    "transmission": "6MT",
+    "engine_cc": 64,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 364841
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "KX85",
+    "model_number": "KX085A",
+    "transmission": "6MT",
+    "engine_cc": 84,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 442467
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "KX85",
+    "model_number": "KX085C",
+    "transmission": "6MT",
+    "engine_cc": 84,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 442467
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "KX85 II",
+    "model_number": "KX085D",
+    "transmission": "6MT",
+    "engine_cc": 84,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 455404
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "KX85-II",
+    "model_number": "KX085D",
+    "transmission": "6MT",
+    "engine_cc": 84,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 455404
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "MEGURO K3",
+    "model_number": "8BL-EL800E",
+    "transmission": "5MT",
+    "engine_cc": 773,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1807386
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "MEGURO K3",
+    "model_number": "2BL-EJ800B",
+    "transmission": "5MT",
+    "engine_cc": 773,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1650841
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA 1000",
+    "model_number": "2BL-ZXT00W",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1526640
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA 1000SX",
+    "model_number": "2BL-ZXT02K",
+    "transmission": "6MT",
+    "engine_cc": 1043,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1746579
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA 250",
+    "model_number": "2BK-EX250P",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 754264
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA 250 KRT",
+    "model_number": "2BK-EX250P",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 767201
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA 400",
+    "model_number": "2BL-EX400G",
+    "transmission": "6MT",
+    "engine_cc": 398,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 838358
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA 400 KRT EDITION",
+    "model_number": "2BL-EX400G",
+    "transmission": "6MT",
+    "engine_cc": 398,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 838358
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA 650",
+    "model_number": "2BLER650H",
+    "transmission": "6MT",
+    "engine_cc": 649,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 967734
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA 650 KRT EDITION",
+    "model_number": "2BL-ER650H",
+    "transmission": "6MT",
+    "engine_cc": 649,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 967734
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA 7 HYBRID",
+    "model_number": "8AL-CX500A",
+    "transmission": "6MT",
+    "engine_cc": 451,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2390873
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA E-1",
+    "model_number": "ZAD-NX011A",
+    "transmission": null,
+    "engine_cc": 0,
+    "seating": 2,
+    "fuel": "ELECTRIC",
+    "crsp_kes": 1380445
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA H2 CARBON",
+    "model_number": "2BL-ZXT02J",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 4269416
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA H2 SE",
+    "model_number": "8BL-ZXT02P",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3956326
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA H2 SX",
+    "model_number": "2BL-ZXT02A",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2393461
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA H2 SX SE",
+    "model_number": "2BL-ZXT02A",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2846278
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA H2 SX SE",
+    "model_number": "8BL-ZXT02P",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3970557
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA H2 SX SE+",
+    "model_number": "2BL-ZXT02A",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3324970
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA ZX-10 KRT EDITION",
+    "model_number": "2BL-ZXT02E",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2471086
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA ZX-10R KRK EDITION",
+    "model_number": "8BL-ZXT02L",
+    "transmission": "6MT",
+    "engine_cc": 996,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2974360
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA ZX-10R KRT EDITION",
+    "model_number": "2BL-ZXT02E",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2471086
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA ZX-10R SE",
+    "model_number": "2BL-ZXT02E",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3182656
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA ZX-10RR",
+    "model_number": "2BL-ZXT02E",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3506096
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA ZX-25R SE KRT EDITION",
+    "model_number": "8BK-ZX250H",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1245246
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA ZX-25R SE KRT EDITION",
+    "model_number": "2BK-ZX250E",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1209668
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA ZX-4RR KRT EDITION",
+    "model_number": "8BL-ZX400P",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1494296
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA ZX-6R",
+    "model_number": "2BL-ZX630G",
+    "transmission": "6MT",
+    "engine_cc": 636,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1591328
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA ZX-6R KRT EDITION",
+    "model_number": "2BL-ZX630G",
+    "transmission": "6MT",
+    "engine_cc": 636,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1591328
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA250",
+    "model_number": "2BK-EX250P",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 754264
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "NINJA400",
+    "model_number": "2BL-EX400G",
+    "transmission": "6MT",
+    "engine_cc": 398,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 939272
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "VERSYS 100 SE",
+    "model_number": "2BL-LZT00D",
+    "transmission": "6MT",
+    "engine_cc": 1043,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2238209
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "VERSYS 1000 SE",
+    "model_number": "2BL-LZT00D",
+    "transmission": "6MT",
+    "engine_cc": 1043,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2238209
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "VERSYS-X 250",
+    "model_number": "2BK-LE250D",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 754264
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "VERSYS-X 250 TOURER",
+    "model_number": "2BK-LE250D",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 818952
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "VULCAN S",
+    "model_number": "EBL-EN650A",
+    "transmission": "6MT",
+    "engine_cc": 649,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 935390
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "VULCAN S",
+    "model_number": "2BL-EN650G",
+    "transmission": "6MT",
+    "engine_cc": 649,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 993610
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "VULCAN S ABS SPECIAL EDITION",
+    "model_number": "EBL-EN650A",
+    "transmission": "6MT",
+    "engine_cc": 649,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1009135
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "W800",
+    "model_number": "2BL-EJ800B",
+    "transmission": "5MT",
+    "engine_cc": 773,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1293762
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "W800",
+    "model_number": "8BL-EJ800E",
+    "transmission": "5MT",
+    "engine_cc": 773,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1551221
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "W800 CAFÉ",
+    "model_number": "2BL-EJ800B",
+    "transmission": "5MT",
+    "engine_cc": 773,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1332575
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "W800 STREET",
+    "model_number": "2BL-EJ800B",
+    "transmission": "5MT",
+    "engine_cc": 773,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1190262
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z H2",
+    "model_number": "2BL-ZRT00K",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2225272
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z H2 SE",
+    "model_number": "8BL-ZRT00K",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2917434
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z H2 SE",
+    "model_number": "2BL-ZRT00K",
+    "transmission": "6MT",
+    "engine_cc": 998,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2817815
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z1000",
+    "model_number": "2BL-ZXT00W",
+    "transmission": "6MT",
+    "engine_cc": 1043,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1377857
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z125 PRO",
+    "model_number": "2BL-BR125H",
+    "transmission": "4MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 414004
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z250",
+    "model_number": "2BK-EX250P",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 715451
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z250 ABS",
+    "model_number": "JBK-ER250C",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 662406
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z250 ABS SPECIAL EDITION",
+    "model_number": "JBK-ER250C",
+    "transmission": "6MT",
+    "engine_cc": 248,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 681813
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z400",
+    "model_number": "2BL-EX400G",
+    "transmission": "6MT",
+    "engine_cc": 398,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 799545
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z650",
+    "model_number": "2BL-ER650H",
+    "transmission": "6MT",
+    "engine_cc": 649,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 941859
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z650 NINJA 650",
+    "model_number": "2BL-ER650H",
+    "transmission": "6MT",
+    "engine_cc": 649,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 941859
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z650RS",
+    "model_number": "8BL-ER650M",
+    "transmission": "6MT",
+    "engine_cc": 649,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1337750
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z900",
+    "model_number": "2BL-ZR900B",
+    "transmission": "6MT",
+    "engine_cc": 948,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1138511
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z900RS",
+    "model_number": "2BL-ZRJ900C",
+    "transmission": "6MT",
+    "engine_cc": 948,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1552515
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z900RS CAFÉ",
+    "model_number": "2BL-ZR900C",
+    "transmission": "6MT",
+    "engine_cc": 948,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1617203
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "Z900RS YELLOW BALL EDITION",
+    "model_number": "8BL-ZR900K",
+    "transmission": "6MT",
+    "engine_cc": 948,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2020857
+  },
+  {
+    "make": "KAWASAKI",
+    "model": "ZV1000",
+    "model_number": "2BL-ZXT00W",
+    "transmission": "6MT",
+    "engine_cc": 1043,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1377857
+  },
+  {
+    "make": "YAMAHA",
+    "model": "AXIS Z",
+    "model_number": "2BJ-SED7J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 291097
+  },
+  {
+    "make": "YAMAHA",
+    "model": "AXIS Z",
+    "model_number": "8BJ-SED7J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 351515
+  },
+  {
+    "make": "YAMAHA",
+    "model": "AXIS Z",
+    "model_number": "8BJ-SEJ6J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 362900
+  },
+  {
+    "make": "YAMAHA",
+    "model": "BOLT ABS",
+    "model_number": "2BL-VN09J",
+    "transmission": "5MT",
+    "engine_cc": 941,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1151449
+  },
+  {
+    "make": "YAMAHA",
+    "model": "BOLT ABS",
+    "model_number": "2BL-VN09J",
+    "transmission": "6MT",
+    "engine_cc": 941,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1151449
+  },
+  {
+    "make": "YAMAHA",
+    "model": "BOLT R",
+    "model_number": "2BL-VN09J",
+    "transmission": "5MT",
+    "engine_cc": 941,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1229074
+  },
+  {
+    "make": "YAMAHA",
+    "model": "BOLT R ABS",
+    "model_number": "2BL--VN09J",
+    "transmission": "5MT",
+    "engine_cc": 941,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1351982
+  },
+  {
+    "make": "YAMAHA",
+    "model": "BW'S125",
+    "model_number": "2BJ-SED9J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 394598
+  },
+  {
+    "make": "YAMAHA",
+    "model": "BW'S125",
+    "model_number": "EBJ-SED91",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 394598
+  },
+  {
+    "make": "YAMAHA",
+    "model": "CYGNUS GRYPHUS",
+    "model_number": "8BJ-SEJ4J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 483867
+  },
+  {
+    "make": "YAMAHA",
+    "model": "CYGNUS X",
+    "model_number": "2BJ-SED8J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 394598
+  },
+  {
+    "make": "YAMAHA",
+    "model": "E-VINO",
+    "model_number": "ZAD-SY11J",
+    "transmission": "CVT",
+    "engine_cc": 0,
+    "seating": 1,
+    "fuel": "ELECTRIC",
+    "crsp_kes": 335861
+  },
+  {
+    "make": "YAMAHA",
+    "model": "E-VINO",
+    "model_number": "ZAD-SY11J",
+    "transmission": null,
+    "engine_cc": 0,
+    "seating": 1,
+    "fuel": "ELECTRIC",
+    "crsp_kes": 283334
+  },
+  {
+    "make": "YAMAHA",
+    "model": "E-VINO",
+    "model_number": "ZAD-SY11J",
+    "transmission": "CVT",
+    "engine_cc": null,
+    "seating": 1,
+    "fuel": "ELECTRIC",
+    "crsp_kes": 283334
+  },
+  {
+    "make": "YAMAHA",
+    "model": "E-VINO",
+    "model_number": "ZAD-SY11J",
+    "transmission": null,
+    "engine_cc": null,
+    "seating": 1,
+    "fuel": "ELECTRIC",
+    "crsp_kes": 407018
+  },
+  {
+    "make": "YAMAHA",
+    "model": "E-VINO",
+    "model_number": "ZAD-SY11J",
+    "transmission": "CVT",
+    "engine_cc": 0,
+    "seating": 1,
+    "fuel": "ELECTRIC",
+    "crsp_kes": 407018
+  },
+  {
+    "make": "YAMAHA",
+    "model": "FJR1300A",
+    "model_number": "2BL-RP27J",
+    "transmission": "6MT",
+    "engine_cc": 1297,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1811268
+  },
+  {
+    "make": "YAMAHA",
+    "model": "GEAR",
+    "model_number": "2BH-UA08J",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 271690
+  },
+  {
+    "make": "YAMAHA",
+    "model": "GYGNUS X SR",
+    "model_number": "2BJ-SED8J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 381660
+  },
+  {
+    "make": "YAMAHA",
+    "model": "JOG",
+    "model_number": "2BH-AY01",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 200533
+  },
+  {
+    "make": "YAMAHA",
+    "model": "JOG 125",
+    "model_number": "8BJ-SEJ5J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 341553
+  },
+  {
+    "make": "YAMAHA",
+    "model": "JOG DELUXE",
+    "model_number": "2BH-AY01",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 251896
+  },
+  {
+    "make": "YAMAHA",
+    "model": "JOG DX",
+    "model_number": "2BH-AY01",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 200533
+  },
+  {
+    "make": "YAMAHA",
+    "model": "M-10 ABS",
+    "model_number": "2BL-RN50J",
+    "transmission": "6MT",
+    "engine_cc": 997,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2005332
+  },
+  {
+    "make": "YAMAHA",
+    "model": "M7-03 ABS",
+    "model_number": "2BL-RH13J",
+    "transmission": "6MT",
+    "engine_cc": 320,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 769789
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MAJESTY S",
+    "model_number": "2BK-SG52J",
+    "transmission": "CVT",
+    "engine_cc": 155,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 446348
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-03",
+    "model_number": "2BL-RH13J",
+    "transmission": "6MT",
+    "engine_cc": 320,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 679225
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-03 ABS",
+    "model_number": "8BL-RH21J",
+    "transmission": "6MT",
+    "engine_cc": 320,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 888815
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-03 ABS",
+    "model_number": "2BL-RH13J",
+    "transmission": "6MT",
+    "engine_cc": 320,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 846768
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-07",
+    "model_number": "2BL-RM19J",
+    "transmission": "6MT",
+    "engine_cc": 688,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 931509
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-07 ABS",
+    "model_number": "8BL-RM33J",
+    "transmission": "6MT",
+    "engine_cc": 688,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1053123
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-09",
+    "model_number": "2BL-RN52J",
+    "transmission": "6MT",
+    "engine_cc": 845,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1203199
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-09 ABS",
+    "model_number": "2BL-RN52J",
+    "transmission": "6MT",
+    "engine_cc": 845,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1203199
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-09 ABS",
+    "model_number": "8BL-RN69",
+    "transmission": "6MT",
+    "engine_cc": 888,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1423139
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-09 SP AB",
+    "model_number": "8BL-RN87J",
+    "transmission": "6MT",
+    "engine_cc": 888,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1864312
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-10 ABS",
+    "model_number": "2BL-RN50J",
+    "transmission": "6MT",
+    "engine_cc": 997,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2005332
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-10 ABS",
+    "model_number": "8BL-RN78J",
+    "transmission": "6MT",
+    "engine_cc": 997,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2490493
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-10 SP ABS",
+    "model_number": "8BL-RN78J",
+    "transmission": "6MT",
+    "engine_cc": 997,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2832046
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-125 ABS",
+    "model_number": "8BJ-RE45J",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 640412
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-25",
+    "model_number": "2BK-RG43J",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 640412
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-25 ABS",
+    "model_number": "2BK-RG43J",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 730976
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-25 ABS",
+    "model_number": "8BL-RG43J",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 818305
+  },
+  {
+    "make": "YAMAHA",
+    "model": "MT-25 ABS",
+    "model_number": "8BK-RG74J",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 818305
+  },
+  {
+    "make": "YAMAHA",
+    "model": "NIKEN",
+    "model_number": "2BL-RN5BJ",
+    "transmission": "6MT",
+    "engine_cc": 845,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2134708
+  },
+  {
+    "make": "YAMAHA",
+    "model": "NIKEN GT",
+    "model_number": "2BL-RN58J",
+    "transmission": "6MT/CVT",
+    "engine_cc": 845,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2561650
+  },
+  {
+    "make": "YAMAHA",
+    "model": "NMAX",
+    "model_number": "8BJ-SEG6J",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 476751
+  },
+  {
+    "make": "YAMAHA",
+    "model": "NMAX ABS",
+    "model_number": "2BJ-SED6J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 420473
+  },
+  {
+    "make": "YAMAHA",
+    "model": "NMAX ABS",
+    "model_number": "2BK-SG42J",
+    "transmission": "CVT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 769789
+  },
+  {
+    "make": "YAMAHA",
+    "model": "NMAX ABS",
+    "model_number": "8BJ-SEG6J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 490983
+  },
+  {
+    "make": "YAMAHA",
+    "model": "NMAX155 ABS",
+    "model_number": "2BK-SG50J",
+    "transmission": "CVT",
+    "engine_cc": 155,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 452817
+  },
+  {
+    "make": "YAMAHA",
+    "model": "NMAX155 ABS",
+    "model_number": "8BK-SG66J",
+    "transmission": "CVT",
+    "engine_cc": 155,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 526561
+  },
+  {
+    "make": "YAMAHA",
+    "model": "NMAX155 ABS",
+    "model_number": "2BK-SG50J",
+    "transmission": "6MT",
+    "engine_cc": 155,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 498099
+  },
+  {
+    "make": "YAMAHA",
+    "model": "NMAX1555 ABS",
+    "model_number": "2BK-SG50J",
+    "transmission": "CVT",
+    "engine_cc": 155,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 452817
+  },
+  {
+    "make": "YAMAHA",
+    "model": "PW50",
+    "model_number": "2SAL",
+    "transmission": "6MT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 207002
+  },
+  {
+    "make": "YAMAHA",
+    "model": "S400 FINAL EDITION",
+    "model_number": "2BL-RH16J",
+    "transmission": "6MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 711569
+  },
+  {
+    "make": "YAMAHA",
+    "model": "SCR950 ABS",
+    "model_number": "2BL-VN09J",
+    "transmission": "5MT",
+    "engine_cc": 941,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1270475
+  },
+  {
+    "make": "YAMAHA",
+    "model": "SEROW 250",
+    "model_number": "2BK-DG31J",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 676638
+  },
+  {
+    "make": "YAMAHA",
+    "model": "SEROW FINAL EDITION",
+    "model_number": "2BK-DG31J",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 692163
+  },
+  {
+    "make": "YAMAHA",
+    "model": "SEROW250",
+    "model_number": "2BK-DG31J",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 676638
+  },
+  {
+    "make": "YAMAHA",
+    "model": "SR400",
+    "model_number": "2BL-RH16J",
+    "transmission": "5MT",
+    "engine_cc": 399,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 685694
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TENERE700",
+    "model_number": "2BL-DM09J",
+    "transmission": "6MT",
+    "engine_cc": 688,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1487827
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TENERE700",
+    "model_number": "6BL-DM13J",
+    "transmission": "6MT",
+    "engine_cc": 688,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1736229
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TENERE700",
+    "model_number": "8BL-DM13J",
+    "transmission": "6MT",
+    "engine_cc": 688,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1807386
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TMAX 560 TECH MAX ABS",
+    "model_number": "8BL-SJ19J",
+    "transmission": "CVT",
+    "engine_cc": 561,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2070667
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TMAX SX ABS",
+    "model_number": "2BL-SJ15J",
+    "transmission": "CVT",
+    "engine_cc": 530,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1487827
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TMAX560 ABS",
+    "model_number": "8BL-SJ19J",
+    "transmission": "CVT",
+    "engine_cc": 561,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1500764
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TMAX560 TECH MAX ABS",
+    "model_number": "8BL-SJ19J",
+    "transmission": "CVT",
+    "engine_cc": 561,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2070667
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TMAX650 ABS",
+    "model_number": "8BL-SJ19J",
+    "transmission": "6MT",
+    "engine_cc": 561,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1650841
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRACER 900 ABS",
+    "model_number": "2BL-RN51J",
+    "transmission": "6MT",
+    "engine_cc": 845,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1332575
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRACER GT ABS",
+    "model_number": "8BL-RN70J",
+    "transmission": "6MT",
+    "engine_cc": 888,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1935469
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRACER9 GT ABS",
+    "model_number": "8BL-RN70J",
+    "transmission": "6MT",
+    "engine_cc": 888,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1935469
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRACER9 GT+ ABS",
+    "model_number": "8BL-RN70J",
+    "transmission": "6MT",
+    "engine_cc": 888,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2362410
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRICITY 125",
+    "model_number": "8BJ-SEK1J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 640412
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRICITY 125",
+    "model_number": "2BJ-SEC1J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 597718
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRICITY 125 ABS",
+    "model_number": "2BJ-SEC1J",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 543380
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRICITY 125 ABS",
+    "model_number": "8BL-1JSEC",
+    "transmission": "CVT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 640412
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRICITY 155 ABS",
+    "model_number": "2BK-SG37J",
+    "transmission": "CVT",
+    "engine_cc": 155,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 569256
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRICITY155 ABS",
+    "model_number": "8BK-SG37J",
+    "transmission": "CVT",
+    "engine_cc": 155,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 732916
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRICITY155 ABS",
+    "model_number": "8BK-SG81J",
+    "transmission": "CVT",
+    "engine_cc": 155,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 732916
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRICITY 300 ABS",
+    "model_number": "2BL-SH15J",
+    "transmission": "CVT",
+    "engine_cc": 292,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1238131
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRICITY300 ABS",
+    "model_number": "8BL-SH21J",
+    "transmission": "CVT",
+    "engine_cc": 292,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1351982
+  },
+  {
+    "make": "YAMAHA",
+    "model": "TRICKER",
+    "model_number": "2BK-DG32J",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 560199
+  },
+  {
+    "make": "YAMAHA",
+    "model": "VINO",
+    "model_number": "2BH-AY02",
+    "transmission": "CVT",
+    "engine_cc": 49,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 239346
+  },
+  {
+    "make": "YAMAHA",
+    "model": "X FORCE ABS",
+    "model_number": "8BK-SG79J",
+    "transmission": "CVT",
+    "engine_cc": 155,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 512330
+  },
+  {
+    "make": "YAMAHA",
+    "model": "XMAX ABS",
+    "model_number": "2BK-SG42J",
+    "transmission": "CVT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 769789
+  },
+  {
+    "make": "YAMAHA",
+    "model": "XMAX ABS",
+    "model_number": "2BK-SG42J",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 846768
+  },
+  {
+    "make": "YAMAHA",
+    "model": "XMAX ABS",
+    "model_number": "8BK-SG70J",
+    "transmission": "CVT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 846768
+  },
+  {
+    "make": "YAMAHA",
+    "model": "XS700 ABS",
+    "model_number": "8BL-RM41J",
+    "transmission": "6MT",
+    "engine_cc": 688,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1295056
+  },
+  {
+    "make": "YAMAHA",
+    "model": "XSR125 ABS",
+    "model_number": "6BJ-RE46J",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 654644
+  },
+  {
+    "make": "YAMAHA",
+    "model": "XSR700 ABS",
+    "model_number": "2BL-RM22J",
+    "transmission": "6MT",
+    "engine_cc": 688,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1077704
+  },
+  {
+    "make": "YAMAHA",
+    "model": "XSR700 ABS",
+    "model_number": "8BL-RM41J",
+    "transmission": "6MT",
+    "engine_cc": 688,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1295056
+  },
+  {
+    "make": "YAMAHA",
+    "model": "XSR900 ABS",
+    "model_number": "2BL-RN56J",
+    "transmission": "6MT",
+    "engine_cc": 845,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1248481
+  },
+  {
+    "make": "YAMAHA",
+    "model": "XSR900 ABS",
+    "model_number": "8BL-RN80J",
+    "transmission": "6MT",
+    "engine_cc": 888,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1565453
+  },
+  {
+    "make": "YAMAHA",
+    "model": "XSR900 GP ABS",
+    "model_number": "8BL-RN96J",
+    "transmission": "6MT",
+    "engine_cc": 888,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1850080
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YFF-R25",
+    "model_number": "2BK-RG43J",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 718038
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ125",
+    "model_number": "B0V3",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 737445
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ125",
+    "model_number": "B0V7",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 737445
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ125X",
+    "model_number": "B1B3",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 750382
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ125X",
+    "model_number": "B1B4",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 750382
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ250",
+    "model_number": "B0U3",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 866821
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ250",
+    "model_number": "BRU7",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 866821
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ250F",
+    "model_number": "B7B3",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1047948
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ250F",
+    "model_number": "B7B7",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1047948
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ250FX",
+    "model_number": "B29R",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 970322
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ250FX",
+    "model_number": "BAJ4",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1099698
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ250X",
+    "model_number": "BF1F",
+    "transmission": "5MT",
+    "engine_cc": 249,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 879758
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ250X",
+    "model_number": "BF1J",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 879758
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ450F",
+    "model_number": "BR97",
+    "transmission": "5MT",
+    "engine_cc": 449,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1216137
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ450F",
+    "model_number": "B2W3",
+    "transmission": "5MT",
+    "engine_cc": 449,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1267887
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ450FX",
+    "model_number": "B3J4",
+    "transmission": "5MT",
+    "engine_cc": 449,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1267887
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ450FX",
+    "model_number": "B3J8",
+    "transmission": "5MT",
+    "engine_cc": 449,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1267887
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ65",
+    "model_number": "BR87",
+    "transmission": "6MT",
+    "engine_cc": 64,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 582193
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ85",
+    "model_number": "BR83",
+    "transmission": "6MT",
+    "engine_cc": 64,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 569256
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ85",
+    "model_number": "B4B3",
+    "transmission": "6MT",
+    "engine_cc": 84,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 595131
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ85",
+    "model_number": "B4B6",
+    "transmission": "6MT",
+    "engine_cc": 84,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 595131
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ85L W",
+    "model_number": "B0G6",
+    "transmission": "6MT",
+    "engine_cc": 84,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 608068
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZ85LW",
+    "model_number": "B0G3",
+    "transmission": "6MT",
+    "engine_cc": 84,
+    "seating": 1,
+    "fuel": "GASOLINE",
+    "crsp_kes": 608068
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF ABS",
+    "model_number": "8BL-RH21J",
+    "transmission": "6MT",
+    "engine_cc": 320,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 939272
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R1 ABS",
+    "model_number": "2BL-RN65J",
+    "transmission": "6MT",
+    "engine_cc": 997,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 2781589
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R1 ABS",
+    "model_number": "8BL-RN65J",
+    "transmission": "6MT",
+    "engine_cc": 997,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3059748
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R125 ABS",
+    "model_number": "8BL-RE45J",
+    "transmission": "6MT",
+    "engine_cc": 124,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 668875
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R15 ABS",
+    "model_number": "8BK-RG86J",
+    "transmission": "6MT",
+    "engine_cc": 155,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 711569
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R1M",
+    "model_number": "2BL-RN65J",
+    "transmission": "6MT",
+    "engine_cc": 997,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3751911
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R1M",
+    "model_number": "8BL-RN65J",
+    "transmission": "6MT",
+    "engine_cc": 997,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 4127102
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R1M ABS",
+    "model_number": "8BL-RN65J",
+    "transmission": "6MT",
+    "engine_cc": 997,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 4127102
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R25",
+    "model_number": "2BK-RG43J",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 718038
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R25 ABS",
+    "model_number": "8BK-RG74J",
+    "transmission": "6MT",
+    "engine_cc": 249,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 893731
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R3 ABS",
+    "model_number": "2BL-RH13J",
+    "transmission": "6MT",
+    "engine_cc": 320,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 808602
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R3 ABS",
+    "model_number": "8BL-RH21J",
+    "transmission": "6MT",
+    "engine_cc": 320,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 939272
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-R7 ABS",
+    "model_number": "8BL-RM39J",
+    "transmission": "6MT",
+    "engine_cc": 688,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 1364790
+  },
+  {
+    "make": "YAMAHA",
+    "model": "YZF-RF1 ABS",
+    "model_number": "8BL-RN65J",
+    "transmission": "6MT",
+    "engine_cc": 997,
+    "seating": 2,
+    "fuel": "GASOLINE",
+    "crsp_kes": 3059748
+  }
+]
