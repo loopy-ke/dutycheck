@@ -125,6 +125,14 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [] }) {
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${desc}" />
   ${ldScripts}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VT7S4F6QJG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VT7S4F6QJG');
+  </script>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body class="bg-bg text-text min-h-screen">
