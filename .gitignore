@@ -8,12 +8,7 @@ node_modules/
 .pnp
 .pnp.js
 
-# Next.js
-.next/
-out/
-
-# Production build
-/build
+# Build output
 /dist
 
 # Environment variables

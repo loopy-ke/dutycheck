@@ -1,0 +1,33 @@
+{
+  "name": "carduty",
+  "version": "1.0.0",
+  "description": "> The only Kenya car duty calculator that shows you exactly how KRA calculates your duty — step by step, verified against the official KRA valuation template.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && python3 scripts/generate_pages.py",
+    "build:site": "vite build",
+    "generate": "python3 scripts/generate_pages.py",
+    "data": "python3 scripts/crsp_to_json.py && python3 scripts/build_crsp_cascade.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/griffins/carduty.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/griffins/carduty/issues"
+  },
+  "homepage": "https://github.com/griffins/carduty#readme",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/vite": "^4.2.1",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1"
+  }
+}
