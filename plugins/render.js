@@ -86,7 +86,17 @@ function buildModelIndex(models) {
 
 // ── Shared layout ─────────────────────────────────────────────────────────
 
-function layout({ title, desc, canonical, body, crumbs = [] }) {
+function breadcrumbJsonLd(crumbs) {
+  if (!crumbs.length) return "";
+  const items = crumbs.map(([name, href], i) => {
+    const entry = { "@type": "ListItem", "position": i + 1, "name": name };
+    if (href) entry.item = `https://dutycheck.co.ke${href}`;
+    return entry;
+  });
+  return JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items });
+}
+
+function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [] }) {
   const bc = crumbs.length ? `
   <nav class="text-xs text-text-muted flex items-center gap-1.5 flex-wrap">
     ${crumbs.map(([label, href], i) =>
@@ -94,6 +104,10 @@ function layout({ title, desc, canonical, body, crumbs = [] }) {
       (i < crumbs.length - 1 ? " <span>›</span>" : "")
     ).join(" ")}
   </nav>` : "";
+
+  const allJsonLd = [...jsonLd];
+  if (crumbs.length) allJsonLd.push(breadcrumbJsonLd(crumbs));
+  const ldScripts = allJsonLd.map(ld => `<script type="application/ld+json">${ld}</script>`).join("\n  ");
 
   return `<!DOCTYPE html>
 <html lang="en-KE" class="dark">
@@ -105,6 +119,12 @@ function layout({ title, desc, canonical, body, crumbs = [] }) {
   <link rel="canonical" href="https://dutycheck.co.ke${canonical}" />
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${desc}" />
+  <meta property="og:url" content="https://dutycheck.co.ke${canonical}" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="${title}" />
+  <meta name="twitter:description" content="${desc}" />
+  ${ldScripts}
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body class="bg-bg text-text min-h-screen">
@@ -441,11 +461,43 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
       </a>
     </div>`;
 
+  const faqJsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `How much is the import duty for a ${year} ${make} ${m.model} in Kenya?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `The KRA import duty for a ${year} ${make} ${m.model} is ${kes(total)}. This includes Import Duty (${kes(id_)}), Excise Duty (${kes(ed)}), VAT (${kes(vat)}), IDF (${kes(idf)}), and RDL (${kes(rdl)}), calculated on a Customs Value of ${kes(cv)} after ${depr_pct}% depreciation under the Finance Act 2025.`,
+        },
+      },
+      {
+        "@type": "Question",
+        "name": `What is the CRSP value for ${make} ${m.model}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `The official KRA CRSP (Current Retail Selling Price) for ${make} ${m.model} is ${kes(m.crsp)} as per the KRA CRSP list dated July 2025.`,
+        },
+      },
+      {
+        "@type": "Question",
+        "name": `Can I import a ${year} ${make} ${m.model} into Kenya?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${age <= MAX_AGE ? `Yes. A ${year} ${make} ${m.model} is ${ageStr} and is within Kenya's 8-year import rule. Total KRA duty payable is ${kes(total)}.` : `No. Kenya's 8-year rule prohibits importing vehicles more than 8 years old. A ${year} vehicle would be ${age} years old.`}`,
+        },
+      },
+    ],
+  });
+
   return layout({
     title:    `${make} ${m.model} ${year} Import Duty Kenya — ${kes(total)} — Duty Check`,
     desc:     `KRA import duty for a ${year} ${make} ${m.model}: ${kes(total)} total. CRSP ${kes(m.crsp)}, Customs Value ${kes(cv)}, ${depr_pct}% depreciation. Finance Act 2025.`,
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/${year}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, `/${catSlug}/${makeSlug}/${modelSlug}/`], [String(year), null]],
+    jsonLd:   [faqJsonLd],
     body,
   });
 }
