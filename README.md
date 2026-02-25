@@ -31,6 +31,7 @@ CarDuty is a transparent, SEO-optimised KRA duty calculator for Kenya car import
 ## Features (Roadmap)
 
 ### Phase 1 — MVP
+
 - [x] Repo initialised
 - [ ] Calculator with full CRSP database (5,200+ models)
 - [ ] Step-by-step duty breakdown (transparent methodology)
@@ -38,18 +39,21 @@ CarDuty is a transparent, SEO-optimised KRA duty calculator for Kenya car import
 - [ ] WhatsApp share button
 
 ### Phase 2 — SEO Foundation
+
 - [ ] Static pages for top 200 most-searched car models
 - [ ] Blog: 8-Year Rule, CRSP 2025 Explained, Cheapest Cars to Import
 - [ ] Schema markup (FAQ, HowTo, Calculator)
 - [ ] Google Search Console + sitemap
 
 ### Phase 3 — Growth
+
 - [ ] Auto-generated pages for all 5,200+ CRSP models (long-tail SEO)
 - [ ] Landed cost calculator (auction + shipping + duty + port + NTSA)
 - [ ] Model comparison tool
 - [ ] Email capture for CRSP update alerts
 
 ### Phase 4 — Monetise
+
 - [ ] Clearing agent referral partnerships
 - [ ] Car exporter affiliate links (SBT, BeForward)
 - [ ] Google AdSense
@@ -63,7 +67,6 @@ CarDuty uses the correct KRA formula:
 
 ```
 CRSP Value (from official list)
-  ÷ 2.4469                        ← strips built-in taxes to get customs value
   × depreciation factor            ← based on vehicle age
   = Customs Value (CV)
 
@@ -95,14 +98,14 @@ npm run build
 
 ## Competitive Edge
 
-| Feature | CarDuty | Competitors |
-|---|---|---|
-| Transparent formula | ✓ | ✗ (black box) |
-| Correct CRSP 2025 rates | ✓ | Mostly 2019 |
-| Correct tax-stripping | ✓ | Rarely |
-| Mobile-first | ✓ | Mixed |
-| WhatsApp share | ✓ | Rare |
-| Model-specific SEO pages | ✓ | None |
+| Feature                  | CarDuty | Competitors   |
+| ------------------------ | ------- | ------------- |
+| Transparent formula      | ✓       | ✗ (black box) |
+| Correct CRSP 2025 rates  | ✓       | Mostly 2019   |
+| Correct tax-stripping    | ✓       | Rarely        |
+| Mobile-first             | ✓       | Mixed         |
+| WhatsApp share           | ✓       | Rare          |
+| Model-specific SEO pages | ✓       | None          |
 
 ---
 

@@ -36,11 +36,9 @@
       <!-- Dark/light toggle -->
       <button id="theme-toggle" aria-label="Toggle theme"
         class="w-8 h-8 rounded-lg border border-border flex items-center justify-center text-text-muted hover:text-text hover:border-border-2 transition-colors">
-        <!-- Sun (shown in dark mode) -->
         <svg id="icon-sun" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
         </svg>
-        <!-- Moon (shown in light mode) -->
         <svg id="icon-moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
@@ -61,15 +59,21 @@
     </div>
   </div>
 
-  <main class="max-w-2xl mx-auto px-4 py-5 space-y-4">
+  <main class="max-w-2xl mx-auto px-4 py-5 space-y-3">
 
     <!-- ── Step 1: Vehicle Type ──────────────────────────────── -->
-    <section class="bg-surface border border-border rounded-2xl overflow-hidden">
-      <div class="px-5 py-3.5 border-b border-border flex items-center gap-2.5">
-        <span class="w-5 h-5 rounded-full bg-amber text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
-        <h2 class="font-semibold text-sm">Vehicle type</h2>
+    <section id="step-cat" class="bg-surface border border-border rounded-2xl overflow-hidden">
+      <div id="step-cat-hdr" class="px-5 py-3.5 border-b border-border flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-amber text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
+          <div class="leading-tight">
+            <h2 class="font-semibold text-sm">Vehicle type</h2>
+            <p id="step-cat-val" class="text-amber text-xs font-medium hidden"></p>
+          </div>
+        </div>
+        <button id="step-cat-chg" class="hidden text-xs text-text-muted hover:text-amber transition-colors px-1 py-0.5">Change</button>
       </div>
-      <div class="px-4 py-4">
+      <div id="step-cat-body" class="px-4 py-4">
         <div id="category-grid" class="grid grid-cols-3 gap-2 sm:grid-cols-4">
           <!-- rendered by JS -->
         </div>
@@ -78,53 +82,55 @@
 
     <!-- ── Step 2: Make ──────────────────────────────────────── -->
     <section id="step-make" class="hidden bg-surface border border-border rounded-2xl overflow-hidden fade-up">
-      <div class="px-5 py-3.5 border-b border-border flex items-center gap-2.5">
-        <span class="w-5 h-5 rounded-full bg-amber text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
-        <h2 class="font-semibold text-sm">Make</h2>
+      <div id="step-make-hdr" class="px-5 py-3.5 border-b border-border flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-amber text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
+          <div class="leading-tight">
+            <h2 class="font-semibold text-sm">Make</h2>
+            <p id="step-make-val" class="text-amber text-xs font-medium hidden"></p>
+          </div>
+        </div>
+        <button id="step-make-chg" class="hidden text-xs text-text-muted hover:text-amber transition-colors px-1 py-0.5">Change</button>
       </div>
-      <div class="px-4 py-4">
-        <select id="make-select"
-          class="w-full px-4 py-3 rounded-xl border border-border bg-surface-2 text-text text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent transition-colors">
-          <option value="">— Select make —</option>
-        </select>
+      <div id="step-make-body" class="px-4 py-4">
+        <div id="make-grid" class="flex flex-wrap gap-2 max-h-56 overflow-y-auto">
+          <!-- rendered by JS -->
+        </div>
       </div>
     </section>
 
     <!-- ── Step 3: Model ─────────────────────────────────────── -->
     <section id="step-model" class="hidden bg-surface border border-border rounded-2xl overflow-hidden fade-up">
-      <div class="px-5 py-3.5 border-b border-border flex items-center gap-2.5">
-        <span class="w-5 h-5 rounded-full bg-amber text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
-        <h2 class="font-semibold text-sm">Model</h2>
-      </div>
-      <div class="px-4 py-4 space-y-3">
-        <select id="model-select"
-          class="w-full px-4 py-3 rounded-xl border border-border bg-surface-2 text-text text-sm focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent transition-colors">
-          <option value="">— Select model —</option>
-        </select>
-
-        <!-- Selected vehicle pill -->
-        <div id="vehicle-card" class="hidden bg-amber/10 border border-amber/30 rounded-xl px-4 py-3">
-          <div class="flex items-start justify-between gap-3">
-            <div class="min-w-0">
-              <p class="font-bold text-sm text-text" id="vc-name"></p>
-              <p class="text-text-muted text-xs mt-0.5 truncate" id="vc-meta"></p>
-            </div>
-            <div class="text-right flex-shrink-0">
-              <p class="text-text-subtle text-xs">CRSP</p>
-              <p class="font-bold text-amber text-sm" id="vc-crsp"></p>
-            </div>
+      <div id="step-model-hdr" class="px-5 py-3.5 border-b border-border flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-amber text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
+          <div class="leading-tight">
+            <h2 class="font-semibold text-sm">Model</h2>
+            <p id="step-model-val" class="text-amber text-xs font-medium hidden"></p>
           </div>
+        </div>
+        <button id="step-model-chg" class="hidden text-xs text-text-muted hover:text-amber transition-colors px-1 py-0.5">Change</button>
+      </div>
+      <div id="step-model-body" class="px-4 py-4">
+        <div id="model-grid" class="flex flex-col gap-2">
+          <!-- rendered by JS -->
         </div>
       </div>
     </section>
 
     <!-- ── Step 4: Year ──────────────────────────────────────── -->
     <section id="step-year" class="hidden bg-surface border border-border rounded-2xl overflow-hidden fade-up">
-      <div class="px-5 py-3.5 border-b border-border flex items-center gap-2.5">
-        <span class="w-5 h-5 rounded-full bg-amber text-white text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
-        <h2 class="font-semibold text-sm">Year of manufacture</h2>
+      <div id="step-year-hdr" class="px-5 py-3.5 border-b border-border flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-amber text-white text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
+          <div class="leading-tight">
+            <h2 class="font-semibold text-sm">Year of manufacture</h2>
+            <p id="step-year-val" class="text-amber text-xs font-medium hidden"></p>
+          </div>
+        </div>
+        <button id="step-year-chg" class="hidden text-xs text-text-muted hover:text-amber transition-colors px-1 py-0.5">Change</button>
       </div>
-      <div class="px-4 py-4 space-y-3">
+      <div id="step-year-body" class="px-4 py-4 space-y-3">
         <div id="year-grid" class="grid grid-cols-4 gap-2 sm:grid-cols-5"></div>
 
         <div id="eight-year-notice" class="hidden bg-kra-red/10 border border-kra-red/30 rounded-xl px-4 py-3 text-sm text-kra-red">
@@ -140,14 +146,6 @@
       </div>
     </section>
 
-    <!-- ── Calculate ─────────────────────────────────────────── -->
-    <div id="calc-wrap" class="hidden">
-      <button id="calc-btn"
-        class="w-full py-4 rounded-2xl font-bold text-base bg-amber text-white hover:bg-amber-dark active:scale-[0.98] transition-all shadow-lg shadow-amber/20">
-        Calculate KRA Duty →
-      </button>
-    </div>
-
     <!-- ── Results ───────────────────────────────────────────── -->
     <section id="results" class="hidden space-y-4 fade-up">
 
@@ -161,17 +159,17 @@
       <!-- Step-by-step breakdown -->
       <div class="bg-surface border border-border rounded-2xl overflow-hidden">
         <div class="px-5 py-3.5 border-b border-border">
-          <h2 class="font-semibold text-sm">How KRA calculated this</h2>
-          <p class="text-text-subtle text-xs mt-0.5">Every line matches the official KRA valuation template</p>
+          <h2 class="font-semibold text-sm">Full duty breakdown</h2>
+          <p class="text-text-subtle text-xs mt-0.5">Every figure matches the official KRA valuation template</p>
         </div>
         <div id="breakdown" class="divide-y divide-border"></div>
       </div>
 
       <!-- Landed cost note -->
       <div class="bg-surface border border-amber/20 rounded-2xl px-5 py-4">
-        <p class="font-semibold text-sm mb-1">Duty only — not your full landed cost</p>
+        <p class="font-semibold text-sm mb-1">This is the KRA duty only — not your total cost</p>
         <p class="text-text-muted text-xs leading-relaxed">
-          Add: auction price · shipping (≈KES 80–150K) · insurance · port clearing (≈KES 30–60K) · NTSA registration · transport from Mombasa.
+          Your full landed cost also includes the purchase price, shipping from Japan (≈KES 80–150K), marine insurance, port clearing (≈KES 30–60K), NTSA registration, and road transport from Mombasa.
         </p>
       </div>
 
@@ -191,24 +189,53 @@
       </button>
     </section>
 
-    <!-- ── Formula card ──────────────────────────────────────── -->
+    <!-- ── How it works ───────────────────────────────────────── -->
     <section class="bg-surface border border-border rounded-2xl px-5 py-4">
-      <h3 class="font-semibold text-sm mb-3">The KRA formula</h3>
-      <div class="bg-surface-2 border border-border rounded-xl px-4 py-3 font-mono text-xs text-text-muted space-y-1 leading-relaxed">
-        <div>CRSP <span class="text-text-subtle">÷ 2.4469</span> = pre-depreciation value</div>
-        <div>× (1 − depreciation) = <strong class="text-text">Customs Value (CV)</strong></div>
-        <div class="border-t border-border pt-1.5 mt-1.5"></div>
-        <div>CV × 25% = Import Duty</div>
-        <div>(CV + ID) × 20% = Excise Duty</div>
-        <div>(CV + ID + ED) × 16% = VAT</div>
-        <div>CV × 2.25% = IDF <span class="text-text-subtle">(min KES 5,000)</span></div>
-        <div>CV × 1.5% = RDL</div>
+      <h2 class="font-semibold text-sm mb-2">How KRA calculates import duty</h2>
+      <p class="text-text-muted text-xs mb-4 leading-relaxed">KRA uses the official <strong class="text-text">CRSP</strong> (Current Retail Selling Price) list as the starting value for every car. The CRSP is adjusted by a KRA factor and the car's age to arrive at the <strong class="text-text">Customs Value</strong>, from which five levies are charged.</p>
+      <div class="bg-surface-2 border border-border rounded-xl px-4 py-3 font-mono text-xs text-text-muted space-y-1.5 leading-relaxed">
+        <div>CRSP × (1 − depreciation%) ÷ 2.4469 = <strong class="text-amber">Customs Value (CV)</strong></div>
+        <div class="border-t border-border pt-2 mt-2 space-y-1">
+          <div class="flex justify-between"><span>Import Duty</span><span class="text-text">CV × 25%</span></div>
+          <div class="flex justify-between"><span>Excise Duty</span><span class="text-text">(CV + ID) × 20%</span></div>
+          <div class="flex justify-between"><span>VAT</span><span class="text-text">(CV + ID + ED) × 16%</span></div>
+          <div class="flex justify-between"><span>IDF</span><span class="text-text">CV × 2.25% <span class="text-text-subtle">(min KES 5,000)</span></span></div>
+          <div class="flex justify-between"><span>RDL</span><span class="text-text">CV × 1.5%</span></div>
+        </div>
+        <div class="border-t border-border pt-2 mt-1">
+          <p class="text-text-subtle text-xs mb-1.5">Depreciation by age</p>
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="text-text-subtle">
+                <th class="text-left font-normal pb-1">Age</th>
+                <th class="text-right font-normal pb-1">Depreciation</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border/50">
+              <tr><td class="py-0.5 text-text-muted">New (under 1 yr)</td><td class="py-0.5 text-right text-text">0%</td></tr>
+              <tr><td class="py-0.5 text-text-muted">1 year</td><td class="py-0.5 text-right text-text">20%</td></tr>
+              <tr><td class="py-0.5 text-text-muted">2 years</td><td class="py-0.5 text-right text-text">30%</td></tr>
+              <tr><td class="py-0.5 text-text-muted">3 years</td><td class="py-0.5 text-right text-text">40%</td></tr>
+              <tr><td class="py-0.5 text-text-muted">4 years</td><td class="py-0.5 text-right text-text">50%</td></tr>
+              <tr><td class="py-0.5 text-text-muted">5 years</td><td class="py-0.5 text-right text-text">55%</td></tr>
+              <tr><td class="py-0.5 text-text-muted">6 years</td><td class="py-0.5 text-right text-text">60%</td></tr>
+              <tr><td class="py-0.5 text-text-muted">7–8 years <span class="text-text-subtle">(max allowed)</span></td><td class="py-0.5 text-right text-amber font-medium">65%</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
-    <footer class="text-center text-xs text-text-subtle pb-8 space-y-1">
-      <p>Data: KRA CRSP July 2025 · Rates: Finance Act 2025</p>
-      <p>For guidance only. Verify with KRA or a licensed clearing agent.</p>
+    <footer class="text-center text-xs text-text-subtle pb-8 space-y-2">
+      <p>
+        Source:
+        <a href="https://www.kra.go.ke/images/publications/New-CRSP---July-2025.xlsx" class="text-amber hover:underline" target="_blank" rel="noopener noreferrer">KRA CRSP July 2025 (Excel)</a>
+        &nbsp;·&nbsp;
+        <a href="https://new.kenyalaw.org/akn/ke/act/2025/9/eng@2025-07-01" class="text-amber hover:underline" target="_blank" rel="noopener noreferrer">Finance Act 2025</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.kra.go.ke/14-motor-vehicle-import-duty" class="text-amber hover:underline" target="_blank" rel="noopener noreferrer">KRA Duty Page</a>
+      </p>
+      <p>For guidance only. Verify with KRA or a licensed clearing agent before importing.</p>
     </footer>
 
   </main>
