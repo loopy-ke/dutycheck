@@ -1,5 +1,5 @@
 {
-  "name": "carduty",
+  "name": "dutycheck",
   "version": "1.0.0",
   "description": "> The only Kenya car duty calculator that shows you exactly how KRA calculates your duty — step by step, verified against the official KRA valuation template.",
   "main": "index.js",
@@ -11,16 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/griffins/carduty.git"
+    "url": "git+https://github.com/loopy-ke/dutycheck.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/griffins/carduty/issues"
+    "url": "https://github.com/loopy-ke/dutycheck/issues"
   },
-  "homepage": "https://github.com/griffins/carduty#readme",
+  "homepage": "https://github.com/loopy-ke/dutycheck#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.1",
     "@tailwindcss/postcss": "^4.2.1",
