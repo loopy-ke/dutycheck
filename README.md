@@ -1,4 +1,4 @@
-# DutyCheck — KRA Car Import Duty Calculator
+# Duty Check — KRA Car Import Duty Calculator
 
 > The only Kenya car duty calculator that shows you exactly how KRA calculates your duty — step by step, verified against the official KRA valuation template.
 
@@ -6,9 +6,9 @@
 
 ---
 
-## What is DutyCheck?
+## What is Duty Check?
 
-DutyCheck is a transparent, SEO-optimised KRA duty calculator for Kenya car imports. Unlike black-box competitors, DutyCheck shows the full calculation breakdown:
+Duty Check is a transparent, SEO-optimised KRA duty calculator for Kenya car imports. Unlike black-box competitors, Duty Check shows the full calculation breakdown:
 
 1. CRSP lookup from the official July 2025 KRA list (5,200+ models)
 2. Tax-stripping step (÷2.4469 multiplier explained)
@@ -63,7 +63,7 @@ DutyCheck is a transparent, SEO-optimised KRA duty calculator for Kenya car impo
 
 ## KRA Duty Methodology
 
-DutyCheck uses the correct KRA formula:
+Duty Check uses the correct KRA formula:
 
 ```
 CRSP Value (from official list)
@@ -98,7 +98,7 @@ npm run build
 
 ## Competitive Edge
 
-| Feature                  | DutyCheck | Competitors   |
+| Feature                  | Duty Check | Competitors   |
 | ------------------------ | ------- | ------------- |
 | Transparent formula      | ✓       | ✗ (black box) |
 | Correct CRSP 2025 rates  | ✓       | Mostly 2019   |

@@ -1,5 +1,5 @@
 /**
- * DutyCheck — Shared page renderer (dev SSR + prod static generation)
+ * Duty Check — Shared page renderer (dev SSR + prod static generation)
  *
  * In dev:  Vite middleware calls renderUrl() on every request
  * In prod: build script calls renderAll() to write static HTML files
@@ -116,7 +116,7 @@ function layout({ title, desc, canonical, body, crumbs = [] }) {
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/>
           </svg>
         </div>
-        <span class="font-bold text-white text-base tracking-tight">DutyCheck</span>
+        <span class="font-bold text-white text-base tracking-tight">Duty Check</span>
       </a>
       <a href="/" class="text-xs text-amber hover:underline">← Calculator</a>
     </div>
@@ -182,7 +182,7 @@ function renderCategoryPage(category, catSlug) {
     </div>`;
 
   return layout({
-    title:    `${category} Import Duty Kenya 2025 — DutyCheck`,
+    title:    `${category} Import Duty Kenya 2025 — Duty Check`,
     desc:     `Browse all ${category} vehicles in KRA CRSP July 2025. ${makeEntries.length} makes, ${totalModels} models. Calculate import duty instantly.`,
     canonical: `/${catSlug}/`,
     crumbs:   [["Home", "/"], [category, null]],
@@ -237,7 +237,7 @@ function renderMakePage(category, catSlug, make, makeSlug) {
     </div>`;
 
   return layout({
-    title:    `${make} ${category} Import Duty Kenya 2025 — DutyCheck`,
+    title:    `${make} ${category} Import Duty Kenya 2025 — Duty Check`,
     desc:     `All ${make} ${category} models in KRA CRSP July 2025. ${models.length} variants with full duty breakdowns.`,
     canonical: `/${catSlug}/${makeSlug}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, null]],
@@ -340,7 +340,7 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
     </div>`;
 
   return layout({
-    title:    `${make} ${m.model} Import Duty Kenya 2025 — DutyCheck`,
+    title:    `${make} ${m.model} Import Duty Kenya 2025 — Duty Check`,
     desc:     `KRA import duty for ${make} ${m.model}. CRSP: ${kes(m.crsp)}. Duty from ${cheapest ? kes(cheapest.total) : "N/A"} depending on year. Full verified breakdown.`,
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, null]],
@@ -442,7 +442,7 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
     </div>`;
 
   return layout({
-    title:    `${make} ${m.model} ${year} Import Duty Kenya — ${kes(total)} — DutyCheck`,
+    title:    `${make} ${m.model} ${year} Import Duty Kenya — ${kes(total)} — Duty Check`,
     desc:     `KRA import duty for a ${year} ${make} ${m.model}: ${kes(total)} total. CRSP ${kes(m.crsp)}, Customs Value ${kes(cv)}, ${depr_pct}% depreciation. Finance Act 2025.`,
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/${year}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, `/${catSlug}/${makeSlug}/${modelSlug}/`], [String(year), null]],

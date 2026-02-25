@@ -1,5 +1,5 @@
 /**
- * DutyCheck — KRA Import Duty Calculator
+ * Duty Check — KRA Import Duty Calculator
  * Cascade: Vehicle Type → Make → Model → Year → auto-calculate
  * Uses only safe DOM methods (no innerHTML with data).
  */
@@ -491,7 +491,7 @@ function makeBreakdownRow({ label, note, formula, value, style }) {
 function buildShareText(total, cv, id, ed, vat, idf, rdl) {
   const car = `${selectedMake} ${selectedModel.model} (${selectedYear})`;
   return [
-    `🚗 *DutyCheck KRA Calculator*`,
+    `🚗 *Duty Check KRA Calculator*`,
     ``,
     `*${car}*`,
     `CRSP: ${kes(selectedModel.crsp)}`,
