@@ -1,0 +1,26 @@
+<svg width="360" height="88" viewBox="0 0 360 88" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Duty Check">
+  <defs>
+    <linearGradient id="dcAmber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon mark: amber rounded square with a car + a "check" tick -->
+  <g transform="translate(8,12)">
+    <rect width="64" height="64" rx="16" fill="url(#dcAmber)"/>
+    <!-- car glyph -->
+    <g transform="translate(14,15)" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+    </g>
+    <!-- check badge (bottom-right) -->
+    <circle cx="50" cy="50" r="15" fill="#0f0e0d"/>
+    <path d="M43 50.5l4.5 4.5 9 -9.5" fill="none" stroke="#f97316" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(92,0)" font-family="Arial, Helvetica, sans-serif">
+    <text x="0" y="46" font-size="34" font-weight="800" letter-spacing="-0.5" fill="#0f0e0d" class="dc-word">Duty Check</text>
+    <text x="2" y="68" font-size="13" font-weight="600" letter-spacing="2" fill="#f97316">KRA IMPORT DUTY · KENYA</text>
+  </g>
+</svg>
