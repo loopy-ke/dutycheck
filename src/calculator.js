@@ -63,24 +63,32 @@ function el(tag, { cls, text } = {}) {
 
 const $ = (id) => document.getElementById(id);
 
-const categoryGrid    = $("category-grid");
-const stepMake        = $("step-make");
-const makeGrid        = $("make-grid");
-const stepModel       = $("step-model");
-const modelGrid       = $("model-grid");
-const stepYear        = $("step-year");
-const yearGrid        = $("year-grid");
-const eightYearNotice = $("eight-year-notice");
-const cutoffLabel     = $("cutoff-label");
-const yearNote        = $("year-note");
-const ageLabel        = $("age-label");
-const deprLabel       = $("depr-label");
-const results         = $("results");
-const rTotal          = $("r-total");
-const rSummary        = $("r-summary");
-const breakdown       = $("breakdown");
-const shareBtn        = $("share-btn");
-const recalcBtn       = $("recalc-btn");
+// DOM refs are (re)captured on every init. Turbo Drive swaps <body> on each
+// visit, so refs captured at module-load time would become detached/stale.
+let categoryGrid, stepMake, makeGrid, stepModel, modelGrid, stepYear, yearGrid,
+    eightYearNotice, cutoffLabel, yearNote, ageLabel, deprLabel, results,
+    rTotal, rSummary, breakdown, shareBtn, recalcBtn;
+
+function captureRefs() {
+  categoryGrid    = $("category-grid");
+  stepMake        = $("step-make");
+  makeGrid        = $("make-grid");
+  stepModel       = $("step-model");
+  modelGrid       = $("model-grid");
+  stepYear        = $("step-year");
+  yearGrid        = $("year-grid");
+  eightYearNotice = $("eight-year-notice");
+  cutoffLabel     = $("cutoff-label");
+  yearNote        = $("year-note");
+  ageLabel        = $("age-label");
+  deprLabel       = $("depr-label");
+  results         = $("results");
+  rTotal          = $("r-total");
+  rSummary        = $("r-summary");
+  breakdown       = $("breakdown");
+  shareBtn        = $("share-btn");
+  recalcBtn       = $("recalc-btn");
+}
 
 // ── Slugify (mirrors plugins/render.js) ───────────────────────────────────
 
@@ -141,12 +149,34 @@ let shareText     = "";
 // ── Boot ──────────────────────────────────────────────────────────────────
 
 export async function initCalculator() {
-  const res = await fetch("/data/crsp_cascade.json");
-  crspData  = await res.json();
+  const grid = $("category-grid");
+  if (!grid) return;                    // not the calculator page (e.g. a generated SEO page)
+  if (grid.dataset.dcInit === "1") return; // already wired for this DOM — no double-binding
+  grid.dataset.dcInit = "1";            // set synchronously, before any await, to dedupe re-entrancy
+
+  // Fresh element references for the current (possibly Turbo-swapped) <body>.
+  captureRefs();
+
+  // Reset any state carried over from a previous visit (JS runtime persists across Turbo visits).
+  selectedCat = selectedMake = selectedModel = selectedYear = null;
+  shareText = "";
+
+  if (!crspData) {
+    const res = await fetch("/data/crsp_cascade.json");
+    crspData  = await res.json();
+  }
+
   renderCategories();
+
+  // Start from a clean, collapsed state.
+  hide(stepMake, stepModel, stepYear, results);
+  expandSection("step-cat");
+  yearNote.classList.add("hidden");
+
   shareBtn.addEventListener("click", share);
   recalcBtn.addEventListener("click", recalculate);
-  $("brand-home").addEventListener("click", recalculate);
+  const brandHome = $("brand-home");
+  if (brandHome) brandHome.addEventListener("click", recalculate);
   makeHeaderClickable("step-cat");
   makeHeaderClickable("step-make");
   makeHeaderClickable("step-model");

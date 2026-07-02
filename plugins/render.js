@@ -288,6 +288,11 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [] }) {
     gtag('js', new Date());
     gtag('config', 'G-VT7S4F6QJG');
   </script>
+  <!-- FOUC-free theme: apply saved preference before paint -->
+  <script>try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.classList.remove('dark');else if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}</script>
+  <!-- Turbo Drive (vendored, auto-starts) + GA glue for SPA navigations -->
+  <script src="/vendor/turbo.min.js" defer></script>
+  <script src="/turbo-init.js" defer></script>
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body class="bg-bg text-text min-h-screen">

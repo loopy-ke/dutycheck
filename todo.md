@@ -18,7 +18,7 @@
 ### High priority
 - [ ] Insurance estimate widget — show 4-6% of CRSP annually in results, "Get quotes" CTA → partner with Britam / Jubilee / CIC
 - [ ] Finance pre-qualification CTA — show below total duty when duty+car cost > ~KES 3M, pass vehicle details to Stanbic / NCBA / I&M asset finance
-- [ ] Turbolinks-style navigation — @hotwired/turbo to intercept link clicks and swap body without full page reload (app feel)
+- [x] Turbolinks-style navigation — @hotwired/turbo (vendored to public/vendor/turbo.min.js, auto-starts); GA page_view on turbo:load via public/turbo-init.js; calculator + theme re-init idempotently on turbo:load
 - [ ] Fix external links — verify KRA CRSP Excel URL, Finance Act URL, KRA duty page URL actually resolve
 
 ### Medium priority
