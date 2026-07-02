@@ -66,8 +66,7 @@ const $ = (id) => document.getElementById(id);
 // DOM refs are (re)captured on every init. Turbo Drive swaps <body> on each
 // visit, so refs captured at module-load time would become detached/stale.
 let categoryGrid, stepMake, makeGrid, stepModel, modelGrid, stepYear, yearGrid,
-    eightYearNotice, cutoffLabel, yearNote, ageLabel, deprLabel, results,
-    rTotal, rSummary, breakdown, shareBtn, recalcBtn;
+    eightYearNotice, cutoffLabel, yearNote, ageLabel, deprLabel;
 
 function captureRefs() {
   categoryGrid    = $("category-grid");
@@ -82,12 +81,6 @@ function captureRefs() {
   yearNote        = $("year-note");
   ageLabel        = $("age-label");
   deprLabel       = $("depr-label");
-  results         = $("results");
-  rTotal          = $("r-total");
-  rSummary        = $("r-summary");
-  breakdown       = $("breakdown");
-  shareBtn        = $("share-btn");
-  recalcBtn       = $("recalc-btn");
 }
 
 // ── Slugify (mirrors plugins/render.js) ───────────────────────────────────
@@ -158,7 +151,6 @@ let selectedCat   = null;
 let selectedMake  = null;
 let selectedModel = null;
 let selectedYear  = null;
-let shareText     = "";
 
 // ── Boot ──────────────────────────────────────────────────────────────────
 
@@ -173,7 +165,6 @@ export async function initCalculator() {
 
   // Reset any state carried over from a previous visit (JS runtime persists across Turbo visits).
   selectedCat = selectedMake = selectedModel = selectedYear = null;
-  shareText = "";
 
   if (!crspData) {
     const res = await fetch("/data/crsp_cascade.json");
@@ -183,12 +174,10 @@ export async function initCalculator() {
   renderCategories();
 
   // Start from a clean, collapsed state.
-  hide(stepMake, stepModel, stepYear, results);
+  hide(stepMake, stepModel, stepYear);
   expandSection("step-cat");
   yearNote.classList.add("hidden");
 
-  shareBtn.addEventListener("click", share);
-  recalcBtn.addEventListener("click", recalculate);
   const brandHome = $("brand-home");
   if (brandHome) brandHome.addEventListener("click", recalculate);
   makeHeaderClickable("step-cat");
@@ -240,7 +229,7 @@ function renderCategories() {
       expandSection("step-cat");
       // Reset downstream
       selectedCat = selectedMake = selectedModel = selectedYear = null;
-      hide(stepMake, stepModel, stepYear, results);
+      hide(stepMake, stepModel, stepYear);
       // Deselect all category buttons
       categoryGrid.querySelectorAll("button").forEach(b => {
         b.classList.remove("border-amber", "bg-amber/10", "text-amber");
@@ -278,7 +267,7 @@ function selectCategory(cat, activeBtn) {
     makeChg.onclick = () => {
       expandSection("step-make");
       selectedMake = selectedModel = selectedYear = null;
-      hide(stepModel, stepYear, results);
+      hide(stepModel, stepYear);
       makeGrid.querySelectorAll("button").forEach(b => {
         b.classList.remove("border-amber", "bg-amber/10", "text-amber");
         b.classList.add("border-border", "bg-surface-2", "text-text-muted");
@@ -287,7 +276,7 @@ function selectCategory(cat, activeBtn) {
   }
 
   collapseSection("step-cat", cat);
-  hide(stepModel, stepYear, results);
+  hide(stepModel, stepYear);
   show(stepMake);
   expandSection("step-make");
   scrollSmooth(stepMake);
@@ -351,7 +340,7 @@ function selectMake(make, activeChip) {
     modelChg.onclick = () => {
       expandSection("step-model");
       selectedModel = selectedYear = null;
-      hide(stepYear, results);
+      hide(stepYear);
       modelGrid.querySelectorAll("button").forEach(b => {
         b.classList.remove("border-amber", "bg-amber/10");
         b.classList.add("border-border");
@@ -360,7 +349,7 @@ function selectMake(make, activeChip) {
   }
 
   collapseSection("step-make", make);
-  hide(stepYear, results);
+  hide(stepYear);
   show(stepModel);
   expandSection("step-model");
   scrollSmooth(stepModel);
@@ -385,7 +374,6 @@ function selectModel(model, activeChip) {
     yearChg.onclick = () => {
       expandSection("step-year");
       selectedYear = null;
-      hide(results);
       yearGrid.querySelectorAll("button:not(:disabled)").forEach(b => {
         b.classList.remove("border-amber", "bg-amber/10", "text-amber");
         b.classList.add("border-border", "bg-surface-2", "text-text");
@@ -397,7 +385,6 @@ function selectModel(model, activeChip) {
   const modelLabel = model.model + (model.cc ? ` · ${typeof model.cc === "number" ? model.cc + "cc" : model.cc}` : "");
   collapseSection("step-model", modelLabel);
   renderYearGrid();
-  hide(results);
   show(stepYear);
   expandSection("step-year");
   scrollSmooth(stepYear);
@@ -462,133 +449,12 @@ function selectYear(year, activeBtn) {
   }
 }
 
-// ── Calculate ─────────────────────────────────────────────────────────────
-
-function calculate() {
-  const crsp       = selectedModel.crsp;
-  const age        = CURRENT_YEAR - selectedYear;
-  const depr       = getDepreciation(age);
-  const preDepr    = crsp / DIVISOR;
-  const cv         = preDepr * (1 - depr);
-  const importDuty = cv * 0.25;
-  const exciseDuty = (cv + importDuty) * 0.20;
-  const vat        = (cv + importDuty + exciseDuty) * 0.16;
-  const idf        = Math.max(cv * 0.0225, 5000);
-  const rdl        = cv * 0.015;
-  const total      = importDuty + exciseDuty + vat + idf + rdl;
-
-  rTotal.textContent   = kes(total);
-  rSummary.textContent = `${selectedMake} ${selectedModel.model} · ${selectedYear} · ${selectedCat}`;
-
-  clear(breakdown);
-
-  const steps = [
-    { label: "CRSP Value",                  note: "Official KRA CRSP July 2025",                                  formula: null,                                        value: crsp,       style: "normal"    },
-    { label: "÷ 2.4469",                    note: "KRA valuation factor → pre-depreciation base",                 formula: `${kes(crsp)} ÷ 2.4469`,                     value: preDepr,    style: "normal"    },
-    { label: `− ${pct(depr)} depreciation`, note: `${age} year${age !== 1 ? "s" : ""} old · direct import`,      formula: `${kes(preDepr)} × ${(1 - depr).toFixed(2)}`, value: cv,         style: "highlight" },
-    { label: "Import Duty (25%)",           note: "Customs Value × 25%",                                          formula: `${kes(cv)} × 0.25`,                         value: importDuty, style: "normal"    },
-    { label: "Excise Duty (20%)",           note: "(CV + Import Duty) × 20%",                                     formula: `${kes(cv + importDuty)} × 0.20`,            value: exciseDuty, style: "normal"    },
-    { label: "VAT (16%)",                   note: "(CV + ID + Excise) × 16%",                                     formula: `${kes(cv + importDuty + exciseDuty)} × 0.16`, value: vat,      style: "normal"    },
-    { label: "IDF (2.25%)",                 note: `CV × 2.25%${idf === 5000 ? " · min KES 5,000 applied" : ""}`, formula: `${kes(cv)} × 0.0225`,                       value: idf,        style: "normal"    },
-    { label: "RDL (1.5%)",                  note: "Railway Development Levy",                                      formula: `${kes(cv)} × 0.015`,                        value: rdl,        style: "normal"    },
-    { label: "Total KRA Duty",              note: "Import Duty + Excise + VAT + IDF + RDL",                       formula: null,                                        value: total,      style: "total"     },
-  ];
-
-  steps.forEach(s => breakdown.appendChild(makeBreakdownRow(s)));
-
-  shareText = buildShareText(total, cv, importDuty, exciseDuty, vat, idf, rdl);
-  results.classList.remove("hidden");
-  results.classList.add("fade-up");
-  scrollSmooth(results);
-}
-
-function makeBreakdownRow({ label, note, formula, value, style }) {
-  const row = document.createElement("div");
-  if (style === "total") {
-    row.className = "px-5 py-4 bg-charcoal";
-  } else if (style === "highlight") {
-    row.className = "px-5 py-3.5 bg-amber/5 border-l-2 border-amber";
-  } else {
-    row.className = "px-5 py-3.5";
-  }
-
-  const isTotal = style === "total";
-
-  const metaDiv = document.createElement("div");
-  metaDiv.className = "flex-1 min-w-0";
-  metaDiv.appendChild(el("p", {
-    cls:  `font-semibold text-sm ${isTotal ? "text-white" : "text-text"}`,
-    text: label,
-  }));
-  metaDiv.appendChild(el("p", {
-    cls:  `text-xs mt-0.5 ${isTotal ? "text-text-subtle" : "text-text-muted"}`,
-    text: note,
-  }));
-  if (formula) {
-    metaDiv.appendChild(el("p", {
-      cls:  "text-xs mt-0.5 font-mono text-text-subtle",
-      text: formula,
-    }));
-  }
-
-  const valueEl = el("p", {
-    cls: [
-      "font-bold flex-shrink-0",
-      isTotal               ? "text-white text-lg"  :
-      style === "highlight" ? "text-amber"           :
-                              "text-text",
-    ].join(" "),
-    text: kes(value),
-  });
-
-  const wrapper = document.createElement("div");
-  wrapper.className = "flex items-start justify-between gap-3";
-  wrapper.appendChild(metaDiv);
-  wrapper.appendChild(valueEl);
-  row.appendChild(wrapper);
-  return row;
-}
-
-// ── Share ─────────────────────────────────────────────────────────────────
-
-function buildShareText(total, cv, id, ed, vat, idf, rdl) {
-  const car = `${selectedMake} ${selectedModel.model} (${selectedYear})`;
-  // Link to this exact vehicle page (built from in-memory state), not the homepage.
-  // Use the current origin so dev/preview/prod all share correct links.
-  const modelSlug = selectedModel.slug || slugify(selectedModel.model); // .slug is the de-duplicated one
-  const path = `/${slugify(selectedCat)}/${slugify(selectedMake)}/${modelSlug}/${selectedYear}/`;
-  const base = window.location.origin;
-  const url  = `${base}${path}`;
-  return [
-    `*Duty Check -- KRA Calculator*`,
-    ``,
-    `*${car}*`,
-    `CRSP: ${kes(selectedModel.crsp)}`,
-    `Customs Value: ${kes(cv)}`,
-    ``,
-    `Import Duty:  ${kes(id)}`,
-    `Excise Duty:  ${kes(ed)}`,
-    `VAT:          ${kes(vat)}`,
-    `IDF + RDL:    ${kes(idf + rdl)}`,
-    ``,
-    `*Total KRA Duty: ${kes(total)}*`,
-    ``,
-    // Single URL only, so WhatsApp attaches THIS vehicle page's og card
-    // (not the landing page). Do not add a second URL below.
-    `See full breakdown: ${url}`,
-  ].join("\n");
-}
-
-function share() {
-  window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, "_blank");
-}
-
 // ── Recalculate ───────────────────────────────────────────────────────────
 
 function recalculate() {
   // Reset all state and collapse all steps back to start
   selectedCat = selectedMake = selectedModel = selectedYear = null;
-  hide(stepMake, stepModel, stepYear, results);
+  hide(stepMake, stepModel, stepYear);
   expandSection("step-cat");
   categoryGrid.querySelectorAll("button").forEach(b => {
     b.classList.remove("border-amber", "bg-amber/10", "text-amber");
