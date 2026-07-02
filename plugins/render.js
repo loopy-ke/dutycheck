@@ -338,8 +338,8 @@ function renderCategoryPage(category, catSlug) {
     </div>`;
 
   return layout({
-    title:    `${category} Import Duty Kenya 2025 — Duty Check`,
-    desc:     `Browse all ${category} vehicles in KRA CRSP July 2025. ${makeEntries.length} makes, ${totalModels} models. Calculate import duty instantly.`,
+    title:    `${category} Import Duty Calculator Kenya — Prices & CRSP 2025`,
+    desc:     `Calculate KRA import duty, taxes & CRSP prices for ${makeEntries.length}+ ${category} makes in Kenya. Full customs-duty breakdown for ${totalModels} models — CRSP July 2025.`,
     canonical: `/${catSlug}/`,
     crumbs:   [["Home", "/"], [category, null]],
     body,
@@ -393,8 +393,8 @@ function renderMakePage(category, catSlug, make, makeSlug) {
     </div>`;
 
   return layout({
-    title:    `${make} ${category} Import Duty Kenya 2025 — Duty Check`,
-    desc:     `All ${make} ${category} models in KRA CRSP July 2025. ${models.length} variants with full duty breakdowns.`,
+    title:    `${make} ${category} Prices & Import Duty Kenya — CRSP Calculator 2025`,
+    desc:     `${make} ${category} prices & KRA import duty in Kenya. ${models.length} models with full CRSP July 2025 duty & tax breakdowns.`,
     canonical: `/${catSlug}/${makeSlug}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, null]],
     body,
@@ -502,7 +502,7 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
 
   return layout({
     title:    `${make} ${m.model} Price & Import Duty in Kenya — Duty Check`,
-    desc:     `${make} ${m.model} price & KRA import duty in Kenya. CRSP: ${kes(m.crsp)}. Duty from ${cheapest ? kes(cheapest.total) : "N/A"} depending on year. Full verified breakdown.`,
+    desc:     `How much to import a ${make} ${m.model} to Kenya? CRSP ${kes(m.crsp)} — full KRA import duty, excise, VAT & customs breakdown${cheapest ? `, duty from ${kes(cheapest.total)} by year` : ""}.`,
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, null]],
     jsonLd:   [vehicleLd],
@@ -658,7 +658,7 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
 
   return layout({
     title:    `${make} ${m.model} ${year} Price & Import Duty Kenya — ${kes(total)}`,
-    desc:     `${make} ${m.model} ${year} price & KRA import duty in Kenya: ${kes(total)} total. CRSP ${kes(m.crsp)}, Customs Value ${kes(cv)}, ${depr_pct}% depreciation. Finance Act 2025.`,
+    desc:     `How much is import duty on a ${year} ${make} ${m.model} in Kenya? ${kes(total)} total — CRSP ${kes(m.crsp)}, customs value ${kes(cv)}, ${depr_pct}% depreciation. Finance Act 2025.`,
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/${year}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, `/${catSlug}/${makeSlug}/${modelSlug}/`], [String(year), null]],
     jsonLd:   [faqJsonLd, vehicleLd],
