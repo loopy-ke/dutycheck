@@ -151,6 +151,40 @@ The canonical host is **`https://www.dutycheck.co.ke`**. DNS 301-redirects the n
 
 ---
 
+## Roadmap
+
+### Done
+- [x] Cascading calculator (category → make → model → year) with real URL paths
+- [x] Dev SSR + prod static generation (~50k pages) from a shared renderer
+- [x] Dark / light mode
+- [x] Sitemaps (`sitemap-index.xml` + `sitemap.xml` + per-category sitemaps, incl. year pages)
+- [x] `robots.txt` with sitemap reference
+- [x] Canonical host consolidated on `www` (fixes GSC apex/www split)
+- [x] Structured data: `WebApplication` + `WebSite` (home), `BreadcrumbList`, `FAQPage`, `Car` (model/year)
+- [x] Price-intent titles/descriptions ("price in Kenya") on model/year pages
+- [x] Homepage optimized for head terms ("KRA car import duty calculator") + FAQ
+- [x] Branded `og:image` share card (`summary_large_image`)
+- [x] WhatsApp share links to the exact vehicle page (origin-derived)
+
+### SEO — next
+- [ ] Internal linking: "related vehicles" + "popular models" modules (funnel link equity, improve indexation)
+- [ ] Content guides: "How to import a car into Kenya", "Understanding CRSP" (informational traffic + backlinks)
+- [ ] E-E-A-T: visible "last updated" dates, organization/author attribution
+- [ ] FAW / commercial-vehicle title + content tuning (impressions but 0 clicks)
+- [ ] Indexation audit in GSC (indexed vs. "discovered – not indexed")
+- [ ] Off-page: backlinks / embeddable calculator widget / directory listings
+
+### Product / Growth
+- [ ] Insurance estimate widget (4–6% of CRSP) + "Get quotes" CTA
+- [ ] Finance pre-qualification CTA when duty + car cost is high
+- [ ] Turbo-style navigation (`@hotwired/turbo`) for app-like transitions
+- [ ] Model page as self-contained calculator (trim + interactive year picker)
+- [ ] Compare feature — `/compare/toyota-harrier/mazda-cx5`
+
+> Working task tracking lives in [`todo.md`](todo.md).
+
+---
+
 ## Disclaimer
 
 Duty Check is provided **for guidance only**. Duty figures are estimates based on the published KRA CRSP list and prevailing rates, and actual assessments can vary. Always verify with **KRA** or a **licensed clearing agent** before making import decisions.
