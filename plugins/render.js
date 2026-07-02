@@ -251,7 +251,9 @@ function vehicleJsonLd({ make, model, year, crsp, duty }) {
 // kept 4-byte-emoji-free for WhatsApp compatibility.
 function whatsappShareHtml(shareText, canonical) {
   const url  = `https://www.dutycheck.co.ke${canonical}`;
-  const text = encodeURIComponent(`${shareText}\n\nSee full breakdown: ${url}\n\nCalculate yours: https://www.dutycheck.co.ke`);
+  // Single URL only — this is the page being shared, so WhatsApp attaches
+  // THIS page's og card (not the landing page). Do not add a second URL.
+  const text = encodeURIComponent(`${shareText}\n\nSee full breakdown: ${url}`);
   return `
     <a href="https://wa.me/?text=${text}" target="_blank" rel="noopener"
        class="flex items-center justify-center gap-2 w-full text-white font-semibold text-sm rounded-xl px-5 py-3 transition-opacity hover:opacity-90"

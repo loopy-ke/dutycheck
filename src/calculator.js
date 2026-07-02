@@ -564,8 +564,9 @@ function buildShareText(total, cv, id, ed, vat, idf, rdl) {
     ``,
     `*Total KRA Duty: ${kes(total)}*`,
     ``,
+    // Single URL only, so WhatsApp attaches THIS vehicle page's og card
+    // (not the landing page). Do not add a second URL below.
     `See full breakdown: ${url}`,
-    `Calculate yours: ${base}`,
   ].join("\n");
 }
 
