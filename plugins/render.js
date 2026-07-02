@@ -112,6 +112,33 @@ export function relatedVehicles(category, make, currentModel, limit = 6) {
 }
 
 /**
+ * Pick up to `limit` OTHER models across the WHOLE category (any make),
+ * by closest CRSP to the current one. Used to generate cross-make compare
+ * pages (e.g. Toyota Harrier vs Mazda CX-5), which are higher-value search
+ * queries than same-make pairs. Each returned item carries its own
+ * `make`, `makeSlug`, and de-duplicated `.slug`.
+ */
+export function relatedVehiclesCrossMake(category, currentMake, currentModel, limit = 6) {
+  const { data } = getCrsp();
+  const makes = data[category];
+  if (!makes) return [];
+
+  const base = typeof currentModel.crsp === "number" ? currentModel.crsp : 0;
+  const pool = [];
+  for (const [mk, models] of Object.entries(makes)) {
+    const mkSlug = slugify(mk);
+    for (const m of buildModelIndex(models)) {
+      if (mk === currentMake && m.slug === currentModel.slug) continue; // exclude self
+      pool.push({ make: mk, makeSlug: mkSlug, ...m });
+    }
+  }
+  if (!pool.length) return [];
+
+  pool.sort((a, b) => Math.abs((a.crsp || 0) - base) - Math.abs((b.crsp || 0) - base));
+  return pool.slice(0, limit);
+}
+
+/**
  * Resolve a combined "{makeSlug}-{modelSlug}" token to a real vehicle.
  * Model slugs can themselves contain hyphens, so the split point between
  * make and model is ambiguous — we try every split point on hyphens and pick

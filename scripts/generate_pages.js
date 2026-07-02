@@ -8,7 +8,7 @@
 
 import { mkdirSync, writeFileSync } from "fs";
 import { resolve } from "path";
-import { slugify, renderUrl, relatedVehicles } from "../plugins/render.js";
+import { slugify, renderUrl, relatedVehiclesCrossMake } from "../plugins/render.js";
 
 const ROOT       = new URL("..", import.meta.url).pathname;
 const OUT_DIR    = resolve(ROOT, "dist");
@@ -128,9 +128,11 @@ for (const category of crsp.categories) {
     const indexed  = buildModelIndex(models);
     for (const m of indexed) {
       const comboA = `${makeSlug}-${m.slug}`;
-      const related = relatedVehicles(category, make, m, 6);
+      // Cross-make: pair with the closest-CRSP models across the whole
+      // category (any make), so /compare/ covers cross-brand queries too.
+      const related = relatedVehiclesCrossMake(category, make, m, 6);
       for (const r of related) {
-        const comboB = `${makeSlug}-${r.slug}`;
+        const comboB = `${r.makeSlug}-${r.slug}`;
         if (comboA === comboB) continue;
         const [lo, hi] = comboA < comboB ? [comboA, comboB] : [comboB, comboA];
         const key = `${lo}|${hi}`;
