@@ -157,29 +157,38 @@ The canonical host is **`https://www.dutycheck.co.ke`**. DNS 301-redirects the n
 - [x] Cascading calculator (category → make → model → year) with real URL paths
 - [x] Dev SSR + prod static generation (~50k pages) from a shared renderer
 - [x] Dark / light mode
-- [x] Sitemaps (`sitemap-index.xml` + `sitemap.xml` + per-category sitemaps, incl. year pages)
+- [x] Sitemaps (`sitemap-index.xml` + `sitemap.xml` + per-category sitemaps, incl. year pages) — entries only for pages actually written (consistency fix)
 - [x] `robots.txt` with sitemap reference
 - [x] Canonical host consolidated on `www` (fixes GSC apex/www split)
 - [x] Structured data: `WebApplication` + `WebSite` (home), `BreadcrumbList`, `FAQPage`, `Car` (model/year)
 - [x] Price-intent titles/descriptions ("price in Kenya") on model/year pages
 - [x] Homepage optimized for head terms ("KRA car import duty calculator") + FAQ
 - [x] Branded `og:image` share card (`summary_large_image`)
-- [x] WhatsApp share links to the exact vehicle page (origin-derived)
+- [x] WhatsApp share button on every generated page (single-URL so the correct og card attaches)
+- [x] Internal linking: "Related vehicles" + "Other years" modules on model/year pages (funnels link equity, improves indexation)
+- [x] E-E-A-T provenance: CRSP date line + `Car` JSON-LD `dateModified`/`publisher`
+- [x] Keyword tuning from Search Console data: category titles gained "Calculator", make titles gained "Prices", model/year descriptions gained "how much/cost/customs", homepage added tax/customs/valuation terms
+- [x] Compare feature: `/compare/{make-model}/{make-model}/` side-by-side pages (~20k, incl. cross-make) with interactive year selectors + `sitemap-compare.xml`
+- [x] Cross-make compare generation (`relatedVehiclesCrossMake`)
+- [x] Turbo Drive navigation (`@hotwired/turbo` vendored; GA `page_view` on `turbo:load`; idempotent calculator/theme re-init) — verified via full build + Playwright
 
 ### SEO — next
-- [ ] Internal linking: "related vehicles" + "popular models" modules (funnel link equity, improve indexation)
 - [ ] Content guides: "How to import a car into Kenya", "Understanding CRSP" (informational traffic + backlinks)
-- [ ] E-E-A-T: visible "last updated" dates, organization/author attribution
 - [ ] FAW / commercial-vehicle title + content tuning (impressions but 0 clicks)
 - [ ] Indexation audit in GSC (indexed vs. "discovered – not indexed")
 - [ ] Off-page: backlinks / embeddable calculator widget / directory listings
+- [ ] Per-page dynamic OG images (currently one shared branded card)
+- [ ] External-links verification (KRA / Finance Act URLs — kenyalaw.org was unverifiable from CI, but the KRA links return 200)
+
+### Known follow-ups
+- [ ] Link compare pages from model/year pages so they aren't orphaned (in progress)
 
 ### Product / Growth
 - [ ] Insurance estimate widget (4–6% of CRSP) + "Get quotes" CTA
 - [ ] Finance pre-qualification CTA when duty + car cost is high
-- [ ] Turbo-style navigation (`@hotwired/turbo`) for app-like transitions
-- [ ] Model page as self-contained calculator (trim + interactive year picker)
-- [ ] Compare feature — `/compare/toyota-harrier/mazda-cx5`
+- [ ] Model page as a fully self-contained interactive calculator (model pages already show a year table linking to year pages, but not an in-page interactive calculator)
+- [x] Turbo-style navigation (`@hotwired/turbo`) for app-like transitions
+- [x] Compare feature — `/compare/{make-model}/{make-model}/`
 
 > Working task tracking lives in [`todo.md`](todo.md).
 
