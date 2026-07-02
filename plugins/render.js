@@ -517,6 +517,33 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
   ].filter(Boolean).join(" · ");
 
   const cheapest = calcDuty(m.crsp, CURRENT_YEAR - MAX_AGE);
+  const newest   = calcDuty(m.crsp, CURRENT_YEAR);
+  const oldestYear = CURRENT_YEAR - MAX_AGE;
+
+  const faqs = [
+    {
+      q: `How much is import duty on a ${make} ${m.model} in Kenya?`,
+      a: `KRA import duty on a ${make} ${m.model} depends on its year of manufacture. Based on the CRSP value of ${kes(m.crsp)}, total duty${newest && cheapest ? ` ranges from about ${kes(cheapest.total)} for a ${oldestYear} model to ${kes(newest.total)} for a ${CURRENT_YEAR} model` : ""} — typically 60–90% of the customs value once Import Duty, Excise, VAT, IDF and RDL are added. See the year-by-year table above for the exact figure.`,
+    },
+    {
+      q: `What is the CRSP value of the ${make} ${m.model}?`,
+      a: `The official KRA CRSP (Current Retail Selling Price) for the ${make} ${m.model} is ${kes(m.crsp)}, as listed in the KRA CRSP schedule dated ${CRSP_DATE}. This CRSP is the basis KRA uses to calculate the customs value and import duty.`,
+    },
+    {
+      q: `Can I import a ${make} ${m.model} older than 8 years?`,
+      a: `No. Under Kenya's 8-year rule, KRA does not allow the import of vehicles more than 8 years old. In ${CURRENT_YEAR}, the oldest ${make} ${m.model} you can import is a ${oldestYear} model.`,
+    },
+  ];
+
+  const faqHtml = `
+    <section class="bg-surface border border-border rounded-2xl px-5 py-4">
+      <h3 class="font-semibold text-base mb-3">Frequently asked questions</h3>
+      <div class="divide-y divide-border">${faqs.map(f => `
+        <div class="py-3">
+          <p class="font-semibold text-sm text-text">${f.q}</p>
+          <p class="text-text-muted text-sm mt-1 leading-relaxed">${f.a}</p>
+        </div>`).join("")}</div>
+    </section>`;
 
   const body = `
     <div class="bg-charcoal rounded-2xl px-5 py-6 border border-border-2">
@@ -573,6 +600,8 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
       </div>
     </section>
 
+    ${faqHtml}
+
     ${relatedVehiclesHtml(category, catSlug, make, makeSlug, m)}
 
     ${compareLinksHtml(category, catSlug, make, makeSlug, m) || `
@@ -585,12 +614,22 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
 
   const vehicleLd = vehicleJsonLd({ make, model: m.model, crsp: m.crsp, duty: cheapest ? cheapest.total : undefined });
 
+  const faqLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a },
+    })),
+  });
+
   return layout({
-    title:    `${make} ${m.model} Price & Import Duty in Kenya — Duty Check`,
+    title:    `${make} ${m.model} Import Duty Calculator Kenya (${CURRENT_YEAR}) — Price & CRSP`,
     desc:     `How much to import a ${make} ${m.model} to Kenya? CRSP ${kes(m.crsp)} — full KRA import duty, excise, VAT & customs breakdown${cheapest ? `, duty from ${kes(cheapest.total)} by year` : ""}.`,
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, null]],
-    jsonLd:   [vehicleLd],
+    jsonLd:   [vehicleLd, faqLd],
     body,
   });
 }
@@ -743,7 +782,7 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
   const vehicleLd = vehicleJsonLd({ make, model: m.model, year, crsp: m.crsp, duty: total });
 
   return layout({
-    title:    `${make} ${m.model} ${year} Price & Import Duty Kenya — ${kes(total)}`,
+    title:    `${make} ${m.model} ${year} Import Duty Calculator Kenya — ${kes(total)}`,
     desc:     `How much is import duty on a ${year} ${make} ${m.model} in Kenya? ${kes(total)} total — CRSP ${kes(m.crsp)}, customs value ${kes(cv)}, ${depr_pct}% depreciation. Finance Act 2025.`,
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/${year}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, `/${catSlug}/${makeSlug}/${modelSlug}/`], [String(year), null]],
