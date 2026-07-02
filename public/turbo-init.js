@@ -13,7 +13,22 @@
       if (!window.adsbygoogle) return;
       var units = document.querySelectorAll("ins.adsbygoogle:not([data-adsbygoogle-status])");
       for (var i = 0; i < units.length; i++) {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (function (ins) {
+          // When the unit resolves, hide its whole wrapper (incl. the
+          // "Advertisement" label) if AdSense returned no ad ("unfilled"),
+          // so we never show an empty labelled box.
+          var obs = new MutationObserver(function () {
+            var status = ins.getAttribute("data-ad-status");
+            if (!status) return;
+            if (status === "unfilled") {
+              var wrap = ins.closest("[data-ad-wrapper]");
+              if (wrap) wrap.style.display = "none";
+            }
+            obs.disconnect();
+          });
+          obs.observe(ins, { attributes: true, attributeFilter: ["data-ad-status"] });
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        })(units[i]);
       }
     } catch (e) { /* AdSense not ready — ignore */ }
   }

@@ -307,7 +307,7 @@ function whatsappShareHtml(shareText, canonical) {
 function inFeedAdHtml() {
   if (!AD_SLOT_INFEED) return "";
   return `
-    <div>
+    <div data-ad-wrapper>
       <p class="text-text-subtle text-xs uppercase tracking-widest mb-1 text-center">Advertisement</p>
       <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-gw-3+1f-3d+2z" data-ad-client="ca-pub-1980028485411595" data-ad-slot="${AD_SLOT_INFEED}"></ins>
     </div>`;
@@ -320,7 +320,7 @@ function inFeedAdHtml() {
 function sidebarAdHtml() {
   if (!AD_SLOT_SIDEBAR) return "";
   return `
-  <aside class="hidden xl:block" style="position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:30;width:160px">
+  <aside data-ad-wrapper class="hidden xl:block" style="position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:30;width:160px">
     <p class="text-text-subtle text-xs uppercase tracking-widest mb-1 text-center">Advertisement</p>
     <ins class="adsbygoogle" style="display:block;width:160px;height:600px" data-ad-client="ca-pub-1980028485411595" data-ad-slot="${AD_SLOT_SIDEBAR}" data-ad-format="auto" data-full-width-responsive="true"></ins>
   </aside>`;
@@ -624,7 +624,6 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
       </div>
       <div class="mt-3 text-xs text-text-muted space-y-1">
         <p>Source: <a href="${CRSP_EXCEL}" class="text-amber hover:underline" target="_blank" rel="noopener">KRA CRSP July 2025 (Excel)</a></p>
-        <p>Rates: <a href="${FINANCE_ACT}" class="text-amber hover:underline" target="_blank" rel="noopener">Finance Act 2025, Act No. 9 of 2025</a></p>
       </div>
     </section>
 
@@ -757,7 +756,7 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
     <section class="bg-surface border border-border rounded-2xl overflow-hidden">
       <div class="px-5 py-3.5 border-b border-border">
         <h2 class="font-semibold text-base">Full Duty Breakdown</h2>
-        <p class="text-text-muted text-xs mt-0.5">${ageStr} · ${depr_pct}% depreciation · Finance Act 2025</p>
+        <p class="text-text-muted text-xs mt-0.5">${ageStr} · ${depr_pct}% depreciation</p>
       </div>
       <div class="divide-y divide-border">${rows}</div>
     </section>
@@ -786,7 +785,7 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
         "name": `How much is the import duty for a ${year} ${make} ${m.model} in Kenya?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `The KRA import duty for a ${year} ${make} ${m.model} is ${kes(total)}. This includes Import Duty (${kes(id_)}), Excise Duty (${kes(ed)}), VAT (${kes(vat)}), IDF (${kes(idf)}), and RDL (${kes(rdl)}), calculated on a Customs Value of ${kes(cv)} after ${depr_pct}% depreciation under the Finance Act 2025.`,
+          "text": `The KRA import duty for a ${year} ${make} ${m.model} is ${kes(total)}. This includes Import Duty (${kes(id_)}), Excise Duty (${kes(ed)}), VAT (${kes(vat)}), IDF (${kes(idf)}), and RDL (${kes(rdl)}), calculated on a Customs Value of ${kes(cv)} after ${depr_pct}% depreciation.`,
         },
       },
       {
@@ -812,7 +811,7 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
 
   return layout({
     title:    `${make} ${m.model} ${year} Import Duty Calculator Kenya — ${kes(total)}`,
-    desc:     `How much is import duty on a ${year} ${make} ${m.model} in Kenya? ${kes(total)} total — CRSP ${kes(m.crsp)}, customs value ${kes(cv)}, ${depr_pct}% depreciation. Finance Act 2025.`,
+    desc:     `How much is import duty on a ${year} ${make} ${m.model} in Kenya? ${kes(total)} total — CRSP ${kes(m.crsp)}, customs value ${kes(cv)}, ${depr_pct}% depreciation.`,
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/${year}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, `/${catSlug}/${makeSlug}/${modelSlug}/`], [String(year), null]],
     jsonLd:   [faqJsonLd, vehicleLd],
@@ -874,7 +873,7 @@ function renderComparePage(comboA, comboB) {
     <div class="bg-charcoal rounded-2xl px-5 py-6 border border-border-2">
       <p class="text-text-subtle text-xs uppercase tracking-widest mb-1">Compare Import Duty</p>
       <h1 class="text-xl font-bold text-white leading-tight">${nameA} <span class="text-text-muted">vs</span> ${nameB}</h1>
-      <p class="text-text-muted text-sm mt-1">KRA import duty & CRSP side by side · Finance Act 2025</p>
+      <p class="text-text-muted text-sm mt-1">KRA import duty & CRSP side by side</p>
     </div>
 
     <div id="cmp-verdict" class="bg-amber/10 border border-amber/30 rounded-2xl px-5 py-4 text-center">
