@@ -528,12 +528,12 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
       if (!d) return "";
       const ageStr = d.age === 0 ? "New" : `${d.age} yr${d.age !== 1 ? "s" : ""}`;
       return `
-      <tr class="border-t border-border hover:bg-surface-2 transition-colors">
-        <td class="px-4 py-3 font-semibold text-sm"><a href="/${catSlug}/${makeSlug}/${m.slug}/${yr}/" class="text-text hover:text-amber transition-colors">${yr}</a></td>
+      <tr class="border-t border-border hover:bg-surface-2 transition-colors cursor-pointer group" data-href="/${catSlug}/${makeSlug}/${m.slug}/${yr}/">
+        <td class="px-4 py-3 font-semibold text-sm"><a href="/${catSlug}/${makeSlug}/${m.slug}/${yr}/" class="text-amber hover:underline">${yr}</a></td>
         <td class="px-4 py-3 text-sm text-text-muted">${ageStr}</td>
         <td class="px-4 py-3 text-sm text-text-muted">${d.depr_pct}%</td>
         <td class="px-4 py-3 text-sm text-text">${kes(d.cv)}</td>
-        <td class="px-4 py-3 font-bold text-amber">${kes(d.total)}</td>
+        <td class="px-4 py-3 font-bold text-amber whitespace-nowrap">${kes(d.total)} <span class="text-text-subtle group-hover:text-amber transition-colors" aria-hidden="true">›</span></td>
       </tr>`;
     }).join("");
 
@@ -594,7 +594,7 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
       <div class="px-5 py-4 border-b border-border">
         <h2 class="font-semibold text-base">KRA Duty by Year of Manufacture</h2>
         <p class="text-text-muted text-xs mt-0.5">
-          Valid years under Kenya's 8-year rule. Cars before ${CURRENT_YEAR - MAX_AGE} cannot be imported.
+          Tap any year for the full breakdown. Valid years under Kenya's 8-year rule — cars before ${CURRENT_YEAR - MAX_AGE} cannot be imported.
         </p>
       </div>
       <div class="overflow-x-auto">

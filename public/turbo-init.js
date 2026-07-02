@@ -33,6 +33,19 @@
     } catch (e) { /* AdSense not ready — ignore */ }
   }
 
+  // Make any element with [data-href] (e.g. the year-table rows) clickable as
+  // a whole. Delegated + registered once. Clicks on a real <a> inside the row
+  // are left alone so the link (and Turbo) handle them normally.
+  document.addEventListener("click", function (e) {
+    if (e.target.closest("a")) return; // let real links work
+    var row = e.target.closest("[data-href]");
+    if (!row) return;
+    var href = row.getAttribute("data-href");
+    if (!href) return;
+    if (window.Turbo && typeof window.Turbo.visit === "function") window.Turbo.visit(href);
+    else window.location.assign(href);
+  });
+
   initAds();
 
   document.addEventListener("turbo:load", function () {
