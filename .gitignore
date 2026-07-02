@@ -11,6 +11,9 @@ node_modules/
 # Build output
 /dist
 
+# Generated CSS (rebuilt by `npm run build:css` on every build/deploy)
+/public/css/styles.css
+
 # Environment variables
 .env
 .env.local
