@@ -326,7 +326,31 @@ function sidebarAdHtml() {
   </aside>`;
 }
 
-function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share }) {
+// Fleetr partner promo — native, benefit-led banner (carVertical-style),
+// personalized to the vehicle when provided. Dofollow backlink to fleetr.co.ke.
+function fleetrPromoHtml(vehicle) {
+  const headline = vehicle
+    ? `Bringing in a ${vehicle}? Protect your investment.`
+    : `Just calculated your duty? Protect your investment.`;
+  return `
+    <a href="https://fleetr.co.ke/?ref=dutycheck&utm_source=dutycheck&utm_medium=referral&utm_campaign=import-duty" target="_blank" rel="noopener"
+       class="block rounded-2xl border border-border-2 hover:border-amber transition-colors" style="background:linear-gradient(135deg,#1c1917 0%,#111827 100%)">
+      <div class="px-5 py-5 flex items-center gap-4">
+        <img src="/fleetr-logo.png" alt="Fleetr logo" width="48" height="48" class="w-12 h-12 flex-shrink-0" />
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-bold text-white text-sm tracking-tight">Fleetr</span>
+            <span class="text-text-subtle text-xs uppercase tracking-widest border border-border-2 rounded px-1.5 py-0.5">Partner</span>
+          </div>
+          <p class="text-white font-semibold text-sm leading-snug">${headline}</p>
+          <p class="text-text-muted text-xs mt-1 leading-relaxed">Track it in real time with live GPS, anti-theft alerts and driver monitoring built for Kenyan roads. Start your 30-day free trial.</p>
+        </div>
+        <span class="hidden sm:inline-flex items-center bg-amber text-white text-sm font-semibold rounded-lg px-4 py-2 whitespace-nowrap flex-shrink-0">Start free trial →</span>
+      </div>
+    </a>`;
+}
+
+function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share, promo }) {
   const bc = crumbs.length ? `
   <nav class="text-xs text-text-muted flex items-center gap-1.5 flex-wrap">
     ${crumbs.map(([label, href], i) =>
@@ -391,6 +415,7 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share 
     ${bc}
     ${body}
     ${whatsappShareHtml(share || title, canonical)}
+    ${fleetrPromoHtml(promo)}
     <footer class="text-center text-xs text-text-subtle pb-10 space-y-2">
       <p>
         Source:
@@ -657,6 +682,7 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, null]],
     jsonLd:   [vehicleLd, faqLd],
+    promo:    `${make} ${m.model}`,
     body,
   });
 }
@@ -815,6 +841,7 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/${year}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, `/${catSlug}/${makeSlug}/${modelSlug}/`], [String(year), null]],
     jsonLd:   [faqJsonLd, vehicleLd],
+    promo:    `${make} ${m.model}`,
     body,
   });
 }
