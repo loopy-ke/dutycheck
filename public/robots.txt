@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dutycheck.co.ke/sitemap-index.xml
+Sitemap: https://www.dutycheck.co.ke/sitemap-index.xml

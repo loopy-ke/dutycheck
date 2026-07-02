@@ -90,7 +90,7 @@ function breadcrumbJsonLd(crumbs) {
   if (!crumbs.length) return "";
   const items = crumbs.map(([name, href], i) => {
     const entry = { "@type": "ListItem", "position": i + 1, "name": name };
-    if (href) entry.item = `https://dutycheck.co.ke${href}`;
+    if (href) entry.item = `https://www.dutycheck.co.ke${href}`;
     return entry;
   });
   return JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items });
@@ -116,10 +116,10 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [] }) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${title}</title>
   <meta name="description" content="${desc}" />
-  <link rel="canonical" href="https://dutycheck.co.ke${canonical}" />
+  <link rel="canonical" href="https://www.dutycheck.co.ke${canonical}" />
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${desc}" />
-  <meta property="og:url" content="https://dutycheck.co.ke${canonical}" />
+  <meta property="og:url" content="https://www.dutycheck.co.ke${canonical}" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="${title}" />

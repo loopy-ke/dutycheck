@@ -529,7 +529,7 @@ function buildShareText(total, cv, id, ed, vat, idf, rdl) {
     ``,
     `*Total KRA Duty: ${kes(total)}*`,
     ``,
-    `Calculate yours: https://dutycheck.co.ke`,
+    `Calculate yours: https://www.dutycheck.co.ke`,
   ].join("\n");
 }
 
