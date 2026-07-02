@@ -316,6 +316,7 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>${title}</title>
   <meta name="description" content="${desc}" />
   <link rel="canonical" href="https://www.dutycheck.co.ke${canonical}" />
@@ -350,11 +351,7 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share 
   <header class="bg-charcoal border-b border-border-2 sticky top-0 z-40">
     <div class="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2.5">
-        <div class="w-8 h-8 bg-amber rounded-lg flex items-center justify-center flex-shrink-0">
-          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
-        </div>
+        <img src="/logo.svg" alt="Duty Check logo" width="32" height="32" class="w-8 h-8 flex-shrink-0" />
         <span class="font-bold text-white text-base tracking-tight">Duty Check</span>
       </a>
       <a href="/" class="text-xs text-amber hover:underline">← Calculator</a>
