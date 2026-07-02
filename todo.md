@@ -32,7 +32,7 @@
 - [x] Sitemap.xml generation in build script (sitemap-index.xml + sitemap.xml + 11 per-category sitemaps)
 - [x] robots.txt with Sitemap (public/robots.txt, now www)
 - [ ] Title/description intent tuning toward "price in kenya" (top non-branded query: "hyundai veloster price in kenya" — pages say "Import Duty" not "price")
-- [ ] og:image / twitter:image — needs a share-card image asset (missing everywhere)
+- [x] og:image / twitter:image — branded 1200x630 card (public/og-image.png, source scripts/og-card.svg); summary_large_image on homepage + generated pages
 - [ ] Product/Vehicle schema on model/year pages (currently only FAQPage + BreadcrumbList)
 
 ## Notes
