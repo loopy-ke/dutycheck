@@ -448,7 +448,18 @@ function selectYear(year, activeBtn) {
   yearNote.classList.remove("hidden");
 
   collapseSection("step-year", `${year} · ${age === 0 ? "New" : age + "yr"} · ${pct(rate)} depr`);
-  calculate();
+
+  // Navigate to the canonical static page for this vehicle+year so the URL
+  // updates AND a refresh shows the same content. Uses the de-duplicated
+  // model slug (matches the generated pages). Turbo makes this an instant
+  // client-side visit; falls back to a full load if Turbo isn't present.
+  const modelSlug = selectedModel.slug || slugify(selectedModel.model);
+  const path = `/${slugify(selectedCat)}/${slugify(selectedMake)}/${modelSlug}/${selectedYear}/`;
+  if (window.Turbo && typeof window.Turbo.visit === "function") {
+    window.Turbo.visit(path);
+  } else {
+    window.location.assign(path);
+  }
 }
 
 // ── Calculate ─────────────────────────────────────────────────────────────
