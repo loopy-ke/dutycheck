@@ -515,9 +515,11 @@ function makeBreakdownRow({ label, note, formula, value, style }) {
 
 function buildShareText(total, cv, id, ed, vat, idf, rdl) {
   const car = `${selectedMake} ${selectedModel.model} (${selectedYear})`;
-  // Link to this exact vehicle page (mirrors updatePath), not the homepage
+  // Link to this exact vehicle page (mirrors updatePath), not the homepage.
+  // Use the current origin so dev/preview/prod all share correct links.
   const path = `/${slugify(selectedCat)}/${slugify(selectedMake)}/${slugify(selectedModel.model)}/${selectedYear}/`;
-  const url  = `https://www.dutycheck.co.ke${path}`;
+  const base = window.location.origin;
+  const url  = `${base}${path}`;
   return [
     `*Duty Check -- KRA Calculator*`,
     ``,
@@ -533,7 +535,7 @@ function buildShareText(total, cv, id, ed, vat, idf, rdl) {
     `*Total KRA Duty: ${kes(total)}*`,
     ``,
     `See full breakdown: ${url}`,
-    `Calculate yours: https://www.dutycheck.co.ke`,
+    `Calculate yours: ${base}`,
   ].join("\n");
 }
 
