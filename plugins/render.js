@@ -95,7 +95,7 @@ function buildModelIndex(models) {
  * category (same make) with the models whose CRSP is closest to the current
  * one. Returns indexed models (each carries a de-duplicated `.slug`).
  */
-function relatedVehicles(category, make, currentModel, limit = 6) {
+export function relatedVehicles(category, make, currentModel, limit = 6) {
   const { data } = getCrsp();
   const models = data[category]?.[make];
   if (!models) return [];
@@ -109,6 +109,48 @@ function relatedVehicles(category, make, currentModel, limit = 6) {
   others.sort((a, b) => Math.abs((a.crsp || 0) - base) - Math.abs((b.crsp || 0) - base));
 
   return others.slice(0, limit);
+}
+
+/**
+ * Resolve a combined "{makeSlug}-{modelSlug}" token to a real vehicle.
+ * Model slugs can themselves contain hyphens, so the split point between
+ * make and model is ambiguous — we try every split point on hyphens and pick
+ * the first (makeSlug, modelSlug) pair that matches an existing make+model.
+ * Returns { category, catSlug, make, makeSlug, model, models } or null.
+ */
+function findVehicleByComboSlug(comboSlug) {
+  if (!comboSlug) return null;
+  const { categories, data } = getCrsp();
+  const segParts = comboSlug.split("-");
+
+  for (let k = 1; k < segParts.length; k++) {
+    const makeSlug  = segParts.slice(0, k).join("-");
+    const modelSlug = segParts.slice(k).join("-");
+
+    for (const category of categories) {
+      const makes = data[category];
+      if (!makes) continue;
+      for (const make of Object.keys(makes)) {
+        if (slugify(make) !== makeSlug) continue;
+        const indexed = buildModelIndex(makes[make]);
+        const model = indexed.find(x => x.slug === modelSlug);
+        if (model) {
+          return { category, catSlug: slugify(category), make, makeSlug, model, models: indexed };
+        }
+      }
+    }
+  }
+  return null;
+}
+
+// Duty for a sensible default year: newest allowed year (CURRENT_YEAR),
+// falling back to the newest year that yields a value.
+function defaultDuty(crsp) {
+  for (let yr = CURRENT_YEAR; yr >= CURRENT_YEAR - MAX_AGE; yr--) {
+    const d = calcDuty(crsp, yr);
+    if (d) return { year: yr, ...d };
+  }
+  return null;
 }
 
 // Render a compact, crawlable "Related vehicles" card. Returns "" if empty.
@@ -624,6 +666,142 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
   });
 }
 
+function renderComparePage(comboA, comboB) {
+  const A = findVehicleByComboSlug(comboA);
+  const B = findVehicleByComboSlug(comboB);
+  if (!A || !B) return null;
+  // Same vehicle → nothing to compare.
+  if (A.catSlug === B.catSlug && A.makeSlug === B.makeSlug && A.model.slug === B.model.slug) return null;
+
+  const dA = defaultDuty(A.model.crsp);
+  const dB = defaultDuty(B.model.crsp);
+  if (!dA || !dB) return null;
+
+  const nameA = `${A.make} ${A.model.model}`;
+  const nameB = `${B.make} ${B.model.model}`;
+  const linkA = `/${A.catSlug}/${A.makeSlug}/${A.model.slug}/`;
+  const linkB = `/${B.catSlug}/${B.makeSlug}/${B.model.slug}/`;
+
+  const yearOptions = (selected) => Array.from({ length: MAX_AGE + 1 }, (_, i) => CURRENT_YEAR - i)
+    .map(yr => `<option value="${yr}"${yr === selected ? " selected" : ""}>${yr}${yr === CURRENT_YEAR ? " (new)" : ""}</option>`)
+    .join("");
+
+  const fuelStr = (m) => m.fuel ? m.fuel.charAt(0) + m.fuel.slice(1).toLowerCase() : "—";
+  const ccStr   = (m) => typeof m.cc === "number" ? `${m.cc}cc` : (m.cc || "—");
+
+  // Column card (one per vehicle). Elements carry data-side for the inline script.
+  const col = (side, veh, d, name, link) => `
+      <div class="bg-surface border border-border rounded-2xl overflow-hidden">
+        <div class="px-5 py-4 border-b border-border">
+          <p class="text-text-subtle text-xs uppercase tracking-widest mb-1">${veh.category}</p>
+          <h2 class="font-bold text-white text-base leading-tight"><a href="${link}" class="hover:text-amber transition-colors">${name}</a></h2>
+          <p class="text-text-muted text-xs mt-1">${ccStr(veh.model)} · ${fuelStr(veh.model)}</p>
+        </div>
+        <dl class="divide-y divide-border text-sm">
+          <div class="px-5 py-3 flex items-center justify-between gap-3"><dt class="text-text-muted">CRSP</dt><dd class="font-semibold text-amber">${kes(veh.model.crsp)}</dd></div>
+          <div class="px-5 py-3 flex items-center justify-between gap-3"><dt class="text-text-muted">Engine</dt><dd class="text-text">${ccStr(veh.model)}</dd></div>
+          <div class="px-5 py-3 flex items-center justify-between gap-3"><dt class="text-text-muted">Fuel</dt><dd class="text-text">${fuelStr(veh.model)}</dd></div>
+          <div class="px-5 py-3 flex items-center justify-between gap-3">
+            <dt class="text-text-muted">Year</dt>
+            <dd><select data-cmp-year="${side}" class="bg-surface-2 border border-border rounded-lg px-2.5 py-1 text-text text-sm focus:border-amber outline-none">${yearOptions(d.year)}</select></dd>
+          </div>
+          <div class="px-5 py-3 flex items-center justify-between gap-3"><dt class="text-text-muted">Customs Value</dt><dd class="text-text" data-cmp-cv="${side}">${kes(d.cv)}</dd></div>
+          <div class="px-5 py-4 bg-charcoal flex items-center justify-between gap-3"><dt class="font-semibold text-white">Total KRA Duty</dt><dd class="font-bold text-amber text-lg" data-cmp-total="${side}">${kes(d.total)}</dd></div>
+        </dl>
+      </div>`;
+
+  const diff = Math.abs(dA.total - dB.total);
+  const cheaperName = dA.total === dB.total ? "" : (dA.total < dB.total ? nameA : nameB);
+  const verdictText = dA.total === dB.total
+    ? `Both cost the same to import (${kes(dA.total)}) for ${CURRENT_YEAR}.`
+    : `${cheaperName} is cheaper to import by ${kes(diff)}.`;
+
+  const body = `
+    <div class="bg-charcoal rounded-2xl px-5 py-6 border border-border-2">
+      <p class="text-text-subtle text-xs uppercase tracking-widest mb-1">Compare Import Duty</p>
+      <h1 class="text-xl font-bold text-white leading-tight">${nameA} <span class="text-text-muted">vs</span> ${nameB}</h1>
+      <p class="text-text-muted text-sm mt-1">KRA import duty & CRSP side by side · Finance Act 2025</p>
+    </div>
+
+    <div id="cmp-verdict" class="bg-amber/10 border border-amber/30 rounded-2xl px-5 py-4 text-center">
+      <p class="font-bold text-sm text-text">${verdictText}</p>
+      <p class="text-text-subtle text-xs mt-1">Change either year below to recompute.</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      ${col("a", A, dA, nameA, linkA)}
+      ${col("b", B, dB, nameB, linkB)}
+    </div>
+
+    <section class="bg-surface border border-border rounded-2xl px-5 py-4">
+      <h3 class="font-semibold text-sm mb-2">How this is calculated</h3>
+      <p class="text-text-muted text-xs leading-relaxed">
+        Each duty is CRSP ÷ ${DIVISOR}, less depreciation for the selected year, then Import Duty (25%),
+        Excise (20%), VAT (16%), IDF (2.25%, min KES 5,000) and RDL (1.5%) — per the official KRA CRSP (${CRSP_DATE}).
+        Figures reviewed ${REVIEWED}.
+      </p>
+    </section>
+
+    <div class="grid grid-cols-2 gap-3">
+      <a href="${linkA}" class="bg-surface border border-border rounded-xl px-4 py-3 text-center hover:border-amber transition-colors block">
+        <p class="text-xs text-text-muted mb-0.5">Full breakdown</p><p class="font-semibold text-sm text-text">${nameA}</p></a>
+      <a href="${linkB}" class="bg-surface border border-border rounded-xl px-4 py-3 text-center hover:border-amber transition-colors block">
+        <p class="text-xs text-text-muted mb-0.5">Full breakdown</p><p class="font-semibold text-sm text-text">${nameB}</p></a>
+    </div>
+
+    <script>
+    (function(){
+      var DIVISOR=${DIVISOR}, CURRENT_YEAR=${CURRENT_YEAR}, MAX_AGE=${MAX_AGE};
+      var DEPRECIATION=${JSON.stringify(DEPRECIATION)};
+      var CRSP={a:${A.model.crsp},b:${B.model.crsp}};
+      var NAME={a:${JSON.stringify(nameA)},b:${JSON.stringify(nameB)}};
+      function fmt(n){return "KES "+Math.round(n).toLocaleString("en-KE");}
+      function getDepr(age){for(var i=0;i<DEPRECIATION.length;i++){if(age<=DEPRECIATION[i][0])return DEPRECIATION[i][1];}return null;}
+      function calcDuty(crsp,year){
+        var age=CURRENT_YEAR-year, depr=getDepr(age);
+        if(depr===null)return null;
+        var cv=(crsp/DIVISOR)*(1-depr);
+        var id=cv*0.25, ed=(cv+id)*0.20, vat=(cv+id+ed)*0.16;
+        var idf=Math.max(cv*0.0225,5000), rdl=cv*0.015;
+        return {cv:Math.round(cv),total:Math.round(id+ed+vat+idf+rdl)};
+      }
+      var last={};
+      function upd(side){
+        var sel=document.querySelector('[data-cmp-year="'+side+'"]');
+        var d=calcDuty(CRSP[side],parseInt(sel.value,10));
+        if(!d)return;
+        last[side]=d.total;
+        document.querySelector('[data-cmp-cv="'+side+'"]').textContent=fmt(d.cv);
+        document.querySelector('[data-cmp-total="'+side+'"]').textContent=fmt(d.total);
+        verdict();
+      }
+      function verdict(){
+        var v=document.querySelector('#cmp-verdict p');
+        if(last.a==null||last.b==null)return;
+        if(last.a===last.b){v.textContent="Both cost the same to import ("+fmt(last.a)+").";return;}
+        var cheaper=last.a<last.b?NAME.a:NAME.b;
+        v.textContent=cheaper+" is cheaper to import by "+fmt(Math.abs(last.a-last.b))+".";
+      }
+      ["a","b"].forEach(function(side){
+        var sel=document.querySelector('[data-cmp-year="'+side+'"]');
+        if(sel){sel.addEventListener("change",function(){upd(side);});upd(side);}
+      });
+    })();
+    </script>`;
+
+  const vehLdA = vehicleJsonLd({ make: A.make, model: A.model.model, year: dA.year, crsp: A.model.crsp, duty: dA.total });
+  const vehLdB = vehicleJsonLd({ make: B.make, model: B.model.model, year: dB.year, crsp: B.model.crsp, duty: dB.total });
+
+  return layout({
+    title:    `${nameA} vs ${nameB} — Import Duty Compare Kenya`,
+    desc:     `Compare ${nameA} and ${nameB} KRA import duty & CRSP in Kenya. ${verdictText} Interactive year-by-year duty comparison.`,
+    canonical: `/compare/${comboA}/${comboB}/`,
+    crumbs:   [["Home", "/"], ["Compare", null], [`${nameA} vs ${nameB}`, null]],
+    jsonLd:   [vehLdA, vehLdB],
+    body,
+  });
+}
+
 // ── Route resolver ────────────────────────────────────────────────────────
 
 /**
@@ -636,6 +814,12 @@ export function renderUrl(pathname) {
   // Normalise: strip leading slash, split on /
   const parts = pathname.replace(/^\/|\/$/g, "").split("/").filter(Boolean);
   if (parts.length === 0) return null; // homepage handled by Vite
+
+  // /compare/{makeSlug}-{modelSlug}/{makeSlug}-{modelSlug}/
+  if (parts[0] === "compare") {
+    if (parts.length !== 3) return null;
+    return renderComparePage(parts[1], parts[2]);
+  }
 
   const [catSlug, makeSlug, modelSlug, yearStr] = parts;
 

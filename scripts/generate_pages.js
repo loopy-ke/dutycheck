@@ -8,7 +8,7 @@
 
 import { mkdirSync, writeFileSync } from "fs";
 import { resolve } from "path";
-import { slugify, renderUrl } from "../plugins/render.js";
+import { slugify, renderUrl, relatedVehicles } from "../plugins/render.js";
 
 const ROOT       = new URL("..", import.meta.url).pathname;
 const OUT_DIR    = resolve(ROOT, "dist");
@@ -113,6 +113,49 @@ for (const category of crsp.categories) {
     `  <sitemap>\n    <loc>${BASE_URL}/${sitemapName}</loc>\n    <lastmod>${LASTMOD}</lastmod>\n  </sitemap>`
   );
 }
+
+// ── Compare pages ──────────────────────────────────────────────────────────
+// Each model vs its related vehicles only (not the full cartesian product),
+// deduplicated so A-vs-B is emitted once (when comboA < comboB lexically).
+const compareUrls = [];
+let compareCount = 0;
+const seenPairs = new Set();
+
+for (const category of crsp.categories) {
+  const catSlug = slugify(category);
+  for (const [make, models] of Object.entries(crsp.data[category])) {
+    const makeSlug = slugify(make);
+    const indexed  = buildModelIndex(models);
+    for (const m of indexed) {
+      const comboA = `${makeSlug}-${m.slug}`;
+      const related = relatedVehicles(category, make, m, 6);
+      for (const r of related) {
+        const comboB = `${makeSlug}-${r.slug}`;
+        if (comboA === comboB) continue;
+        const [lo, hi] = comboA < comboB ? [comboA, comboB] : [comboB, comboA];
+        const key = `${lo}|${hi}`;
+        if (seenPairs.has(key)) continue;
+        seenPairs.add(key);
+
+        const html = renderUrl(`/compare/${lo}/${hi}/`);
+        if (html) {
+          const dir = `${OUT_DIR}/compare/${lo}/${hi}`;
+          mkdirSync(dir, { recursive: true });
+          writeFileSync(`${dir}/index.html`, html);
+          count++;
+          compareCount++;
+          compareUrls.push(urlEntry(`/compare/${lo}/${hi}/`, "0.4", "monthly"));
+        }
+      }
+    }
+  }
+}
+
+writeSitemap("sitemap-compare.xml", compareUrls);
+sitemapIndexEntries.push(
+  `  <sitemap>\n    <loc>${BASE_URL}/sitemap-compare.xml</loc>\n    <lastmod>${LASTMOD}</lastmod>\n  </sitemap>`
+);
+console.log(`Generated ${compareCount} compare pages`);
 
 // Write main sitemap
 writeSitemap("sitemap.xml", mainUrls);
