@@ -6,7 +6,7 @@
 
 // ── Constants ─────────────────────────────────────────────────────────────
 
-const CURRENT_YEAR = 2026;
+const CURRENT_YEAR = new Date().getFullYear();
 const MAX_AGE      = 8;
 const DIVISOR      = 2.4469;
 

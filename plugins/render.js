@@ -23,7 +23,7 @@ function getCrsp() {
 
 // ── KRA constants ─────────────────────────────────────────────────────────
 
-const CURRENT_YEAR = 2026;
+const CURRENT_YEAR = new Date().getFullYear(); // tracks the real year (8-year window + depreciation advance automatically)
 const MAX_AGE      = 8;
 const DIVISOR      = 2.4469;
 

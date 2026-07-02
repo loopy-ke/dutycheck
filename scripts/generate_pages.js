@@ -12,7 +12,7 @@ import { slugify, renderUrl, relatedVehiclesCrossMake } from "../plugins/render.
 
 const ROOT       = new URL("..", import.meta.url).pathname;
 const OUT_DIR    = resolve(ROOT, "dist");
-const CURR_YEAR  = 2026;
+const CURR_YEAR  = new Date().getFullYear(); // keep in sync with render.js CURRENT_YEAR
 const MAX_AGE    = 8;
 const BASE_URL   = "https://www.dutycheck.co.ke";
 const LASTMOD    = new Date().toISOString().slice(0, 10); // build date
