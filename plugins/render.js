@@ -23,6 +23,9 @@ function getCrsp() {
 
 // ── KRA constants ─────────────────────────────────────────────────────────
 
+const AD_SLOT_SIDEBAR = ""; // paste AdSense 160x600 Display slot ID here to activate the desktop right rail
+const AD_SLOT_TOP     = ""; // paste AdSense responsive Display slot ID to activate the mobile top-of-content ad
+
 const CURRENT_YEAR = new Date().getFullYear(); // tracks the real year (8-year window + depreciation advance automatically)
 const MAX_AGE      = 8;
 const DIVISOR      = 2.4469;
@@ -298,6 +301,32 @@ function whatsappShareHtml(shareText, canonical) {
     </a>`;
 }
 
+// Desktop-only right-gutter AdSense skyscraper. Returns "" (renders NOTHING)
+// until AD_SLOT_SIDEBAR is set to a real slot ID. Fixed 160x600, shown only at
+// ≥1280px (`hidden xl:block`) so it never overlaps the centered column. The
+// push() happens centrally in public/turbo-init.js (Turbo-safe), not here.
+function sidebarAdHtml() {
+  if (!AD_SLOT_SIDEBAR) return "";
+  return `
+  <aside class="hidden xl:block" style="position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:30">
+    <p class="text-text-subtle text-xs uppercase tracking-widest mb-1 text-center">Advertisement</p>
+    <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-1980028485411595" data-ad-slot="${AD_SLOT_SIDEBAR}"></ins>
+  </aside>`;
+}
+
+// Mobile/tablet top-of-content AdSense unit (complements the desktop right
+// rail). Returns "" until AD_SLOT_TOP is set. Responsive horizontal unit shown
+// only below 1280px (`block xl:hidden`), so desktop uses the sidebar instead.
+// The push() happens centrally in public/turbo-init.js.
+function topAdHtml() {
+  if (!AD_SLOT_TOP) return "";
+  return `
+    <div class="block xl:hidden">
+      <p class="text-text-subtle text-xs uppercase tracking-widest mb-1 text-center">Advertisement</p>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1980028485411595" data-ad-slot="${AD_SLOT_TOP}" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>`;
+}
+
 function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share }) {
   const bc = crumbs.length ? `
   <nav class="text-xs text-text-muted flex items-center gap-1.5 flex-wrap">
@@ -360,7 +389,7 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share 
     </div>
   </header>
   <main class="max-w-3xl mx-auto px-4 py-5 space-y-5">
-    ${bc}
+    ${bc}${topAdHtml()}
     ${body}
     ${whatsappShareHtml(share || title, canonical)}
     <footer class="text-center text-xs text-text-subtle pb-10 space-y-2">
@@ -374,7 +403,7 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share 
       </p>
       <p>For guidance only. Verify with KRA or a licensed clearing agent.</p>
     </footer>
-  </main>
+  </main>${sidebarAdHtml()}
 </body>
 </html>`;
 }
