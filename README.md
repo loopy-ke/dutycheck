@@ -180,8 +180,8 @@ The canonical host is **`https://www.dutycheck.co.ke`**. DNS 301-redirects the n
 - [ ] Per-page dynamic OG images (currently one shared branded card)
 - [ ] External-links verification (KRA / Finance Act URLs — kenyalaw.org was unverifiable from CI, but the KRA links return 200)
 
-### Known follow-ups
-- [ ] Link compare pages from model/year pages so they aren't orphaned (in progress)
+### Done (recent)
+- [x] Link compare pages from model/year pages so they aren't orphaned (real `/compare/` links via `compareLinksHtml`, verified to resolve)
 
 ### Product / Growth
 - [ ] Insurance estimate widget (4–6% of CRSP) + "Get quotes" CTA
