@@ -1,114 +1,156 @@
-# Duty Check — KRA Car Import Duty Calculator
+# Duty Check — Kenya Car Import Duty Calculator
 
-> The only Kenya car duty calculator that shows you exactly how KRA calculates your duty — step by step, verified against the official KRA valuation template.
+> The Kenya car import-duty calculator that shows you *exactly* how KRA arrives at your duty — step by step, from the official CRSP valuation to every tax line item.
 
-**Live at:** [dutycheck.co.ke](https://dutycheck.co.ke)
+**Live at:** [www.dutycheck.co.ke](https://www.dutycheck.co.ke)
+
+Duty Check is a fast, transparent, SEO-first duty calculator for importing vehicles into Kenya. Pick a vehicle by category → make → model → year and it shows the full KRA breakdown: CRSP lookup, tax-stripping, age-based depreciation, and every duty component through to the total payable.
 
 ---
 
-## What is Duty Check?
+## Features
 
-Duty Check is a transparent, SEO-optimised KRA duty calculator for Kenya car imports. Unlike black-box competitors, Duty Check shows the full calculation breakdown:
-
-1. CRSP lookup from the official July 2025 KRA list (5,200+ models)
-2. Tax-stripping step (÷2.4469 multiplier explained)
-3. Age-based depreciation applied correctly
-4. Each duty line item with the exact rate
-5. Full landed cost including port, clearing, and transport estimates
+- **Full CRSP database** — every vehicle in the official KRA CRSP list of July 2025 (11 categories, ~5,683 entries).
+- **Transparent methodology** — shows the ÷2.4469 valuation factor, depreciation, and each duty line (Import Duty, Excise, VAT, IDF, RDL) rather than a black-box total.
+- **Cascading selector** — category → make → model → year, with real URL paths pushed to the address bar (e.g. `/suv/toyota/harrier/2022/`).
+- **Shareable, indexable pages** — every category, make, model, and year has its own static page and canonical URL.
+- **Dark / light mode.**
+- **Per-page SEO** — canonical, Open Graph, and Twitter tags on every page, plus JSON-LD structured data (BreadcrumbList everywhere; `Car`/Vehicle on model pages; FAQPage on year pages; WebApplication + WebSite on the homepage).
+- **Generated sitemaps + robots.txt** — a sitemap index, a main sitemap, and one sitemap per category.
+- **Google Analytics 4** on all pages.
 
 ---
 
 ## Tech Stack
 
-- **Framework:** Next.js 15 (App Router)
-- **Hosting:** Vercel (free tier)
-- **Data:** Static JSON from KRA CRSP database (no backend required)
-- **Styling:** Tailwind CSS
+- **Build tool:** [Vite 7](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) via `@tailwindcss/cli` and `@tailwindcss/vite`
+- **App code:** vanilla JavaScript (ES modules, `"type": "module"`) — no UI framework
+- **Data pipeline:** Python 3 (pandas/openpyxl) for parsing the KRA CRSP spreadsheet
+- **Rendering:** a single shared renderer (`plugins/render.js`) used for both dev SSR and prod static generation
+- **Hosting:** Vercel (static output)
 - **Analytics:** Google Analytics 4
 
 ---
 
-## Features (Roadmap)
+## Project Structure
 
-### Phase 1 — MVP
+```
+dutycheck/
+├── index.html                 # Homepage — interactive calculator shell
+├── src/
+│   ├── main.js                # Entry module loaded by index.html
+│   ├── calculator.js          # Interactive cascading calculator (client-side)
+│   ├── theme.js               # Dark/light mode toggle
+│   └── style.css              # Tailwind source (compiled to public/css/styles.css)
+├── plugins/
+│   ├── render.js              # Shared page renderer (KRA formula + all page templates)
+│   └── dev-render.js          # Vite middleware for on-the-fly SSR in dev
+├── scripts/
+│   ├── crsp_to_json.py        # Parse KRA CRSP .xlsx → intermediate JSON
+│   ├── build_crsp_cascade.py  # Build data/crsp_cascade.json (category→make→model)
+│   └── generate_pages.js      # Prod: write static HTML pages + sitemaps into dist/
+├── data/
+│   └── crsp_cascade.json      # CRSP July 2025, 11 categories, ~5,683 entries
+├── public/                    # Static assets copied as-is (robots.txt, css/, data/)
+├── vite.config.js
+└── vercel.json                # Vercel build config
+```
 
-- [x] Repo initialised
-- [ ] Calculator with full CRSP database (5,200+ models)
-- [ ] Step-by-step duty breakdown (transparent methodology)
-- [ ] Mobile-first responsive design
-- [ ] WhatsApp share button
-
-### Phase 2 — SEO Foundation
-
-- [ ] Static pages for top 200 most-searched car models
-- [ ] Blog: 8-Year Rule, CRSP 2025 Explained, Cheapest Cars to Import
-- [ ] Schema markup (FAQ, HowTo, Calculator)
-- [ ] Google Search Console + sitemap
-
-### Phase 3 — Growth
-
-- [ ] Auto-generated pages for all 5,200+ CRSP models (long-tail SEO)
-- [ ] Landed cost calculator (auction + shipping + duty + port + NTSA)
-- [ ] Model comparison tool
-- [ ] Email capture for CRSP update alerts
-
-### Phase 4 — Monetise
-
-- [ ] Clearing agent referral partnerships
-- [ ] Car exporter affiliate links (SBT, BeForward)
-- [ ] Google AdSense
-- [ ] Premium PDF export
+> Note: `public/css/styles.css` is generated by `npm run build:css` and is gitignored.
 
 ---
 
-## KRA Duty Methodology
+## Getting Started
 
-Duty Check uses the correct KRA formula:
+### Prerequisites
 
-```
-CRSP Value (from official list)
-  × depreciation factor            ← based on vehicle age
-  = Customs Value (CV)
+- **Node.js** 18+ (for Vite and the page generator)
+- **Python 3** — only needed if you want to regenerate the CRSP data from the source spreadsheet
 
-Import Duty     = CV × 25%
-Excise Duty     = (CV + Import Duty) × 20%
-VAT             = (CV + Import Duty + Excise Duty) × 16%
-IDF             = CV × 2.25%  (min KES 5,000)
-RDL             = CV × 1.5%
-───────────────────────────────
-Total Tax Due
-```
-
----
-
-## Local Development
+### Install
 
 ```bash
-# Install dependencies
 npm install
-
-# Run dev server
-npm run dev
-
-# Build for production
-npm run build
 ```
 
----
+### npm scripts
 
-## Competitive Edge
-
-| Feature                  | Duty Check | Competitors   |
-| ------------------------ | ------- | ------------- |
-| Transparent formula      | ✓       | ✗ (black box) |
-| Correct CRSP 2025 rates  | ✓       | Mostly 2019   |
-| Correct tax-stripping    | ✓       | Rarely        |
-| Mobile-first             | ✓       | Mixed         |
-| WhatsApp share           | ✓       | Rare          |
-| Model-specific SEO pages | ✓       | None          |
+| Script | What it does |
+| --- | --- |
+| `npm run dev` | Compiles CSS, then starts the Vite dev server. A middleware plugin renders category/make/model/year routes on the fly (SSR). |
+| `npm run build` | Compiles CSS → runs `vite build` → runs `scripts/generate_pages.js` to write all static pages and sitemaps into `dist/`. |
+| `npm run build:css` | Compiles `src/style.css` to `public/css/styles.css` with Tailwind (minified). |
+| `npm run data` | Regenerates the CRSP data (`python3 scripts/crsp_to_json.py && python3 scripts/build_crsp_cascade.py`). |
 
 ---
 
-## License
+## How It Works
 
-MIT
+The interesting architectural bit is that **dev and prod share one renderer** (`plugins/render.js`), which owns both the KRA duty formula and every page template (category, make, model, year).
+
+- **Development (`npm run dev`):** `plugins/dev-render.js` registers Vite middleware that intercepts requests. For any known route it calls `renderUrl(pathname)` and returns freshly rendered HTML. The homepage is served by Vite/`index.html` and hydrated by the client-side calculator in `src/calculator.js`.
+- **Production (`npm run build`):** after `vite build`, `scripts/generate_pages.js` walks the entire CRSP dataset and calls the same `renderUrl()` to write **~50,000+ static HTML files** into `dist/` — one per category, make, model, and valid import year. Because dev and prod use identical rendering logic, what you see locally is exactly what ships.
+
+### URL structure
+
+```
+/{category}/{make}/{model}/{year}/
+e.g. /suv/toyota/harrier/2022/
+```
+
+Year pages exist for every year within Kenya's 8-year import rule (current year back through current − 8).
+
+### KRA duty formula
+
+```
+CRSP Value (official KRA July 2025 list)
+  ÷ 2.4469                 → pre-depreciation value (strips embedded taxes)
+  × (1 − depreciation)     → Customs Value (CV), depreciation by vehicle age
+
+Import Duty  = CV × 25%
+Excise Duty  = (CV + Import Duty) × 20%
+VAT          = (CV + Import Duty + Excise Duty) × 16%
+IDF          = CV × 2.25%   (minimum KES 5,000)
+RDL          = CV × 1.5%
+─────────────────────────────────────────
+Total KRA Duty = Import Duty + Excise + VAT + IDF + RDL
+```
+
+Rates are per the Finance Act 2025 (Act No. 9 of 2025).
+
+---
+
+## Data
+
+The dataset is derived from the official KRA CRSP (Current Retail Selling Price) list of **July 2025**:
+
+- **Source:** [KRA CRSP — July 2025 (.xlsx)](https://www.kra.go.ke/images/publications/New-CRSP---July-2025.xlsx)
+- **Rates reference:** [Finance Act 2025 (Act No. 9 of 2025)](https://new.kenyalaw.org/akn/ke/act/2025/9/eng@2025-07-01)
+- **KRA duty page:** [Motor Vehicle Import Duty](https://www.kra.go.ke/14-motor-vehicle-import-duty)
+
+To regenerate `data/crsp_cascade.json` from the source spreadsheet:
+
+```bash
+npm run data
+```
+
+This runs `scripts/crsp_to_json.py` (parse the `.xlsx`) followed by `scripts/build_crsp_cascade.py` (normalise body types into the 11 display categories and build the category → make → model cascade the app consumes).
+
+---
+
+## Deployment
+
+Deployed on **Vercel** using `vercel.json`:
+
+- `buildCommand`: `npm run build`
+- `outputDirectory`: `dist`
+- `installCommand`: `npm install`
+
+The canonical host is **`https://www.dutycheck.co.ke`**. DNS 301-redirects the naked apex domain to `www`, and every canonical, `og:url`, sitemap, and robots.txt reference uses the `www` host to keep Google Search Console from splitting signals between apex and `www`.
+
+---
+
+## Disclaimer
+
+Duty Check is provided **for guidance only**. Duty figures are estimates based on the published KRA CRSP list and prevailing rates, and actual assessments can vary. Always verify with **KRA** or a **licensed clearing agent** before making import decisions.
