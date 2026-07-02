@@ -151,9 +151,13 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [] }) {
   <meta property="og:description" content="${desc}" />
   <meta property="og:url" content="https://www.dutycheck.co.ke${canonical}" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://www.dutycheck.co.ke/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${desc}" />
+  <meta name="twitter:image" content="https://www.dutycheck.co.ke/og-image.png" />
   ${ldScripts}
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VT7S4F6QJG"></script>

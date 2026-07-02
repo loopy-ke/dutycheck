@@ -1,0 +1,51 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="78%" cy="22%" r="70%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#f97316" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0f0e0d"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Top-left brand lockup -->
+  <g transform="translate(80,74)">
+    <rect width="60" height="60" rx="15" fill="url(#amber)"/>
+    <g transform="translate(15,15)" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+    </g>
+    <text x="80" y="30" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#ffffff">Duty Check</text>
+    <text x="290" y="30" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#78716c">.ke</text>
+    <text x="80" y="54" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="500" fill="#a8a29e" letter-spacing="1">KENYA CAR IMPORT DUTY</text>
+  </g>
+
+  <!-- Headline -->
+  <g transform="translate(80,255)" font-family="Arial, Helvetica, sans-serif" fill="#f5f5f4">
+    <text x="0" y="0" font-size="82" font-weight="800" letter-spacing="-2">KRA Car Import</text>
+    <text x="0" y="98" font-size="82" font-weight="800" letter-spacing="-2">Duty <tspan fill="#f97316">Calculator</tspan></text>
+  </g>
+
+  <!-- Subline -->
+  <text x="80" y="452" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="500" fill="#a8a29e">
+    See exactly how KRA calculates your duty — step by step.
+  </text>
+
+  <!-- CRSP badge -->
+  <g transform="translate(80,492)">
+    <rect width="330" height="52" rx="26" fill="#f97316" fill-opacity="0.14" stroke="#f97316" stroke-opacity="0.4"/>
+    <text x="30" y="34" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#f97316">Official CRSP · July 2025</text>
+  </g>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="622" width="1200" height="8" fill="url(#amber)"/>
+
+  <!-- Big faint watermark figure -->
+  <text x="1120" y="200" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="130" font-weight="800" fill="#ffffff" fill-opacity="0.04">KES</text>
+</svg>
