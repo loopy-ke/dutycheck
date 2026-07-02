@@ -23,8 +23,8 @@ function getCrsp() {
 
 // ── KRA constants ─────────────────────────────────────────────────────────
 
-const AD_SLOT_SIDEBAR = ""; // paste AdSense 160x600 Display slot ID here to activate the desktop right rail
-const AD_SLOT_TOP     = ""; // paste AdSense responsive Display slot ID to activate the mobile top-of-content ad
+const AD_SLOT_INFEED  = "4007052987"; // AdSense fluid in-feed slot, shown in-content after the vehicle details card
+const AD_SLOT_SIDEBAR = "7423966501"; // AdSense responsive vertical banner, desktop-only right rail
 
 const CURRENT_YEAR = new Date().getFullYear(); // tracks the real year (8-year window + depreciation advance automatically)
 const MAX_AGE      = 8;
@@ -301,30 +301,29 @@ function whatsappShareHtml(shareText, canonical) {
     </a>`;
 }
 
-// Desktop-only right-gutter AdSense skyscraper. Returns "" (renders NOTHING)
-// until AD_SLOT_SIDEBAR is set to a real slot ID. Fixed 160x600, shown only at
-// ≥1280px (`hidden xl:block`) so it never overlaps the centered column. The
-// push() happens centrally in public/turbo-init.js (Turbo-safe), not here.
+// In-feed (fluid) AdSense unit, placed in-content after the vehicle details
+// card. Returns "" when AD_SLOT_INFEED is falsy. No inline push() — the push
+// happens centrally in public/turbo-init.js (Turbo-safe, idempotent).
+function inFeedAdHtml() {
+  if (!AD_SLOT_INFEED) return "";
+  return `
+    <div>
+      <p class="text-text-subtle text-xs uppercase tracking-widest mb-1 text-center">Advertisement</p>
+      <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-gw-3+1f-3d+2z" data-ad-client="ca-pub-1980028485411595" data-ad-slot="${AD_SLOT_INFEED}"></ins>
+    </div>`;
+}
+
+// Desktop-only right-gutter vertical banner. Returns "" when AD_SLOT_SIDEBAR is
+// falsy. Fixed to the right gutter, shown only at ≥1280px (`hidden xl:block`)
+// so it never overlaps the centered column or appears on mobile/tablet. No
+// inline push() — the push happens centrally in public/turbo-init.js.
 function sidebarAdHtml() {
   if (!AD_SLOT_SIDEBAR) return "";
   return `
-  <aside class="hidden xl:block" style="position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:30">
+  <aside class="hidden xl:block" style="position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:30;width:160px">
     <p class="text-text-subtle text-xs uppercase tracking-widest mb-1 text-center">Advertisement</p>
-    <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-1980028485411595" data-ad-slot="${AD_SLOT_SIDEBAR}"></ins>
+    <ins class="adsbygoogle" style="display:block;width:160px;height:600px" data-ad-client="ca-pub-1980028485411595" data-ad-slot="${AD_SLOT_SIDEBAR}" data-ad-format="auto" data-full-width-responsive="true"></ins>
   </aside>`;
-}
-
-// Mobile/tablet top-of-content AdSense unit (complements the desktop right
-// rail). Returns "" until AD_SLOT_TOP is set. Responsive horizontal unit shown
-// only below 1280px (`block xl:hidden`), so desktop uses the sidebar instead.
-// The push() happens centrally in public/turbo-init.js.
-function topAdHtml() {
-  if (!AD_SLOT_TOP) return "";
-  return `
-    <div class="block xl:hidden">
-      <p class="text-text-subtle text-xs uppercase tracking-widest mb-1 text-center">Advertisement</p>
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1980028485411595" data-ad-slot="${AD_SLOT_TOP}" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    </div>`;
 }
 
 function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share }) {
@@ -389,7 +388,7 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share 
     </div>
   </header>
   <main class="max-w-3xl mx-auto px-4 py-5 space-y-5">
-    ${bc}${topAdHtml()}
+    ${bc}
     ${body}
     ${whatsappShareHtml(share || title, canonical)}
     <footer class="text-center text-xs text-text-subtle pb-10 space-y-2">
@@ -403,7 +402,8 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share 
       </p>
       <p>For guidance only. Verify with KRA or a licensed clearing agent.</p>
     </footer>
-  </main>${sidebarAdHtml()}
+  </main>
+  ${sidebarAdHtml()}
 </body>
 </html>`;
 }
@@ -589,7 +589,7 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
       </div>
       <p class="text-text-subtle text-xs mt-3">Based on the official KRA CRSP list (${CRSP_DATE}) · figures reviewed ${REVIEWED}</p>
     </div>
-
+    ${inFeedAdHtml()}
     <section class="bg-surface border border-border rounded-2xl overflow-hidden">
       <div class="px-5 py-4 border-b border-border">
         <h2 class="font-semibold text-base">KRA Duty by Year of Manufacture</h2>
@@ -753,6 +753,7 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
       </div>
       <p class="text-text-subtle text-xs mt-3">Based on the official KRA CRSP list (${CRSP_DATE}) · figures reviewed ${REVIEWED}</p>
     </div>
+    ${inFeedAdHtml()}
     <section class="bg-surface border border-border rounded-2xl overflow-hidden">
       <div class="px-5 py-3.5 border-b border-border">
         <h2 class="font-semibold text-base">Full Duty Breakdown</h2>
