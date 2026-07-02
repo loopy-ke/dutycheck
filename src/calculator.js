@@ -100,6 +100,20 @@ function slugify(s) {
     .trim();
 }
 
+// Assign each model a de-duplicated slug, mirroring buildModelIndex in
+// plugins/render.js / scripts/generate_pages.js so client-built vehicle
+// URLs (e.g. the WhatsApp share link) match the generated static pages
+// even when two trims in a make slugify to the same value.
+function buildModelIndex(models) {
+  const seen = {};
+  return models.map((m, i) => {
+    let slug = slugify(m.model) || `model-${i}`;
+    if (seen[slug] !== undefined) slug = `${slug}-${i}`;
+    seen[slug] = i;
+    return { ...m, slug };
+  });
+}
+
 // ── Collapsible section helpers ───────────────────────────────────────────
 
 function collapseSection(id, summary) {
@@ -183,16 +197,6 @@ export async function initCalculator() {
   makeHeaderClickable("step-year");
 }
 
-function updatePath() {
-  const parts = [];
-  if (selectedCat)   parts.push(slugify(selectedCat));
-  if (selectedMake)  parts.push(slugify(selectedMake));
-  if (selectedModel) parts.push(slugify(selectedModel.model));
-  if (selectedYear)  parts.push(String(selectedYear));
-  const path = parts.length ? "/" + parts.join("/") + "/" : "/";
-  history.replaceState(null, "", path);
-}
-
 // ── Step 1: Categories ────────────────────────────────────────────────────
 
 function parseSvg(svgStr) {
@@ -237,7 +241,6 @@ function renderCategories() {
       // Reset downstream
       selectedCat = selectedMake = selectedModel = selectedYear = null;
       hide(stepMake, stepModel, stepYear, results);
-      updatePath();
       // Deselect all category buttons
       categoryGrid.querySelectorAll("button").forEach(b => {
         b.classList.remove("border-amber", "bg-amber/10", "text-amber");
@@ -280,7 +283,6 @@ function selectCategory(cat, activeBtn) {
         b.classList.remove("border-amber", "bg-amber/10", "text-amber");
         b.classList.add("border-border", "bg-surface-2", "text-text-muted");
       });
-      updatePath();
     };
   }
 
@@ -289,7 +291,6 @@ function selectCategory(cat, activeBtn) {
   show(stepMake);
   expandSection("step-make");
   scrollSmooth(stepMake);
-  updatePath();
 }
 
 // ── Step 2: Make ──────────────────────────────────────────────────────────
@@ -305,8 +306,8 @@ function selectMake(make, activeChip) {
   activeChip.classList.remove("border-border", "bg-surface-2", "text-text-muted");
   activeChip.classList.add("border-amber", "bg-amber/10", "text-amber");
 
-  // Render model chips
-  const models = crspData.data[selectedCat][make];
+  // Render model chips (indexed so each carries its de-duplicated slug)
+  const models = buildModelIndex(crspData.data[selectedCat][make]);
   clear(modelGrid);
   models.forEach(m => {
     const chip = document.createElement("button");
@@ -355,7 +356,6 @@ function selectMake(make, activeChip) {
         b.classList.remove("border-amber", "bg-amber/10");
         b.classList.add("border-border");
       });
-      updatePath();
     };
   }
 
@@ -364,7 +364,6 @@ function selectMake(make, activeChip) {
   show(stepModel);
   expandSection("step-model");
   scrollSmooth(stepModel);
-  updatePath();
 }
 
 // ── Step 3: Model ─────────────────────────────────────────────────────────
@@ -397,7 +396,6 @@ function selectModel(model, activeChip) {
 
   const modelLabel = model.model + (model.cc ? ` · ${typeof model.cc === "number" ? model.cc + "cc" : model.cc}` : "");
   collapseSection("step-model", modelLabel);
-  updatePath();
   renderYearGrid();
   hide(results);
   show(stepYear);
@@ -449,7 +447,6 @@ function selectYear(year, activeBtn) {
   deprLabel.textContent = pct(rate);
   yearNote.classList.remove("hidden");
 
-  updatePath();
   collapseSection("step-year", `${year} · ${age === 0 ? "New" : age + "yr"} · ${pct(rate)} depr`);
   calculate();
 }
@@ -545,9 +542,10 @@ function makeBreakdownRow({ label, note, formula, value, style }) {
 
 function buildShareText(total, cv, id, ed, vat, idf, rdl) {
   const car = `${selectedMake} ${selectedModel.model} (${selectedYear})`;
-  // Link to this exact vehicle page (mirrors updatePath), not the homepage.
+  // Link to this exact vehicle page (built from in-memory state), not the homepage.
   // Use the current origin so dev/preview/prod all share correct links.
-  const path = `/${slugify(selectedCat)}/${slugify(selectedMake)}/${slugify(selectedModel.model)}/${selectedYear}/`;
+  const modelSlug = selectedModel.slug || slugify(selectedModel.model); // .slug is the de-duplicated one
+  const path = `/${slugify(selectedCat)}/${slugify(selectedMake)}/${modelSlug}/${selectedYear}/`;
   const base = window.location.origin;
   const url  = `${base}${path}`;
   return [
@@ -586,7 +584,6 @@ function recalculate() {
     b.classList.add("border-border", "bg-surface-2", "text-text-muted");
   });
   yearNote.classList.add("hidden");
-  updatePath();
   scrollSmooth(categoryGrid);
 }
 
