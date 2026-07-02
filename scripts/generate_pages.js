@@ -76,27 +76,33 @@ for (const category of crsp.categories) {
     mkdirSync(makeDir, { recursive: true });
 
     const makeHtml = renderUrl(`/${catSlug}/${makeSlug}/`);
-    if (makeHtml) { writeFileSync(`${makeDir}/index.html`, makeHtml); count++; }
-
-    catUrls.push(urlEntry(`/${catSlug}/${makeSlug}/`, "0.7", "monthly"));
+    if (makeHtml) {
+      writeFileSync(`${makeDir}/index.html`, makeHtml);
+      count++;
+      catUrls.push(urlEntry(`/${catSlug}/${makeSlug}/`, "0.7", "monthly"));
+    }
 
     for (const m of buildModelIndex(models)) {
       const modelDir = `${makeDir}/${m.slug}`;
       mkdirSync(modelDir, { recursive: true });
 
       const modelHtml = renderUrl(`/${catSlug}/${makeSlug}/${m.slug}/`);
-      if (modelHtml) { writeFileSync(`${modelDir}/index.html`, modelHtml); count++; }
-
-      catUrls.push(urlEntry(`/${catSlug}/${makeSlug}/${m.slug}/`, "0.6", "monthly"));
+      if (modelHtml) {
+        writeFileSync(`${modelDir}/index.html`, modelHtml);
+        count++;
+        catUrls.push(urlEntry(`/${catSlug}/${makeSlug}/${m.slug}/`, "0.6", "monthly"));
+      }
 
       // Year pages: one per valid import year
       for (let yr = CURR_YEAR; yr >= CURR_YEAR - MAX_AGE; yr--) {
         const yearDir = `${modelDir}/${yr}`;
         mkdirSync(yearDir, { recursive: true });
         const yearHtml = renderUrl(`/${catSlug}/${makeSlug}/${m.slug}/${yr}/`);
-        if (yearHtml) { writeFileSync(`${yearDir}/index.html`, yearHtml); count++; }
-
-        catUrls.push(urlEntry(`/${catSlug}/${makeSlug}/${m.slug}/${yr}/`, "0.5", "yearly"));
+        if (yearHtml) {
+          writeFileSync(`${yearDir}/index.html`, yearHtml);
+          count++;
+          catUrls.push(urlEntry(`/${catSlug}/${makeSlug}/${m.slug}/${yr}/`, "0.5", "yearly"));
+        }
       }
     }
   }
