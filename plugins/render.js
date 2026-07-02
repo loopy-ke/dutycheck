@@ -199,6 +199,41 @@ function relatedVehiclesHtml(category, catSlug, make, makeSlug, currentModel) {
     </section>`;
 }
 
+// Render crawlable cross-make /compare/ links. The lexical ordering of the
+// two "{makeSlug}-{modelSlug}" combos MUST match scripts/generate_pages.js so
+// every href points at a compare page that actually gets generated.
+// Returns "" if there are no related vehicles to compare against.
+function compareLinksHtml(category, catSlug, make, makeSlug, currentModel) {
+  const related = relatedVehiclesCrossMake(category, make, currentModel, 6);
+  if (!related.length) return "";
+
+  const comboA = `${makeSlug}-${currentModel.slug}`;
+  const seen = new Set();
+  const links = [];
+  for (const r of related) {
+    const comboB = `${r.makeSlug}-${r.slug}`;
+    if (comboB === comboA) continue;
+    const [lo, hi] = comboA < comboB ? [comboA, comboB] : [comboB, comboA];
+    const href = `/compare/${lo}/${hi}/`;
+    if (seen.has(href)) continue;
+    seen.add(href);
+    links.push(`
+      <a href="${href}"
+         class="bg-surface-2 border border-border rounded-xl px-4 py-3 hover:border-amber transition-colors block group">
+        <p class="font-semibold text-sm text-text group-hover:text-amber transition-colors truncate">${make} ${currentModel.model} <span class="text-text-muted">vs</span> ${r.make} ${r.model}</p>
+        <p class="text-text-subtle text-xs mt-0.5">Compare KRA import duty</p>
+      </a>`);
+    if (links.length >= 5) break;
+  }
+  if (!links.length) return "";
+
+  return `
+    <section class="bg-surface border border-border rounded-2xl px-5 py-4">
+      <h3 class="font-semibold text-sm mb-3">Compare import duty side-by-side</h3>
+      <div class="grid grid-cols-1 gap-2.5 sm:grid-cols-2">${links.join("")}</div>
+    </section>`;
+}
+
 // ── Shared layout ─────────────────────────────────────────────────────────
 
 function breadcrumbJsonLd(crumbs) {
@@ -540,12 +575,13 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
 
     ${relatedVehiclesHtml(category, catSlug, make, makeSlug, m)}
 
+    ${compareLinksHtml(category, catSlug, make, makeSlug, m) || `
     <div class="bg-amber/10 border border-amber/30 rounded-2xl px-5 py-5 text-center">
       <p class="font-bold text-sm mb-1">Compare other cars interactively</p>
       <a href="/" class="inline-block bg-amber text-white font-bold text-sm px-6 py-3 rounded-xl hover:bg-amber-dark transition-colors mt-2">
         Calculate My Duty →
       </a>
-    </div>`;
+    </div>`}`;
 
   const vehicleLd = vehicleJsonLd({ make, model: m.model, crsp: m.crsp, duty: cheapest ? cheapest.total : undefined });
 
@@ -659,6 +695,7 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
     </section>
     ${otherYearsHtml}
     ${relatedVehiclesHtml(category, catSlug, make, makeSlug, m)}
+    ${compareLinksHtml(category, catSlug, make, makeSlug, m)}
     <div class="grid grid-cols-2 gap-3">
       <a href="/${catSlug}/${makeSlug}/${modelSlug}/"
          class="bg-surface border border-border rounded-xl px-4 py-3 text-center hover:border-amber transition-colors block">
