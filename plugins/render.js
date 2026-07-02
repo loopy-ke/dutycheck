@@ -26,6 +26,11 @@ function getCrsp() {
 const CURRENT_YEAR = 2026;
 const MAX_AGE      = 8;
 const DIVISOR      = 2.4469;
+
+// Data provenance (static strings — keep builds deterministic; do NOT use Date.now())
+const CRSP_DATE = "July 2025";      // matches footer/badge wording
+const REVIEWED  = "July 2025";      // last human review of figures
+const REVIEWED_ISO = "2025-07-01";  // ISO-ish date for schema.org dateModified
 const FINANCE_ACT  = "https://new.kenyalaw.org/akn/ke/act/2025/9/eng@2025-07-01";
 const CRSP_EXCEL   = "https://www.kra.go.ke/images/publications/New-CRSP---July-2025.xlsx";
 const KRA_DUTY_PG  = "https://www.kra.go.ke/14-motor-vehicle-import-duty";
@@ -84,6 +89,47 @@ function buildModelIndex(models) {
   });
 }
 
+/**
+ * Pick up to `limit` OTHER models to link to from a model page.
+ * Preference: same category + same make first, then fill from the same
+ * category (same make) with the models whose CRSP is closest to the current
+ * one. Returns indexed models (each carries a de-duplicated `.slug`).
+ */
+function relatedVehicles(category, make, currentModel, limit = 6) {
+  const { data } = getCrsp();
+  const models = data[category]?.[make];
+  if (!models) return [];
+
+  const indexed = buildModelIndex(models);
+  const others = indexed.filter(m => m.slug !== currentModel.slug);
+  if (!others.length) return [];
+
+  // Closest CRSP first for a tasteful, relevant list.
+  const base = typeof currentModel.crsp === "number" ? currentModel.crsp : 0;
+  others.sort((a, b) => Math.abs((a.crsp || 0) - base) - Math.abs((b.crsp || 0) - base));
+
+  return others.slice(0, limit);
+}
+
+// Render a compact, crawlable "Related vehicles" card. Returns "" if empty.
+function relatedVehiclesHtml(category, catSlug, make, makeSlug, currentModel) {
+  const related = relatedVehicles(category, make, currentModel, 6);
+  if (!related.length) return "";
+
+  const links = related.map(r => `
+      <a href="/${catSlug}/${makeSlug}/${r.slug}/"
+         class="bg-surface-2 border border-border rounded-xl px-4 py-3 hover:border-amber transition-colors block group">
+        <p class="font-semibold text-sm text-text group-hover:text-amber transition-colors truncate">${make} ${r.model}</p>
+        <p class="text-text-subtle text-xs mt-0.5">CRSP ${kes(r.crsp)}</p>
+      </a>`).join("");
+
+  return `
+    <section class="bg-surface border border-border rounded-2xl px-5 py-4">
+      <h3 class="font-semibold text-sm mb-3">Related vehicles</h3>
+      <div class="grid grid-cols-1 gap-2.5 sm:grid-cols-2">${links}</div>
+    </section>`;
+}
+
 // ── Shared layout ─────────────────────────────────────────────────────────
 
 function breadcrumbJsonLd(crumbs) {
@@ -104,6 +150,12 @@ function vehicleJsonLd({ make, model, year, crsp, duty }) {
     "name": [make, model, year].filter(Boolean).join(" "),
     "brand": { "@type": "Brand", "name": make },
     "model": model,
+    "dateModified": REVIEWED_ISO,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Duty Check",
+      "url": "https://www.dutycheck.co.ke/",
+    },
   };
   if (year) node.vehicleModelDate = String(year);
   if (typeof crsp === "number") {
@@ -354,6 +406,7 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
           <p class="text-text-subtle text-xs mt-0.5">July 2025</p>
         </div>
       </div>
+      <p class="text-text-subtle text-xs mt-3">Based on the official KRA CRSP list (${CRSP_DATE}) · figures reviewed ${REVIEWED}</p>
     </div>
 
     <section class="bg-surface border border-border rounded-2xl overflow-hidden">
@@ -393,6 +446,8 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
         <p>Rates: <a href="${FINANCE_ACT}" class="text-amber hover:underline" target="_blank" rel="noopener">Finance Act 2025, Act No. 9 of 2025</a></p>
       </div>
     </section>
+
+    ${relatedVehiclesHtml(category, catSlug, make, makeSlug, m)}
 
     <div class="bg-amber/10 border border-amber/30 rounded-2xl px-5 py-5 text-center">
       <p class="font-bold text-sm mb-1">Compare other cars interactively</p>
@@ -471,6 +526,23 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
       </div>`;
   }).join("");
 
+  // "Other years" — same model, current year back through the 8-year limit, excluding this year.
+  const otherYears = Array.from({ length: MAX_AGE + 1 }, (_, i) => CURRENT_YEAR - i)
+    .filter(yr => yr !== year)
+    .map(yr => ({ yr, d: calcDuty(m.crsp, yr) }))
+    .filter(x => x.d);
+
+  const otherYearsHtml = otherYears.length ? `
+    <section class="bg-surface border border-border rounded-2xl px-5 py-4">
+      <h3 class="font-semibold text-sm mb-3">Other years for ${make} ${m.model}</h3>
+      <div class="grid grid-cols-2 gap-2.5 sm:grid-cols-3">${otherYears.map(({ yr, d }) => `
+        <a href="/${catSlug}/${makeSlug}/${modelSlug}/${yr}/"
+           class="bg-surface-2 border border-border rounded-xl px-4 py-3 hover:border-amber transition-colors block group">
+          <p class="font-semibold text-sm text-text group-hover:text-amber transition-colors">${yr}</p>
+          <p class="text-text-subtle text-xs mt-0.5">${kes(d.total)}</p>
+        </a>`).join("")}</div>
+    </section>` : "";
+
   const body = `
     <div class="bg-charcoal rounded-2xl px-5 py-6 border border-border-2">
       <div class="flex items-start justify-between gap-4">
@@ -485,6 +557,7 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
           <p class="text-text-subtle text-xs mt-0.5">${depr_pct}% depreciation</p>
         </div>
       </div>
+      <p class="text-text-subtle text-xs mt-3">Based on the official KRA CRSP list (${CRSP_DATE}) · figures reviewed ${REVIEWED}</p>
     </div>
     <section class="bg-surface border border-border rounded-2xl overflow-hidden">
       <div class="px-5 py-3.5 border-b border-border">
@@ -493,6 +566,8 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
       </div>
       <div class="divide-y divide-border">${rows}</div>
     </section>
+    ${otherYearsHtml}
+    ${relatedVehiclesHtml(category, catSlug, make, makeSlug, m)}
     <div class="grid grid-cols-2 gap-3">
       <a href="/${catSlug}/${makeSlug}/${modelSlug}/"
          class="bg-surface border border-border rounded-xl px-4 py-3 text-center hover:border-amber transition-colors block">
