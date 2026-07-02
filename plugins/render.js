@@ -247,7 +247,21 @@ function vehicleJsonLd({ make, model, year, crsp, duty }) {
   return JSON.stringify(node);
 }
 
-function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [] }) {
+// WhatsApp share button — every generated page gets one. Share text is
+// kept 4-byte-emoji-free for WhatsApp compatibility.
+function whatsappShareHtml(shareText, canonical) {
+  const url  = `https://www.dutycheck.co.ke${canonical}`;
+  const text = encodeURIComponent(`${shareText}\n\nSee full breakdown: ${url}\n\nCalculate yours: https://www.dutycheck.co.ke`);
+  return `
+    <a href="https://wa.me/?text=${text}" target="_blank" rel="noopener"
+       class="flex items-center justify-center gap-2 w-full text-white font-semibold text-sm rounded-xl px-5 py-3 transition-opacity hover:opacity-90"
+       style="background:#25D366">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      Share via WhatsApp
+    </a>`;
+}
+
+function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share }) {
   const bc = crumbs.length ? `
   <nav class="text-xs text-text-muted flex items-center gap-1.5 flex-wrap">
     ${crumbs.map(([label, href], i) =>
@@ -312,6 +326,7 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [] }) {
   <main class="max-w-3xl mx-auto px-4 py-5 space-y-5">
     ${bc}
     ${body}
+    ${whatsappShareHtml(share || title, canonical)}
     <footer class="text-center text-xs text-text-subtle pb-10 space-y-2">
       <p>
         Source:
