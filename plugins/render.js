@@ -96,6 +96,36 @@ function breadcrumbJsonLd(crumbs) {
   return JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items });
 }
 
+// schema.org Car (subtype of Vehicle/Product) for model & year pages
+function vehicleJsonLd({ make, model, year, crsp, duty }) {
+  const node = {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": [make, model, year].filter(Boolean).join(" "),
+    "brand": { "@type": "Brand", "name": make },
+    "model": model,
+  };
+  if (year) node.vehicleModelDate = String(year);
+  if (typeof crsp === "number") {
+    node.offers = {
+      "@type": "Offer",
+      "priceCurrency": "KES",
+      "price": Math.round(crsp),
+      "availability": "https://schema.org/InStock",
+      "areaServed": "KE",
+    };
+  }
+  if (typeof duty === "number") {
+    node.additionalProperty = {
+      "@type": "PropertyValue",
+      "name": "KRA Import Duty",
+      "value": Math.round(duty),
+      "unitText": "KES",
+    };
+  }
+  return JSON.stringify(node);
+}
+
 function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [] }) {
   const bc = crumbs.length ? `
   <nav class="text-xs text-text-muted flex items-center gap-1.5 flex-wrap">
@@ -367,11 +397,14 @@ function renderModelPage(category, catSlug, make, makeSlug, modelSlug) {
       </a>
     </div>`;
 
+  const vehicleLd = vehicleJsonLd({ make, model: m.model, crsp: m.crsp, duty: cheapest ? cheapest.total : undefined });
+
   return layout({
-    title:    `${make} ${m.model} Import Duty Kenya 2025 — Duty Check`,
-    desc:     `KRA import duty for ${make} ${m.model}. CRSP: ${kes(m.crsp)}. Duty from ${cheapest ? kes(cheapest.total) : "N/A"} depending on year. Full verified breakdown.`,
+    title:    `${make} ${m.model} Price & Import Duty in Kenya — Duty Check`,
+    desc:     `${make} ${m.model} price & KRA import duty in Kenya. CRSP: ${kes(m.crsp)}. Duty from ${cheapest ? kes(cheapest.total) : "N/A"} depending on year. Full verified breakdown.`,
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, null]],
+    jsonLd:   [vehicleLd],
     body,
   });
 }
@@ -500,12 +533,14 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
     ],
   });
 
+  const vehicleLd = vehicleJsonLd({ make, model: m.model, year, crsp: m.crsp, duty: total });
+
   return layout({
-    title:    `${make} ${m.model} ${year} Import Duty Kenya — ${kes(total)} — Duty Check`,
-    desc:     `KRA import duty for a ${year} ${make} ${m.model}: ${kes(total)} total. CRSP ${kes(m.crsp)}, Customs Value ${kes(cv)}, ${depr_pct}% depreciation. Finance Act 2025.`,
+    title:    `${make} ${m.model} ${year} Price & Import Duty Kenya — ${kes(total)}`,
+    desc:     `${make} ${m.model} ${year} price & KRA import duty in Kenya: ${kes(total)} total. CRSP ${kes(m.crsp)}, Customs Value ${kes(cv)}, ${depr_pct}% depreciation. Finance Act 2025.`,
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/${year}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, `/${catSlug}/${makeSlug}/${modelSlug}/`], [String(year), null]],
-    jsonLd:   [faqJsonLd],
+    jsonLd:   [faqJsonLd, vehicleLd],
     body,
   });
 }
