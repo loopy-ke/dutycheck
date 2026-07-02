@@ -515,6 +515,9 @@ function makeBreakdownRow({ label, note, formula, value, style }) {
 
 function buildShareText(total, cv, id, ed, vat, idf, rdl) {
   const car = `${selectedMake} ${selectedModel.model} (${selectedYear})`;
+  // Link to this exact vehicle page (mirrors updatePath), not the homepage
+  const path = `/${slugify(selectedCat)}/${slugify(selectedMake)}/${slugify(selectedModel.model)}/${selectedYear}/`;
+  const url  = `https://www.dutycheck.co.ke${path}`;
   return [
     `*Duty Check -- KRA Calculator*`,
     ``,
@@ -529,7 +532,7 @@ function buildShareText(total, cv, id, ed, vat, idf, rdl) {
     ``,
     `*Total KRA Duty: ${kes(total)}*`,
     ``,
-    `Calculate yours: https://www.dutycheck.co.ke`,
+    `See full breakdown: ${url}`,
   ].join("\n");
 }
 
