@@ -29,6 +29,7 @@
 ### SEO / Content
 - [x] Canonical domain fix: ALL refs (canonical, og:url, JSON-LD, sitemap, robots) now use www (matches DNS naked→www 301). Fixes GSC www/apex split.
 - [x] JSON-LD structured data: BreadcrumbList + FAQPage on generated pages (render.js); WebApplication + WebSite on homepage
+- [x] Fix GSC "Missing field 'item' (in 'itemListElement')" — every BreadcrumbList ListItem now emits `item`; trailing self-crumb uses the page canonical URL (render.js breadcrumbJsonLd)
 - [x] Sitemap.xml generation in build script (sitemap-index.xml + sitemap.xml + 11 per-category sitemaps)
 - [x] robots.txt with Sitemap (public/robots.txt, now www)
 - [ ] Title/description intent tuning toward "price in kenya" (top non-branded query: "hyundai veloster price in kenya" — pages say "Import Duty" not "price")

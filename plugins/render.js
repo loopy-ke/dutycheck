@@ -239,12 +239,13 @@ function compareLinksHtml(category, catSlug, make, makeSlug, currentModel) {
 
 // ── Shared layout ─────────────────────────────────────────────────────────
 
-function breadcrumbJsonLd(crumbs) {
+function breadcrumbJsonLd(crumbs, selfPath) {
   if (!crumbs.length) return "";
   const items = crumbs.map(([name, href], i) => {
-    const entry = { "@type": "ListItem", "position": i + 1, "name": name };
-    if (href) entry.item = `https://www.dutycheck.co.ke${href}`;
-    return entry;
+    // Every ListItem must carry an `item` URL (GSC flags "Missing field 'item'").
+    // Crumbs without an href are the current page — use its canonical URL.
+    const url = `https://www.dutycheck.co.ke${href || selfPath}`;
+    return { "@type": "ListItem", "position": i + 1, "name": name, "item": url };
   });
   return JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items });
 }
@@ -360,7 +361,7 @@ function layout({ title, desc, canonical, body, crumbs = [], jsonLd = [], share,
   </nav>` : "";
 
   const allJsonLd = [...jsonLd];
-  if (crumbs.length) allJsonLd.push(breadcrumbJsonLd(crumbs));
+  if (crumbs.length) allJsonLd.push(breadcrumbJsonLd(crumbs, canonical));
   const ldScripts = allJsonLd.map(ld => `<script type="application/ld+json">${ld}</script>`).join("\n  ");
 
   return `<!DOCTYPE html>
