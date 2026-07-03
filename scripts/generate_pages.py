@@ -34,7 +34,7 @@ CURRENT_YEAR = 2026
 MAX_AGE      = 8
 DIVISOR      = 2.4469
 
-FINANCE_ACT_URL = "https://new.kenyalaw.org/akn/ke/act/2025/9/eng@2025-07-01"
+FINANCE_ACT_URL = "https://new.kenyalaw.org/akn/ke/act/2025/9/eng"
 CRSP_EXCEL_URL  = "https://www.kra.go.ke/images/publications/New-CRSP---July-2025.xlsx"
 KRA_DUTY_PAGE   = "https://www.kra.go.ke/14-motor-vehicle-import-duty"
 

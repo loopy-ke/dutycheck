@@ -34,7 +34,7 @@ const DIVISOR      = 2.4469;
 const CRSP_DATE = "July 2025";      // matches footer/badge wording
 const REVIEWED  = "July 2025";      // last human review of figures
 const REVIEWED_ISO = "2025-07-01";  // ISO-ish date for schema.org dateModified
-const FINANCE_ACT  = "https://new.kenyalaw.org/akn/ke/act/2025/9/eng@2025-07-01";
+const FINANCE_ACT  = "https://new.kenyalaw.org/akn/ke/act/2025/9/eng";
 const CRSP_EXCEL   = "https://www.kra.go.ke/images/publications/New-CRSP---July-2025.xlsx";
 const KRA_DUTY_PG  = "https://www.kra.go.ke/14-motor-vehicle-import-duty";
 
@@ -325,6 +325,59 @@ function sidebarAdHtml() {
     <p class="text-text-subtle text-xs uppercase tracking-widest mb-1 text-center">Advertisement</p>
     <ins class="adsbygoogle" style="display:block;width:160px;height:600px" data-ad-client="ca-pub-1980028485411595" data-ad-slot="${AD_SLOT_SIDEBAR}" data-ad-format="auto" data-full-width-responsive="true"></ins>
   </aside>`;
+}
+
+// Lead-gen widgets shown on the results (year) page: an insurance estimate and
+// a conditional asset-finance CTA. These are revenue streams (insurance lead
+// gen + vehicle finance referral). Until partner deep-links are signed
+// (Britam/Jubilee/CIC, Stanbic/NCBA/I&M), the CTAs open a WhatsApp enquiry via
+// the same share-picker used site-wide — swap the hrefs for partner/affiliate
+// links once deals are live.
+function leadGenHtml({ crsp, total, make, model, canonical }) {
+  const url = `https://www.dutycheck.co.ke${canonical}`;
+  const insLow  = crsp * 0.04;
+  const insHigh = crsp * 0.06;
+  const insText = encodeURIComponent(
+    `Hi, I'd like comprehensive motor insurance quotes for a ${make} ${model} (CRSP ${kes(crsp)}).\n\nDetails: ${url}`
+  );
+
+  const insurance = `
+    <section class="bg-surface border border-border rounded-2xl px-5 py-4">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h3 class="font-semibold text-sm text-text">Insure this ${make} ${model}</h3>
+          <p class="text-text-muted text-xs mt-1 leading-relaxed">Comprehensive cover in Kenya typically runs 4–6% of the car's value per year.</p>
+        </div>
+        <div class="text-right flex-shrink-0">
+          <p class="text-text-subtle text-xs">Est. annual premium</p>
+          <p class="font-bold text-amber text-sm whitespace-nowrap">${kes(insLow)}–${kes(insHigh)}</p>
+        </div>
+      </div>
+      <a href="https://wa.me/?text=${insText}" target="_blank" rel="noopener"
+         class="mt-3 flex items-center justify-center w-full bg-amber/10 border border-amber/30 text-amber font-semibold text-sm rounded-xl px-5 py-3 hover:bg-amber/20 transition-colors">
+        Get insurance quotes →
+      </a>
+    </section>`;
+
+  // Asset-finance CTA only when the all-in cost (car + duty) is large enough
+  // that financing is realistic (~KES 3M+).
+  let finance = "";
+  if (crsp + total > 3_000_000) {
+    const finText = encodeURIComponent(
+      `Hi, I'd like asset finance pre-qualification for importing a ${make} ${model}. Estimated all-in cost: ${kes(crsp + total)} (car ${kes(crsp)} + duty ${kes(total)}).\n\nDetails: ${url}`
+    );
+    finance = `
+    <section class="bg-charcoal border border-border-2 rounded-2xl px-5 py-4">
+      <h3 class="font-semibold text-sm text-white">Finance this import</h3>
+      <p class="text-text-muted text-xs mt-1 leading-relaxed">All-in cost around ${kes(crsp + total)}. Asset-finance lets you spread it — banks fund up to 90% of the vehicle value over 4–5 years.</p>
+      <a href="https://wa.me/?text=${finText}" target="_blank" rel="noopener"
+         class="mt-3 flex items-center justify-center w-full bg-amber text-white font-semibold text-sm rounded-xl px-5 py-3 hover:bg-amber-dark transition-colors">
+        Check finance pre-qualification →
+      </a>
+    </section>`;
+  }
+
+  return insurance + finance;
 }
 
 // Fleetr partner promo — native, benefit-led banner (carVertical-style),
@@ -787,6 +840,7 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
       </div>
       <div class="divide-y divide-border">${rows}</div>
     </section>
+    ${leadGenHtml({ crsp: m.crsp, total, make, model: m.model, canonical: `/${catSlug}/${makeSlug}/${modelSlug}/${year}/` })}
     ${otherYearsHtml}
     ${relatedVehiclesHtml(category, catSlug, make, makeSlug, m)}
     ${compareLinksHtml(category, catSlug, make, makeSlug, m)}
@@ -837,8 +891,8 @@ function renderYearPage(category, catSlug, make, makeSlug, modelSlug, year) {
   const vehicleLd = vehicleJsonLd({ make, model: m.model, year, crsp: m.crsp, duty: total });
 
   return layout({
-    title:    `${make} ${m.model} ${year} Import Duty Calculator Kenya — ${kes(total)}`,
-    desc:     `How much is import duty on a ${year} ${make} ${m.model} in Kenya? ${kes(total)} total — CRSP ${kes(m.crsp)}, customs value ${kes(cv)}, ${depr_pct}% depreciation.`,
+    title:    `${make} ${m.model} ${year} Import Duty & Price in Kenya — ${kes(total)}`,
+    desc:     `${year} ${make} ${m.model} price in Kenya: KRA import duty is ${kes(total)} — CRSP ${kes(m.crsp)}, customs value ${kes(cv)} after ${depr_pct}% depreciation. Full duty, excise, VAT & levy breakdown.`,
     canonical: `/${catSlug}/${makeSlug}/${modelSlug}/${year}/`,
     crumbs:   [["Home", "/"], [category, `/${catSlug}/`], [make, `/${catSlug}/${makeSlug}/`], [m.model, `/${catSlug}/${makeSlug}/${modelSlug}/`], [String(year), null]],
     jsonLd:   [faqJsonLd, vehicleLd],

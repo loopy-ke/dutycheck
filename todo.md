@@ -16,15 +16,15 @@
 ## Pending Features
 
 ### High priority
-- [ ] Insurance estimate widget — show 4-6% of CRSP annually in results, "Get quotes" CTA → partner with Britam / Jubilee / CIC
-- [ ] Finance pre-qualification CTA — show below total duty when duty+car cost > ~KES 3M, pass vehicle details to Stanbic / NCBA / I&M asset finance
+- [x] Insurance estimate widget — leadGenHtml() on year pages: 4-6% of CRSP/year estimate + "Get insurance quotes" CTA (WhatsApp enquiry; swap for Britam/Jubilee/CIC partner deep-link once signed)
+- [x] Finance pre-qualification CTA — leadGenHtml() shows asset-finance CTA when crsp+duty > KES 3M, passes vehicle + all-in cost (WhatsApp enquiry; swap for Stanbic/NCBA/I&M link once signed)
 - [x] Turbolinks-style navigation — @hotwired/turbo (vendored to public/vendor/turbo.min.js, auto-starts); GA page_view on turbo:load via public/turbo-init.js; calculator + theme re-init idempotently on turbo:load
-- [ ] Fix external links — verify KRA CRSP Excel URL, Finance Act URL, KRA duty page URL actually resolve
+- [x] Fix external links — CRSP Excel + KRA duty page 200 OK; Finance Act URL corrected to /akn/ke/act/2025/9/eng (old @2025-07-01 point-in-time 404'd)
 
 ### Medium priority
-- [ ] Model page as self-contained calculator — trim selector, interactive year picker, full breakdown on /suv/toyota/harrier/ page
-- [ ] Compare feature — /compare/toyota-harrier/mazda-cx5 side-by-side
-- [ ] Prod build test — run npm run build and verify all pages generate correctly
+- [x] Model page — fully clickable year-by-year duty table (each row → full breakdown); trim distinction is per-model CRSP row. (Interactive JS year picker deferred as redundant with the table.)
+- [x] Compare feature — /compare/{comboA}/{comboB}/ side-by-side (renderComparePage)
+- [x] Prod build test — npm run build generates all pages, exit 0
 
 ### SEO / Content
 - [x] Canonical domain fix: ALL refs (canonical, og:url, JSON-LD, sitemap, robots) now use www (matches DNS naked→www 301). Fixes GSC www/apex split.
@@ -32,9 +32,9 @@
 - [x] Fix GSC "Missing field 'item' (in 'itemListElement')" — every BreadcrumbList ListItem now emits `item`; trailing self-crumb uses the page canonical URL (render.js breadcrumbJsonLd)
 - [x] Sitemap.xml generation in build script (sitemap-index.xml + sitemap.xml + 11 per-category sitemaps)
 - [x] robots.txt with Sitemap (public/robots.txt, now www)
-- [ ] Title/description intent tuning toward "price in kenya" (top non-branded query: "hyundai veloster price in kenya" — pages say "Import Duty" not "price")
+- [x] Title/description intent tuning toward "price in kenya" — year page title now "... Import Duty & Price in Kenya", desc leads with "{year} {make} {model} price in Kenya"; model page already "Price & CRSP"
 - [x] og:image / twitter:image — branded 1200x630 card (public/og-image.png, source scripts/og-card.svg); summary_large_image on homepage + generated pages
-- [ ] Product/Vehicle schema on model/year pages (currently only FAQPage + BreadcrumbList)
+- [x] Product/Vehicle schema on model/year pages — vehicleJsonLd() (schema.org Car) wired into model, year & compare pages with brand, CRSP offer & duty PropertyValue
 
 ## Notes
 
